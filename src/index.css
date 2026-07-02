@@ -1,0 +1,420 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #010d1a;
+  background-image:
+    radial-gradient(ellipse at 10% 15%, rgba(6, 89, 186, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 85%, rgba(6, 149, 228, 0.38) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 8%,  rgba(0, 180, 255, 0.22) 0%, transparent 40%),
+    radial-gradient(ellipse at 18% 92%, rgba(0, 60, 140, 0.3)  0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 5px; height: 5px; }
+::-webkit-scrollbar-track    { background: rgba(0, 14, 35, 0.3); }
+::-webkit-scrollbar-thumb    { background: rgba(6, 149, 228, 0.35); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(6, 149, 228, 0.6); }
+
+/* ─── Ant Design – Table ─────────────────────────────────────────── */
+.ant-table-wrapper .ant-table {
+  background: transparent !important;
+}
+.ant-table-wrapper .ant-table-container {
+  background: rgba(3, 51, 112, 0.35) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px !important;
+  border: none !important;
+  overflow: hidden;
+}
+.ant-table-wrapper .ant-table-thead .ant-table-cell {
+  background: rgba(6, 149, 228, 0.09) !important;
+  border-bottom: 1px solid rgba(6, 149, 228, 0.22) !important;
+  color: #e8f4ff !important;
+}
+.ant-table-wrapper .ant-table-tbody .ant-table-cell {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(10, 48, 80, 0.3) !important;
+}
+.ant-table-wrapper .ant-table-tbody .ant-table-row:hover .ant-table-cell {
+  background: rgba(6, 149, 228, 0.07) !important;
+}
+.ant-table-wrapper .ant-table-placeholder {
+  background: transparent !important;
+}
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+  margin-top: 16px;
+}
+
+/* ─── Ant Design – Input ─────────────────────────────────────────── */
+.ant-input-affix-wrapper {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ant-input-affix-wrapper:hover {
+  border-color: rgba(6, 149, 228, 0.5) !important;
+}
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:focus-within {
+  border-color: rgba(6, 149, 228, 0.75) !important;
+  box-shadow: 0 0 0 2px rgba(6, 149, 228, 0.12) !important;
+}
+.ant-input {
+  background: transparent !important;
+}
+.ant-input-clear-icon {
+  color: rgba(6, 149, 228, 0.55) !important;
+}
+.ant-input-clear-icon:hover {
+  color: rgba(6, 149, 228, 0.9) !important;
+}
+
+/* Standalone input (sin affix-wrapper) */
+.ant-input:not(.ant-input-affix-wrapper > .ant-input) {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+}
+
+/* ─── Ant Design – Search Input ──────────────────────────────────── */
+.ant-input-search .ant-input-wrapper {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ─── Ant Design – Modal ─────────────────────────────────────────── */
+.ant-modal-content {
+  background: rgba(3, 51, 112, 0.78) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+.ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(6, 149, 228, 0.16) !important;
+}
+.ant-modal-footer {
+  border-top: 1px solid rgba(6, 149, 228, 0.12) !important;
+}
+.ant-modal .ant-modal-title {
+  color: #e8f4ff !important;
+}
+.ant-modal-mask {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 8, 20, 0.65) !important;
+}
+
+/* ─── Ant Design – Menu ──────────────────────────────────────────── */
+.ant-menu {
+  background: transparent !important;
+}
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  background: rgba(6, 149, 228, 0.1) !important;
+}
+.ant-menu-dark .ant-menu-item-selected {
+  background: rgba(6, 149, 228, 0.18) !important;
+  box-shadow: inset 3px 0 0 #0695E4;
+}
+
+/* ─── Ant Design – Popconfirm / Popover ──────────────────────────── */
+.ant-popover-inner {
+  background: rgba(3, 51, 112, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+.ant-popover .ant-popover-arrow::before,
+.ant-popover .ant-popover-arrow::after {
+  background: rgba(3, 51, 112, 0.88) !important;
+}
+
+/* ─── Ant Design – Select ────────────────────────────────────────── */
+.ant-select-selector {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ant-select-dropdown {
+  background: rgba(3, 51, 112, 0.92) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+}
+.ant-select-item:hover {
+  background: rgba(6, 149, 228, 0.1) !important;
+}
+.ant-select-item-option-selected {
+  background: rgba(6, 149, 228, 0.18) !important;
+}
+
+/* ─── Ant Design – Button (default variant) ──────────────────────── */
+.ant-btn-default {
+  background: rgba(3, 51, 112, 0.5) !important;
+  border-color: rgba(6, 149, 228, 0.3) !important;
+}
+.ant-btn-default:hover {
+  background: rgba(6, 149, 228, 0.1) !important;
+  border-color: rgba(6, 149, 228, 0.6) !important;
+}
+
+/* ─── Ant Design – DatePicker / RangePicker ──────────────────────── */
+.ant-picker {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ant-picker:hover {
+  border-color: rgba(6, 149, 228, 0.5) !important;
+}
+.ant-picker-focused {
+  border-color: rgba(6, 149, 228, 0.75) !important;
+  box-shadow: 0 0 0 2px rgba(6, 149, 228, 0.12) !important;
+}
+.ant-picker .ant-picker-input > input {
+  color: #e8f4ff !important;
+}
+.ant-picker-suffix,
+.ant-picker-separator {
+  color: rgba(6, 149, 228, 0.55) !important;
+}
+.ant-picker-clear {
+  background: transparent !important;
+  color: rgba(6, 149, 228, 0.55) !important;
+}
+.ant-picker-dropdown {
+  background: transparent !important;
+}
+.ant-picker-panel-container {
+  background: rgba(3, 51, 112, 0.92) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+}
+.ant-picker-panel {
+  border-color: rgba(6, 149, 228, 0.18) !important;
+}
+.ant-picker-header,
+.ant-picker-header button {
+  color: #e8f4ff !important;
+}
+.ant-picker-content th {
+  color: #7aafc8 !important;
+}
+.ant-picker-cell {
+  color: rgba(232, 244, 255, 0.35) !important;
+}
+.ant-picker-cell-in-view {
+  color: #e8f4ff !important;
+}
+.ant-picker-cell:hover:not(.ant-picker-cell-selected) .ant-picker-cell-inner {
+  background: rgba(6, 149, 228, 0.15) !important;
+}
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #0695E4 !important;
+}
+
+/* ─── Ant Design – InputNumber ────────────────────────────────────── */
+.ant-input-number {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ant-input-number:hover {
+  border-color: rgba(6, 149, 228, 0.5) !important;
+}
+.ant-input-number-focused {
+  border-color: rgba(6, 149, 228, 0.75) !important;
+  box-shadow: 0 0 0 2px rgba(6, 149, 228, 0.12) !important;
+}
+.ant-input-number-input {
+  background: transparent !important;
+  color: #e8f4ff !important;
+}
+.ant-input-number-handler-wrap {
+  background: rgba(3, 51, 112, 0.6) !important;
+}
+
+/* ─── Ant Design – Radio buttons ─────────────────────────────────── */
+.ant-radio-button-wrapper {
+  background: rgba(3, 51, 112, 0.45) !important;
+  border-color: rgba(6, 149, 228, 0.25) !important;
+  color: #7aafc8 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.ant-radio-button-wrapper:hover {
+  color: #e8f4ff !important;
+}
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  background: #0695E4 !important;
+  border-color: #0695E4 !important;
+  color: #fff !important;
+}
+
+/* ─── Ant Design – Alert ─────────────────────────────────────────── */
+.ant-alert {
+  background: rgba(3, 51, 112, 0.45) !important;
+  backdrop-filter: blur(8px);
+  border: none !important;
+}
+
+/* ─── Ant Design – Statistic Card area ───────────────────────────── */
+.ant-card {
+  background: rgba(3, 51, 112, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
+}
+
+/* ─── Leaflet dark overrides ─────────────────────────────────────── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(0, 18, 48, 0.5);
+}
+.leaflet-control-zoom a {
+  background-color: rgba(0, 18, 48, 0.7) !important;
+  color: #0695E4 !important;
+  border-color: rgba(6, 149, 228, 0.3) !important;
+  backdrop-filter: blur(8px);
+}
+.leaflet-control-zoom a:hover {
+  background-color: #0695E4 !important;
+  color: #fff !important;
+}
+.leaflet-control-attribution {
+  background-color: rgba(0, 18, 34, 0.7) !important;
+  color: #7aafc8 !important;
+}
+.leaflet-control-attribution a {
+  color: #0695E4 !important;
+}
+
+/* ─── Animated wave background ──────────────────────────────────── */
+@keyframes wave-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.wave-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 200%;
+  animation: wave-slide linear infinite;
+  will-change: transform;
+}
+
+/* ─── GlobalLoader spinner ───────────────────────────────────────── */
+@keyframes til-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.til-spin {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(6, 149, 228, 0.2);
+  border-top-color: #0695E4;
+  border-radius: 50%;
+  animation: til-spin 0.85s linear infinite;
+}
+
+/* ─── Page header (título + botón agregar): apilar bajo 400px ────── */
+@media (max-width: 399px) {
+  .maylob-page-header {
+    flex-direction:  column;
+    align-items:      stretch !important;
+    justify-content:  flex-start !important;
+    gap:              10px;
+  }
+}
+
+/* ─── Filtros de búsqueda: apilar en vertical en resoluciones móviles ── */
+@media (max-width: 575px) {
+  .maylob-search-filters {
+    flex-direction: column !important;
+    align-items:    stretch !important;
+    width:          100%;
+  }
+  .maylob-search-filters .ant-space-item {
+    width: 100% !important;
+  }
+  .maylob-search-filters .ant-input-search,
+  .maylob-search-filters .ant-select {
+    width: 100% !important;
+  }
+}
+
+/* ─── Dashboard: compact stat cards (desktop only, map sits alongside) ──── */
+@media (min-width: 992px) {
+  .maylob-dashboard-stats .ant-card-body {
+    padding: 14px 16px !important;
+  }
+  .maylob-dashboard-stats .ant-statistic-title {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+  }
+  .maylob-dashboard-stats .ant-statistic-content {
+    font-size: 20px !important;
+  }
+}
+
+/* ─── Neumorphism + glassmorphism: page components (cards & tables) ─────
+   Applies to every page. Anything nested inside a Modal is explicitly
+   excluded below and keeps the original flat glass look. */
+.ant-card,
+.ant-table-wrapper .ant-table-container {
+  border-radius: 14px !important;
+  box-shadow:
+    10px 10px 24px rgba(0, 4, 12, 0.55),
+    -8px -8px 22px rgba(70, 150, 220, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    14px 14px 30px rgba(0, 4, 12, 0.6),
+    -10px -10px 26px rgba(70, 150, 220, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+}
+.ant-card-head {
+  border-bottom: 1px solid rgba(6, 149, 228, 0.14) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Modals are excluded from neumorphism — keep their flat glass shadow */
+.ant-modal .ant-card,
+.ant-modal .ant-table-wrapper .ant-table-container {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+}
+.ant-modal .ant-card:hover {
+  transform: none !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
+}
