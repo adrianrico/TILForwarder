@@ -9,7 +9,11 @@ const { Title } = Typography
 const DIRTY_CELL = { style: { backgroundColor: '#ffd591', transition: 'background-color 0.2s' } }
 
 function getClientId(r) {
-  return r._id ?? r.id ?? r.client_id
+  // client_id es el identificador que el backend usa para distinguir crear/actualizar
+  // en POST /clients/client/ (y el que referencian Maniobras/Rutas). _id (Mongo) casi
+  // siempre existe también, así que debe ir después o el update crea un cliente duplicado
+  // en vez de modificar el existente.
+  return r.client_id ?? r._id ?? r.id
 }
 
 function toEdits(client) {
@@ -46,11 +50,19 @@ export default function Clientes() {
     retry: false,
   })
 
+  // Solo inicializa edits[id] la primera vez que aparece ese cliente. Un refetch en
+  // segundo plano (staleTime, refocus de ventana, invalidateQueries tras guardar otra
+  // fila) no debe pisar ediciones aún no guardadas del usuario.
   useEffect(() => {
     if (!Array.isArray(data)) return
-    const initial = {}
-    data.forEach(c => { initial[getClientId(c)] = toEdits(c) })
-    setEdits(initial)
+    setEdits(prev => {
+      const next = {}
+      data.forEach(c => {
+        const id = getClientId(c)
+        next[id] = prev[id] ?? toEdits(c)
+      })
+      return next
+    })
   }, [data])
 
   const handleFieldChange = useCallback((id, field, value) => {
@@ -181,21 +193,23 @@ export default function Clientes() {
         const id = getClientId(r)
         return (
           <Space>
-            <Button
-              type="primary"
-              size="small"
-              icon={<SaveOutlined />}
-              loading={updateMutation.isPending}
-              onClick={() => updateMutation.mutate({
-                client_id:     id,
-                client_name:   edits[id]?.client_name,
-                client_phone:  edits[id]?.client_phone,
-                client_email:  edits[id]?.client_email,
-                client_status: edits[id]?.client_status,
-              })}
-            >
-              Guardar
-            </Button>
+            {r._dirty && (
+              <Button
+                type="primary"
+                size="small"
+                icon={<SaveOutlined />}
+                loading={updateMutation.isPending}
+                onClick={() => updateMutation.mutate({
+                  client_id:     id,
+                  client_name:   edits[id]?.client_name,
+                  client_phone:  edits[id]?.client_phone,
+                  client_email:  edits[id]?.client_email,
+                  client_status: edits[id]?.client_status,
+                })}
+              >
+                Guardar
+              </Button>
+            )}
             <Popconfirm
               title="¿Eliminar este cliente?"
               description="Esta acción no se puede deshacer."

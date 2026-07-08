@@ -14,3 +14,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+## Backend API
+
+Por defecto, `npm run dev` apunta al backend local (`http://localhost:8080`, requiere correr `maylob_backend` con Mongo local) y `npm run build` / el despliegue en Render apuntan al backend en producción. La URL se controla vía la variable `VITE_API_URL` en `.env.development` / `.env.production` (ver `.env.example`).

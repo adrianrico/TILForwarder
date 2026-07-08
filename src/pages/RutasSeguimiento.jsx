@@ -247,13 +247,32 @@ export default function RutasSeguimiento() {
     [transportistas, selectedTransporterId]
   )
 
+  const currentEcoId      = Form.useWatch('man_eco', form)
+  const currentOperatorId = Form.useWatch('man_operator', form)
+
+  // Keep the maniobra's currently assigned ECO/operator selectable even if it was
+  // marked "no disponible" afterwards — otherwise the field silently blanks out on edit.
   const ecoOptions = (selectedTransporter?.transporter_equipment ?? [])
-    .filter(e => e.eco_available !== false)
-    .map(e => ({ label: e.eco_name, value: e.eco_name }))
+    .filter(e => e.eco_available !== false || e.eco_id === currentEcoId)
+    .map(e => ({ label: e.eco_name, value: e.eco_id }))
 
   const operatorOptions = (selectedTransporter?.transporter_operators ?? [])
-    .filter(o => o.operator_available !== false)
-    .map(o => ({ label: o.operator_name, value: o.operator_name }))
+    .filter(o => o.operator_available !== false || o.operator_id === currentOperatorId)
+    .map(o => ({ label: o.operator_name, value: o.operator_id }))
+
+  function resolveEquipmentNames(record) {
+    const transporter = transportistas.find(t => t.transporter_id === record.man_transporter)
+    const eco = record.man_eco_id
+      ? transporter?.transporter_equipment?.find(e => e.eco_id === record.man_eco_id)
+      : null
+    const operator = record.man_operator_id
+      ? transporter?.transporter_operators?.find(o => o.operator_id === record.man_operator_id)
+      : null
+    return {
+      ecoName:      eco?.eco_name           ?? record.man_eco      ?? '',
+      operatorName: operator?.operator_name ?? record.man_operator ?? '',
+    }
+  }
 
   const clientOptions      = clientes.map(c => ({ label: c.client_name, value: c.client_id }))
   const transporterOptions = transportistas.map(t => ({ label: t.transporter_name, value: t.transporter_id }))
@@ -348,6 +367,16 @@ export default function RutasSeguimiento() {
       container_weight:  c.container_weight   ?? null,
     }))
 
+    // Match the assigned ECO/operator by id when available; legacy maniobras without an id
+    // fall back to matching the snapshot name against the transporter's current equipment.
+    const recordTransporter = transportistas.find(t => t.transporter_id === record.man_transporter) ?? null
+    const matchedEco = recordTransporter?.transporter_equipment?.find(e =>
+      record.man_eco_id ? e.eco_id === record.man_eco_id : e.eco_name === record.man_eco
+    ) ?? null
+    const matchedOperator = recordTransporter?.transporter_operators?.find(o =>
+      record.man_operator_id ? o.operator_id === record.man_operator_id : o.operator_name === record.man_operator
+    ) ?? null
+
     const formValues = {
       man_client:              record.man_client              || undefined,
       man_type:                record.man_type                || undefined,
@@ -359,8 +388,8 @@ export default function RutasSeguimiento() {
       man_extra_location:      record.man_extra_location      ?? '',
       man_extra_location_link: record.man_extra_location_link ?? '',
       man_transporter:         record.man_transporter         || undefined,
-      man_eco:                 record.man_eco                 || undefined,
-      man_operator:            record.man_operator            || undefined,
+      man_eco:                 matchedEco?.eco_id             ?? undefined,
+      man_operator:            matchedOperator?.operator_id   ?? undefined,
       man_gps_link:            record.man_gps_link            ?? '',
       man_containers:          containers,
     }
@@ -478,6 +507,11 @@ export default function RutasSeguimiento() {
       routeFields.man_events           = []
     }
 
+    const selectedEco = (selectedTransporter?.transporter_equipment ?? [])
+      .find(e => e.eco_id === values.man_eco)
+    const selectedOperator = (selectedTransporter?.transporter_operators ?? [])
+      .find(o => o.operator_id === values.man_operator)
+
     saveMutation.mutate({
       man_id:                  editing.man_id,
       man_client:              values.man_client,
@@ -488,8 +522,10 @@ export default function RutasSeguimiento() {
       man_executive:           values.man_executive            ?? '',
       man_extra_location:      values.man_extra_location      ?? '',
       man_extra_location_link: values.man_extra_location_link ?? '',
-      man_eco:                 values.man_eco                 ?? '',
-      man_operator:            values.man_operator            ?? '',
+      man_eco:                 selectedEco?.eco_name             ?? '',
+      man_eco_id:              selectedEco?.eco_id               ?? '',
+      man_operator:            selectedOperator?.operator_name   ?? '',
+      man_operator_id:         selectedOperator?.operator_id     ?? '',
       man_gps_link:            values.man_gps_link            ?? '',
       man_transporter:         values.man_transporter,
       man_moni_enable:         values.man_moni_enable         ?? true,
@@ -542,12 +578,15 @@ export default function RutasSeguimiento() {
     {
       title: 'Transportista / ECO',
       key: 'transportista',
-      render: (_, r) => (
-        <div>
-          <div style={{ fontSize: 12 }}>{transporterMap[r.man_transporter] ?? r.man_transporter ?? '—'}</div>
-          {r.man_eco && <div style={{ fontSize: 11, color: '#888' }}>{r.man_eco}</div>}
-        </div>
-      ),
+      render: (_, r) => {
+        const { ecoName } = resolveEquipmentNames(r)
+        return (
+          <div>
+            <div style={{ fontSize: 12 }}>{transporterMap[r.man_transporter] ?? r.man_transporter ?? '—'}</div>
+            {ecoName && <div style={{ fontSize: 11, color: '#888' }}>{ecoName}</div>}
+          </div>
+        )
+      },
     },
     {
       title: 'Tipo / Modalidad',

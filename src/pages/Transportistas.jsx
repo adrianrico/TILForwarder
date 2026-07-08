@@ -15,55 +15,52 @@ function EcoFormFields() {
     <>
       <Row gutter={16}>
         <Col xs={24} md={12}>
+          <Form.Item name="eco_plates" label="Placas" rules={[{ required: true, message: 'Las placas son obligatorias' }]}>
+            <Input allowClear placeholder="Placas del vehículo" />
+          </Form.Item>
+        </Col>
+        <Col xs={24} md={12}>
           <Form.Item name="eco_name" label="Nombre" rules={[{ required: true, message: 'El nombre es obligatorio' }]}>
             <Input allowClear placeholder="Ej. KENWORTH T680" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
-          <Form.Item name="eco_number" label="No. ECO">
-            <Input allowClear placeholder="Número de ECO" />
-          </Form.Item>
-        </Col>
       </Row>
       <Row gutter={16}>
-        <Col xs={24} md={12}>
-          <Form.Item name="eco_plates" label="Placas">
-            <Input allowClear placeholder="Placas del vehículo" />
-          </Form.Item>
-        </Col>
         <Col xs={24} md={12}>
           <Form.Item name="eco_year" label="Año">
             <Input allowClear placeholder="Ej. 2022" />
           </Form.Item>
         </Col>
-      </Row>
-      <Row gutter={16}>
         <Col xs={24} md={12}>
           <Form.Item name="eco_color" label="Color">
             <Input allowClear placeholder="Color del vehículo" />
           </Form.Item>
         </Col>
+      </Row>
+      <Row gutter={16}>
         <Col xs={24} md={12}>
           <Form.Item name="eco_serial_number" label="No. de Serie">
             <Input allowClear placeholder="Número de serie" />
           </Form.Item>
         </Col>
-      </Row>
-      <Row gutter={16}>
         <Col xs={24} md={12}>
           <Form.Item name="eco_engine_serial" label="No. de Serie de Motor">
             <Input allowClear placeholder="Número de serie del motor" />
           </Form.Item>
         </Col>
+      </Row>
+      <Row gutter={16}>
         <Col xs={24} md={12}>
           <Form.Item name="eco_insurance_company" label="Compañía de Seguros">
             <Input allowClear placeholder="Nombre de la aseguradora" />
           </Form.Item>
         </Col>
+        <Col xs={24} md={12}>
+          <Form.Item name="eco_insurance_policy" label="No. de Póliza">
+            <Input allowClear placeholder="Número de póliza" />
+          </Form.Item>
+        </Col>
       </Row>
-      <Form.Item name="eco_insurance_policy" label="No. de Póliza">
-        <Input allowClear placeholder="Número de póliza" />
-      </Form.Item>
       <Form.Item name="eco_available" label="Disponible" valuePropName="checked">
         <Switch checkedChildren="Disponible" unCheckedChildren="No disponible" />
       </Form.Item>
@@ -122,9 +119,9 @@ function CamionesSection({ transporter }) {
 
   const columns = [
     { title: 'Nombre',   dataIndex: 'eco_name',   key: 'eco_name' },
-    { title: 'No. ECO',  dataIndex: 'eco_number',  key: 'eco_number' },
     { title: 'Placas',   dataIndex: 'eco_plates',  key: 'eco_plates' },
     { title: 'Año',      dataIndex: 'eco_year',    key: 'eco_year', width: 70 },
+    { title: 'Fecha de Registro', dataIndex: 'eco_registration', key: 'eco_registration', width: 160 },
     {
       title: 'Disponible',
       key: 'eco_available',
@@ -242,7 +239,7 @@ function OperatorFormFields() {
           </Form.Item>
         </Col>
         <Col xs={24} md={12}>
-          <Form.Item name="operator_curp" label="CURP">
+          <Form.Item name="operator_curp" label="CURP" rules={[{ required: true, message: 'El CURP es obligatorio' }]}>
             <Input allowClear placeholder="CURP del operador" />
           </Form.Item>
         </Col>
@@ -329,8 +326,10 @@ function OperadoresSection({ transporter }) {
 
   const columns = [
     { title: 'Nombre',      dataIndex: 'operator_name',    key: 'operator_name' },
+    { title: 'CURP',        dataIndex: 'operator_curp',    key: 'operator_curp' },
     { title: 'RFC',         dataIndex: 'operator_rfc',     key: 'operator_rfc' },
     { title: 'No. Licencia', dataIndex: 'operator_license', key: 'operator_license' },
+    { title: 'Fecha de Registro', dataIndex: 'operator_registration', key: 'operator_registration', width: 160 },
     {
       title: 'Disponible',
       key: 'operator_available',
@@ -486,17 +485,31 @@ export default function Transportistas() {
     retry: false,
   })
 
+  // Solo inicializa edits[id] la primera vez que aparece ese transportista. Un refetch
+  // en segundo plano no debe pisar ediciones aún no guardadas del usuario.
   useEffect(() => {
     if (!Array.isArray(data)) return
-    const initial = {}
-    data.forEach((t) => {
-      initial[t.transporter_id] = {
-        transporter_name: t.transporter_name ?? '',
-        transporter_caat: t.transporter_caat ?? '',
-      }
+    setEdits((prev) => {
+      const next = {}
+      data.forEach((t) => {
+        const id = t.transporter_id
+        next[id] = prev[id] ?? {
+          transporter_name: t.transporter_name ?? '',
+          transporter_caat: t.transporter_caat ?? '',
+        }
+      })
+      return next
     })
-    setEdits(initial)
   }, [data])
+
+  function isDirty(record) {
+    const e = edits[record.transporter_id]
+    if (!e) return false
+    return (
+      e.transporter_name !== (record.transporter_name ?? '') ||
+      e.transporter_caat !== (record.transporter_caat ?? '')
+    )
+  }
 
   function handleFieldChange(id, field, value) {
     setEdits((prev) => ({ ...prev, [id]: { ...prev[id], [field]: value } }))
@@ -576,19 +589,21 @@ export default function Transportistas() {
         const key = record.transporter_id ?? record.transporter_name
         return (
           <Space>
-            <Button
-              type="primary"
-              size="small"
-              icon={<SaveOutlined />}
-              loading={saveMutation.isPending}
-              onClick={() => saveMutation.mutate({
-                transporter_id:   id,
-                transporter_name: edits[id]?.transporter_name,
-                transporter_caat: edits[id]?.transporter_caat,
-              })}
-            >
-              Guardar
-            </Button>
+            {isDirty(record) && (
+              <Button
+                type="primary"
+                size="small"
+                icon={<SaveOutlined />}
+                loading={saveMutation.isPending}
+                onClick={() => saveMutation.mutate({
+                  transporter_id:   id,
+                  transporter_name: edits[id]?.transporter_name,
+                  transporter_caat: edits[id]?.transporter_caat,
+                })}
+              >
+                Guardar
+              </Button>
+            )}
             <Button
               type="primary"
               size="small"
