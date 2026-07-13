@@ -5,6 +5,7 @@ import {
 import { DeleteOutlined, EditOutlined, MinusCircleOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { rutasService } from '../services/rutasService'
+import { backendMessage } from '../utils/backendMessage'
 
 const { Title, Text } = Typography
 
@@ -117,14 +118,14 @@ export default function RutasPersonalizadas() {
       Modal.success({ content: 'Ruta actualizada' })
       qc.invalidateQueries({ queryKey: ['rutas-personalizadas'] })
     },
-    onError: () => Modal.error({ content: 'Error al guardar la ruta' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar la ruta') }),
   })
 
   const createMutation = useMutation({
     meta:       { label: 'Registrando ruta...' },
     mutationFn: (values) => rutasService.createOrUpdate(values),
     onSuccess: () => qc.invalidateQueries({ queryKey: ['rutas-personalizadas'] }),
-    onError: () => Modal.error({ content: 'Error al registrar la ruta' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar la ruta') }),
   })
 
   function submitRoute(values, mode) {
@@ -177,7 +178,7 @@ export default function RutasPersonalizadas() {
       qc.invalidateQueries({ queryKey: ['rutas-personalizadas'] })
       setEventsModal(null)
     },
-    onError: () => Modal.error({ content: 'Error al actualizar eventos' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al actualizar eventos') }),
   })
 
   const deleteMutation = useMutation({
@@ -187,7 +188,7 @@ export default function RutasPersonalizadas() {
       Modal.success({ content: 'Ruta eliminada' })
       qc.invalidateQueries({ queryKey: ['rutas-personalizadas'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar la ruta' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar la ruta') }),
   })
 
   const filtered = (Array.isArray(data) ? data : []).filter((r) => {
@@ -372,7 +373,7 @@ export default function RutasPersonalizadas() {
         />
       </Space>
 
-      <div style={{ marginTop: 'auto' }}>
+      <div className="maylob-table-wrap" style={{ marginTop: 'auto' }}>
         {isLoading ? (
           <Table loading columns={columns} dataSource={[]} rowKey="route_id" />
         ) : !Array.isArray(data) || data.length === 0 ? (

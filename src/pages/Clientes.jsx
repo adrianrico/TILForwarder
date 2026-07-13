@@ -3,6 +3,7 @@ import { Typography, Button, Table, Input, Space, Popconfirm, Empty, Modal, Form
 import { DeleteOutlined, SaveOutlined, PlusOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { clientesService } from '../services/clientesService'
+import { backendMessage } from '../utils/backendMessage'
 
 const { Title } = Typography
 
@@ -18,20 +19,22 @@ function getClientId(r) {
 
 function toEdits(client) {
   return {
-    client_name:   client.client_name   ?? '',
-    client_phone:  client.client_phone  ?? '',
-    client_email:  client.client_email  ?? '',
-    client_status: client.client_status ?? 'ACTIVO',
+    client_name:    client.client_name    ?? '',
+    client_phone:   client.client_phone   ?? '',
+    client_email:   client.client_email   ?? '',
+    client_status:  client.client_status  ?? 'ACTIVO',
+    client_man_key: client.client_man_key ?? '',
   }
 }
 
 function computeDirty(r, e) {
   if (!e) return false
   return (
-    e.client_name   !== (r.client_name   ?? '')       ||
-    e.client_phone  !== (r.client_phone  ?? '')       ||
-    e.client_email  !== (r.client_email  ?? '')       ||
-    e.client_status !== (r.client_status ?? 'ACTIVO')
+    e.client_name    !== (r.client_name    ?? '')       ||
+    e.client_phone   !== (r.client_phone   ?? '')       ||
+    e.client_email   !== (r.client_email   ?? '')       ||
+    e.client_status  !== (r.client_status  ?? 'ACTIVO') ||
+    e.client_man_key !== (r.client_man_key ?? '')
   )
 }
 
@@ -78,17 +81,25 @@ export default function Clientes() {
       form.resetFields()
       qc.refetchQueries({ queryKey: ['clientes'] })
     },
-    onError: () => Modal.error({ content: 'Error al registrar el cliente' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el cliente') }),
   })
 
   const updateMutation = useMutation({
     meta:       { label: 'Guardando cambios...' },
     mutationFn: payload => clientesService.update(payload),
-    onSuccess:  () => {
+    onSuccess:  (_, variables) => {
       Modal.success({ content: 'Cliente actualizado' })
+      // Se descarta el edit local del renglón guardado para que, al llegar el
+      // refetch, el useEffect lo reconstruya desde los datos frescos del backend
+      // (en vez de seguir mostrando lo que el usuario tecleó).
+      setEdits(prev => {
+        const next = { ...prev }
+        delete next[variables.client_id]
+        return next
+      })
       qc.invalidateQueries({ queryKey: ['clientes'] })
     },
-    onError: () => Modal.error({ content: 'Error al actualizar el cliente' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al actualizar el cliente') }),
   })
 
   const deleteMutation = useMutation({
@@ -98,7 +109,7 @@ export default function Clientes() {
       Modal.success({ content: 'Cliente eliminado' })
       qc.invalidateQueries({ queryKey: ['clientes'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar el cliente' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el cliente') }),
   })
 
   // Nuevos objetos en cada cambio de edits → el Table detecta el cambio y re-renderiza.
@@ -145,6 +156,7 @@ export default function Clientes() {
         return (
           <Input
             allowClear
+            placeholder="Sin teléfono"
             value={edits[id]?.client_phone ?? ''}
             onChange={e => handleFieldChange(id, 'client_phone', e.target.value)}
           />
@@ -162,6 +174,22 @@ export default function Clientes() {
             allowClear
             value={edits[id]?.client_email ?? ''}
             onChange={e => handleFieldChange(id, 'client_email', e.target.value)}
+          />
+        )
+      },
+    },
+    {
+      title:  'Llave de Seguimiento',
+      key:    'client_man_key',
+      onCell: r => r._dirty ? DIRTY_CELL : {},
+      render: (_, r) => {
+        const id = getClientId(r)
+        return (
+          <Input
+            allowClear
+            placeholder="ID del cliente"
+            value={edits[id]?.client_man_key ?? ''}
+            onChange={e => handleFieldChange(id, 'client_man_key', e.target.value)}
           />
         )
       },
@@ -200,11 +228,14 @@ export default function Clientes() {
                 icon={<SaveOutlined />}
                 loading={updateMutation.isPending}
                 onClick={() => updateMutation.mutate({
-                  client_id:     id,
-                  client_name:   edits[id]?.client_name,
-                  client_phone:  edits[id]?.client_phone,
-                  client_email:  edits[id]?.client_email,
-                  client_status: edits[id]?.client_status,
+                  client_id:      id,
+                  client_name:    edits[id]?.client_name,
+                  // null en vez de '' para que el backend lo trate como "sin teléfono"
+                  // y de verdad lo vacíe, en lugar de rechazarlo como formato inválido.
+                  client_phone:   edits[id]?.client_phone || null,
+                  client_email:   edits[id]?.client_email,
+                  client_status:  edits[id]?.client_status,
+                  client_man_key: edits[id]?.client_man_key,
                 })}
               >
                 Guardar
@@ -254,7 +285,7 @@ export default function Clientes() {
         </Radio.Group>
       </Space>
 
-      <div style={{ marginTop: 'auto' }}>
+      <div className="maylob-table-wrap" style={{ marginTop: 'auto' }}>
         {isLoading ? (
           <Table loading columns={columns} dataSource={[]} rowKey={getClientId} />
         ) : !Array.isArray(data) || data.length === 0 ? (
@@ -287,7 +318,7 @@ export default function Clientes() {
         <Form
           form={form}
           layout="vertical"
-          onFinish={values => createMutation.mutate(values)}
+          onFinish={values => createMutation.mutate({ ...values, client_email: values.client_email ?? '' })}
           style={{ marginTop: 16 }}
         >
           <Form.Item name="client_name" label="Nombre" rules={[{ required: true, message: 'El nombre es obligatorio' }]}>
@@ -298,6 +329,9 @@ export default function Clientes() {
           </Form.Item>
           <Form.Item name="client_email" label="Email">
             <Input placeholder="correo@ejemplo.com" />
+          </Form.Item>
+          <Form.Item name="client_man_key" label="LLAVE DE SEGUIMIENTO">
+            <Input placeholder="Si se deja en blanco, se usa el ID del cliente" />
           </Form.Item>
         </Form>
       </Modal>

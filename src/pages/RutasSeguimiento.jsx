@@ -14,6 +14,7 @@ import { maniobrasService } from '../services/maniobrasService'
 import { clientesService } from '../services/clientesService'
 import { transportistasService } from '../services/transportistasService'
 import { rutasService } from '../services/rutasService'
+import { backendMessage } from '../utils/backendMessage'
 
 const { Title } = Typography
 
@@ -330,7 +331,7 @@ export default function RutasSeguimiento() {
       setDrawerOpen(false)
       setEditing(null)
     },
-    onError: () => Modal.error({ content: 'Error al guardar los cambios' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar los cambios') }),
   })
 
   const [updatingId, setUpdatingId] = useState(null)
@@ -341,7 +342,7 @@ export default function RutasSeguimiento() {
       queryClient.invalidateQueries({ queryKey: ['maniobras'] })
       setUpdatingId(null)
     },
-    onError: () => { Modal.error({ content: 'Error al actualizar la ubicación' }); setUpdatingId(null) },
+    onError: err => { Modal.error({ content: backendMessage(err, 'Error al actualizar la ubicación') }); setUpdatingId(null) },
   })
 
   function handleLocationSave(man_id, man_current_location, man_current_status) {
@@ -355,7 +356,7 @@ export default function RutasSeguimiento() {
       Modal.success({ content: 'Maniobra eliminada correctamente' })
       queryClient.invalidateQueries({ queryKey: ['maniobras'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar la maniobra' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar la maniobra') }),
   })
 
   function openEdit(record) {
@@ -729,7 +730,7 @@ export default function RutasSeguimiento() {
         </Button>
       </div>
 
-      <Row gutter={[16, 16]} style={{ marginTop: 'auto' }}>
+      <Row className="maylob-table-wrap" gutter={[16, 16]} style={{ marginTop: 'auto' }}>
         <Col span={24}>
           <Card title={`Maniobras (${filtered.length})`} size="small" style={{ height: '100%' }}>
             <Table

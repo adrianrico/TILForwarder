@@ -6,6 +6,7 @@ import {
 import { DeleteOutlined, EditOutlined, PlusOutlined, SaveOutlined, TruckOutlined, TeamOutlined, SettingOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { transportistasService } from '../services/transportistasService'
+import { backendMessage } from '../utils/backendMessage'
 
 const { Title, Text } = Typography
 
@@ -92,7 +93,7 @@ function CamionesSection({ transporter }) {
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setEditModal(null)
     },
-    onError: () => Modal.error({ content: 'Error al guardar el camión' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el camión') }),
   })
 
   const newEcoMutation = useMutation({
@@ -104,7 +105,7 @@ function CamionesSection({ transporter }) {
       setAddModal(false)
       addForm.resetFields()
     },
-    onError: () => Modal.error({ content: 'Error al registrar el camión' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el camión') }),
   })
 
   const deleteEcoMutation = useMutation({
@@ -114,7 +115,7 @@ function CamionesSection({ transporter }) {
       Modal.success({ content: 'Camión eliminado' })
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar el camión' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el camión') }),
   })
 
   const columns = [
@@ -299,7 +300,7 @@ function OperadoresSection({ transporter }) {
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setEditModal(null)
     },
-    onError: () => Modal.error({ content: 'Error al guardar el operador' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el operador') }),
   })
 
   const newOpMutation = useMutation({
@@ -311,7 +312,7 @@ function OperadoresSection({ transporter }) {
       setAddModal(false)
       addForm.resetFields()
     },
-    onError: () => Modal.error({ content: 'Error al registrar el operador' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el operador') }),
   })
 
   const deleteOpMutation = useMutation({
@@ -321,7 +322,7 @@ function OperadoresSection({ transporter }) {
       Modal.success({ content: 'Operador eliminado' })
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar el operador' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el operador') }),
   })
 
   const columns = [
@@ -522,7 +523,7 @@ export default function Transportistas() {
       Modal.success({ content: 'Transportista actualizado' })
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: () => Modal.error({ content: 'Error al guardar el transportista' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el transportista') }),
   })
 
   const createMutation = useMutation({
@@ -534,7 +535,7 @@ export default function Transportistas() {
       setModalOpen(false)
       form.resetFields()
     },
-    onError: () => Modal.error({ content: 'Error al registrar el transportista' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el transportista') }),
   })
 
   const deleteMutation = useMutation({
@@ -544,7 +545,7 @@ export default function Transportistas() {
       Modal.success({ content: 'Transportista eliminado' })
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: () => Modal.error({ content: 'Error al eliminar el transportista' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el transportista') }),
   })
 
   const filtered = (Array.isArray(data) ? data : []).filter((t) =>
@@ -666,7 +667,7 @@ export default function Transportistas() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div style={{ marginTop: 'auto' }}>
+      <div className="maylob-table-wrap" style={{ marginTop: 'auto' }}>
         {isLoading ? (
           <Table loading columns={columns} dataSource={[]} rowKey="transporter_id" />
         ) : !Array.isArray(data) || data.length === 0 ? (

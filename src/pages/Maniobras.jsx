@@ -6,6 +6,7 @@ import { clientesService } from '../services/clientesService'
 import { transportistasService } from '../services/transportistasService'
 import { maniobrasService } from '../services/maniobrasService'
 import { rutasService } from '../services/rutasService'
+import { backendMessage } from '../utils/backendMessage'
 
 const { Title, Text } = Typography
 
@@ -96,7 +97,7 @@ export default function Maniobras() {
       setSelectedTransporterId(null)
       setSelectedRouteId(null)
     },
-    onError: () => Modal.error({ content: 'Error al registrar la maniobra' }),
+    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar la maniobra') }),
   })
 
   function handleRouteSelect(routeId) {
@@ -139,7 +140,7 @@ export default function Maniobras() {
   const createRouteMutation = useMutation({
     meta:       { label: 'Guardando ruta...' },
     mutationFn: values => rutasService.createOrUpdate(values),
-    onError:    () => Modal.error({ content: 'Error al guardar la ruta' }),
+    onError:    err => Modal.error({ content: backendMessage(err, 'Error al guardar la ruta') }),
   })
 
   async function handleCreateRoute() {

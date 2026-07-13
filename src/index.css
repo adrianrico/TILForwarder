@@ -385,6 +385,15 @@ body {
   }
 }
 
+/* ─── Tablas de administración (Clientes, Transportistas, Rutas): pegadas
+   arriba solo en escritorio (en móvil se quedan empujadas al fondo del
+   contenedor, como antes) ─────────────────────────────────────────────── */
+@media (min-width: 992px) {
+  .maylob-table-wrap {
+    margin-top: 0 !important;
+  }
+}
+
 /* ─── Neumorphism + glassmorphism: page components (cards & tables) ─────
    Applies to every page. Anything nested inside a Modal is explicitly
    excluded below and keeps the original flat glass look. */
