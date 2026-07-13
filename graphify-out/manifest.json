@@ -1,0 +1,207 @@
+{
+  ".claude/settings.local.json": {
+    "mtime": 1783958687.716517,
+    "ast_hash": "5491a9757ea55aabba77ab85fecdc924",
+    "semantic_hash": "5491a9757ea55aabba77ab85fecdc924"
+  },
+  ".oxlintrc.json": {
+    "mtime": 1783033647.6068313,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
+  },
+  "package.json": {
+    "mtime": 1783033657.102988,
+    "ast_hash": "ad8c8ef055b980dd7c5ff825f538bae0",
+    "semantic_hash": "ad8c8ef055b980dd7c5ff825f538bae0"
+  },
+  "skills-lock.json": {
+    "mtime": 1783458208.8865519,
+    "ast_hash": "e6d4d27df8e78076929c11d59cc136f6",
+    "semantic_hash": "e6d4d27df8e78076929c11d59cc136f6"
+  },
+  "src/App.jsx": {
+    "mtime": 1783033647.431822,
+    "ast_hash": "047faead04b898aaec4905d70661ff73",
+    "semantic_hash": "047faead04b898aaec4905d70661ff73"
+  },
+  "src/components/GlobalLoader.jsx": {
+    "mtime": 1783033647.0741804,
+    "ast_hash": "c4f946a930f0030fb5fdd2615f69c88b",
+    "semantic_hash": "c4f946a930f0030fb5fdd2615f69c88b"
+  },
+  "src/components/Layout/AppHeader.jsx": {
+    "mtime": 1783033647.069175,
+    "ast_hash": "c327f13cca662d2c6ba60fa191fdb5c0",
+    "semantic_hash": "c327f13cca662d2c6ba60fa191fdb5c0"
+  },
+  "src/components/Layout/AppLayout.jsx": {
+    "mtime": 1783033647.070177,
+    "ast_hash": "5a871d235c845be4c50088d26e1b9cab",
+    "semantic_hash": "5a871d235c845be4c50088d26e1b9cab"
+  },
+  "src/components/Layout/Sidebar.jsx": {
+    "mtime": 1783033647.0466638,
+    "ast_hash": "3da1f5bbfbd2cf244e44c36ff0829b4c",
+    "semantic_hash": "3da1f5bbfbd2cf244e44c36ff0829b4c"
+  },
+  "src/components/ServerStatus.jsx": {
+    "mtime": 1783033647.0741804,
+    "ast_hash": "93bc4c04eb7f2463acd6d4b1152b9174",
+    "semantic_hash": "93bc4c04eb7f2463acd6d4b1152b9174"
+  },
+  "src/components/SteeringWheelOutlined.jsx": {
+    "mtime": 1783033647.0731773,
+    "ast_hash": "3e768c80d481f201189030e9e7288abf",
+    "semantic_hash": "3e768c80d481f201189030e9e7288abf"
+  },
+  "src/components/TILLogo.jsx": {
+    "mtime": 1783033647.2122886,
+    "ast_hash": "9c96d82f8b08989af55bf9cffa11fca5",
+    "semantic_hash": "9c96d82f8b08989af55bf9cffa11fca5"
+  },
+  "src/components/WaveBackground.jsx": {
+    "mtime": 1783033647.26935,
+    "ast_hash": "60c2eb0c99dd1063fbb203558c0f52fc",
+    "semantic_hash": "60c2eb0c99dd1063fbb203558c0f52fc"
+  },
+  "src/components/dashboard/ManeuversTable.jsx": {
+    "mtime": 1783033647.0721774,
+    "ast_hash": "cf8af20d8b7130c927c4f1d0e68fe0c9",
+    "semantic_hash": "cf8af20d8b7130c927c4f1d0e68fe0c9"
+  },
+  "src/components/dashboard/StatCard.jsx": {
+    "mtime": 1783033647.0721774,
+    "ast_hash": "aea2c945541f67c2247f2b709ba41708",
+    "semantic_hash": "aea2c945541f67c2247f2b709ba41708"
+  },
+  "src/main.jsx": {
+    "mtime": 1783033647.3002357,
+    "ast_hash": "47cddcace4621d9cb8479346f96f293f",
+    "semantic_hash": "47cddcace4621d9cb8479346f96f293f"
+  },
+  "src/pages/Clientes.jsx": {
+    "mtime": 1783983758.996534,
+    "ast_hash": "146aaff2f4ac60596f910c1b9df78644",
+    "semantic_hash": "146aaff2f4ac60596f910c1b9df78644"
+  },
+  "src/pages/Dashboard.jsx": {
+    "mtime": 1783033647.271348,
+    "ast_hash": "21118ad0a3a2d3d97404db66e0da1475",
+    "semantic_hash": "21118ad0a3a2d3d97404db66e0da1475"
+  },
+  "src/pages/Maniobras.jsx": {
+    "mtime": 1783960979.6583586,
+    "ast_hash": "ea4a7b84bff6a2becb5407a7ccea862a",
+    "semantic_hash": "ea4a7b84bff6a2becb5407a7ccea862a"
+  },
+  "src/pages/RutasPersonalizadas.jsx": {
+    "mtime": 1783966076.9632332,
+    "ast_hash": "a51d2341555b39832f95198ae70ca550",
+    "semantic_hash": "a51d2341555b39832f95198ae70ca550"
+  },
+  "src/pages/RutasSeguimiento.jsx": {
+    "mtime": 1783966081.2687602,
+    "ast_hash": "ef14d53140fad10ac13b4277f93a539b",
+    "semantic_hash": "ef14d53140fad10ac13b4277f93a539b"
+  },
+  "src/pages/Transportistas.jsx": {
+    "mtime": 1783966073.1290398,
+    "ast_hash": "b014337e20ca0a8bc5ed442d31251b58",
+    "semantic_hash": "b014337e20ca0a8bc5ed442d31251b58"
+  },
+  "src/services/api.js": {
+    "mtime": 1783101409.2427156,
+    "ast_hash": "1ab13915f95dd54aacc167c678656439",
+    "semantic_hash": "1ab13915f95dd54aacc167c678656439"
+  },
+  "src/services/clientesService.js": {
+    "mtime": 1783033647.0296564,
+    "ast_hash": "f81041ff8a28fb11bd95c411894bf6e7",
+    "semantic_hash": "f81041ff8a28fb11bd95c411894bf6e7"
+  },
+  "src/services/maniobrasService.js": {
+    "mtime": 1783033647.043664,
+    "ast_hash": "60e3824d16ffc891982228ec04019f69",
+    "semantic_hash": "60e3824d16ffc891982228ec04019f69"
+  },
+  "src/services/rutasService.js": {
+    "mtime": 1783033647.043664,
+    "ast_hash": "44f47333ff046d71f88a16c72d3be20d",
+    "semantic_hash": "44f47333ff046d71f88a16c72d3be20d"
+  },
+  "src/services/transportistasService.js": {
+    "mtime": 1783033647.0406659,
+    "ast_hash": "385c104b1b350403e71ab939f1476f47",
+    "semantic_hash": "385c104b1b350403e71ab939f1476f47"
+  },
+  "vite.config.js": {
+    "mtime": 1783033647.5323079,
+    "ast_hash": "9bf09b6d97edba4eebf0fe93baaad662",
+    "semantic_hash": "9bf09b6d97edba4eebf0fe93baaad662"
+  },
+  ".agents/skills/caveman/README.md": {
+    "mtime": 1783458205.0098782,
+    "ast_hash": "c7a8a8fdab77e5bd25bf42b5c99c516c",
+    "semantic_hash": "c7a8a8fdab77e5bd25bf42b5c99c516c"
+  },
+  ".agents/skills/caveman/SKILL.md": {
+    "mtime": 1783458205.010878,
+    "ast_hash": "29958ba8f4a7c23450444f66aa9fab90",
+    "semantic_hash": "29958ba8f4a7c23450444f66aa9fab90"
+  },
+  "README.md": {
+    "mtime": 1783101412.4893634,
+    "ast_hash": "a42038ddd3559390dab744604d4ddac1",
+    "semantic_hash": "a42038ddd3559390dab744604d4ddac1"
+  },
+  "index.html": {
+    "mtime": 1783033647.5153055,
+    "ast_hash": "dfbdd7df6e8947477397c92299d1d629",
+    "semantic_hash": "dfbdd7df6e8947477397c92299d1d629"
+  },
+  "render.yaml": {
+    "mtime": 1783033662.476327,
+    "ast_hash": "29470ae4f7174a5ada56c4ea8a7b64fe",
+    "semantic_hash": "29470ae4f7174a5ada56c4ea8a7b64fe"
+  },
+  "public/favicon.svg": {
+    "mtime": 1783033647.457301,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "public/icons.svg": {
+    "mtime": 1783033647.4873056,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
+  },
+  "public/truck.svg": {
+    "mtime": 1783033647.5143065,
+    "ast_hash": "549176173a5c7408f83f330858374fe2",
+    "semantic_hash": "549176173a5c7408f83f330858374fe2"
+  },
+  "src/assets/hero.png": {
+    "mtime": 1783033646.9956577,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  },
+  "src/assets/react.svg": {
+    "mtime": 1783033646.9966564,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": "f0402b67b6ce880f65666bb49e841696"
+  },
+  "src/assets/truck_favicon.png": {
+    "mtime": 1783033647.0286565,
+    "ast_hash": "efee3a7481475735e06af945af53392e",
+    "semantic_hash": "efee3a7481475735e06af945af53392e"
+  },
+  "src/assets/vite.svg": {
+    "mtime": 1783033647.0276556,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": "9960a24288958394ac50e57ff638b036"
+  },
+  "src/utils/backendMessage.js": {
+    "mtime": 1783960929.6150517,
+    "ast_hash": "93631d06c755998b5c5fdb0fef2d5892",
+    "semantic_hash": "93631d06c755998b5c5fdb0fef2d5892"
+  }
+}

@@ -172,6 +172,7 @@ export default function Clientes() {
         return (
           <Input
             allowClear
+            placeholder="Sin Email"
             value={edits[id]?.client_email ?? ''}
             onChange={e => handleFieldChange(id, 'client_email', e.target.value)}
           />
@@ -187,7 +188,7 @@ export default function Clientes() {
         return (
           <Input
             allowClear
-            placeholder="ID del cliente"
+            placeholder="sin llave"
             value={edits[id]?.client_man_key ?? ''}
             onChange={e => handleFieldChange(id, 'client_man_key', e.target.value)}
           />
