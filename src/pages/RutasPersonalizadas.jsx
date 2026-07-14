@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  Typography, Button, Table, Input, Select, Space, Popconfirm, Empty, Modal, Form, Divider, Radio,
+  Typography, Button, Table, Input, Select, Space, Popconfirm, Empty, Modal, Form, Divider, Radio, Tag,
 } from 'antd'
 import { DeleteOutlined, EditOutlined, MinusCircleOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
@@ -14,6 +14,10 @@ function sanitize(value) {
   return value.replace(/[$`<>{};'"]/g, '').trim()
 }
 
+function isCancelado(name) {
+  return (name ?? '').toString().trim().toLowerCase() === 'cancelado'
+}
+
 export default function RutasPersonalizadas() {
   const qc = useQueryClient()
   const [search, setSearch] = useState('')
@@ -23,6 +27,8 @@ export default function RutasPersonalizadas() {
   const [editingRoute, setEditingRoute] = useState(null)
   const [eventsModal, setEventsModal] = useState(null)
   const [form] = Form.useForm()
+  const intermediatePointsWatch = Form.useWatch('route_intermediate_points', form) || []
+  const destinationStep = intermediatePointsWatch.length + 2
 
   const { data, isLoading } = useQuery({
     queryKey: ['rutas-personalizadas'],
@@ -43,36 +49,34 @@ export default function RutasPersonalizadas() {
     setEdits(initial)
   }, [data])
 
-  const EVENTS_KEY = {
-    origin:       'route_origin_events',
-    destination:  'route_destination_events',
-    intermediate: 'route_intermediate_events',
-  }
-
   function openEditModal(record) {
     setEditingRoute(record)
+    const buildEvents = (events) => [
+      { event_name: 'cancelado', sub_events: '' },
+      ...(events ?? [])
+        .filter(ev => !isCancelado(ev.event_name))
+        .map(ev => ({ event_name: ev.event_name ?? '', sub_events: ev.sub_events ?? '' })),
+    ]
     form.setFieldsValue({
-      route_name:               record.route_name       ?? '',
-      route_category:           record.route_category   ?? undefined,
-      route_origin:             record.route_origin      ?? '',
-      route_destination:        record.route_destination ?? '',
-      route_origin_events:      record.route_origin_events?.length
-        ? record.route_origin_events
-        : [{ event_name: 'Cancelado', event_description: '' }],
-      route_destination_events: record.route_destination_events?.length
-        ? record.route_destination_events
-        : [{ event_name: 'Cancelado', event_description: '' }],
-      route_intermediate_stops: record.route_intermediate_stops ?? [],
+      route_name:     record.route_name     ?? '',
+      route_category: record.route_category ?? undefined,
+      route_origin:      { location_name: record.route_origin?.location_name ?? '',      events: buildEvents(record.route_origin?.events) },
+      route_destination: { location_name: record.route_destination?.location_name ?? '', events: buildEvents(record.route_destination?.events) },
+      route_intermediate_points: (record.route_intermediate_points ?? []).map(p => ({
+        location_name: p.location_name ?? '',
+        events: buildEvents(p.events),
+      })),
     })
     setModalOpen(true)
   }
 
   function openEventsModal(route, type, stopIndex) {
     if (type === 'stop') {
-      const stop = route.route_intermediate_stops?.[stopIndex] ?? {}
-      setEventsModal({ route, type, stopIndex, stopName: stop.stop_name ?? '', events: [...(stop.stop_events ?? [])] })
+      const point = route.route_intermediate_points?.[stopIndex] ?? {}
+      setEventsModal({ route, type, stopIndex, locationName: point.location_name ?? '', events: [...(point.events ?? [])] })
     } else {
-      setEventsModal({ route, type, events: [...(route[EVENTS_KEY[type]] ?? [])] })
+      const loc = type === 'origin' ? route.route_origin : route.route_destination
+      setEventsModal({ route, type, locationName: loc?.location_name ?? '', events: [...(loc?.events ?? [])] })
     }
   }
 
@@ -85,10 +89,7 @@ export default function RutasPersonalizadas() {
   }
 
   function handleAddEvent() {
-    setEventsModal((prev) => ({
-      ...prev,
-      events: [...prev.events, { event_id: `ev_${Date.now()}`, event_name: '', event_description: '' }],
-    }))
+    setEventsModal((prev) => ({ ...prev, events: [...prev.events, { event_name: '', sub_events: '' }] }))
   }
 
   function handleDeleteEvent(index) {
@@ -97,12 +98,24 @@ export default function RutasPersonalizadas() {
 
   function handleSaveEvents() {
     const { route, type, events, stopIndex } = eventsModal
+    const toRealEvents = (list) => (list ?? [])
+      .filter(ev => !isCancelado(ev.event_name))
+      .map(ev => ({ event_name: sanitize(ev.event_name ?? ''), sub_events: sanitize(ev.sub_events ?? '') }))
+
     if (type === 'stop') {
-      const stops = [...(route.route_intermediate_stops ?? [])]
-      stops[stopIndex] = { ...stops[stopIndex], stop_events: events }
-      saveEventsMutation.mutate({ route_id: route.route_id, route_name: route.route_name, route_intermediate_stops: stops })
+      const points = (route.route_intermediate_points ?? []).map((p, i) => ({
+        location_name: p.location_name,
+        events: i === stopIndex ? toRealEvents(events) : toRealEvents(p.events),
+      }))
+      saveEventsMutation.mutate({ route_id: route.route_id, route_name: route.route_name, route_intermediate_points: points })
     } else {
-      saveEventsMutation.mutate({ route_id: route.route_id, route_name: route.route_name, [EVENTS_KEY[type]]: events })
+      const fieldKey = type === 'origin' ? 'route_origin' : 'route_destination'
+      const locationName = type === 'origin' ? route.route_origin?.location_name : route.route_destination?.location_name
+      saveEventsMutation.mutate({
+        route_id: route.route_id,
+        route_name: route.route_name,
+        [fieldKey]: { location_name: locationName, events: toRealEvents(events) },
+      })
     }
   }
 
@@ -130,24 +143,20 @@ export default function RutasPersonalizadas() {
 
   function submitRoute(values, mode) {
     const processEvents = (events = []) =>
-      events.map((ev, i) => ({
-        event_id:          `ev_${Date.now()}_${i}`,
-        event_name:        sanitize(ev.event_name        ?? ''),
-        event_description: sanitize(ev.event_description ?? ''),
+      events.filter(ev => !isCancelado(ev.event_name)).map(ev => ({
+        event_name: sanitize(ev.event_name ?? ''),
+        sub_events: sanitize(ev.sub_events ?? ''),
       }))
-    const processStops = (stops = []) =>
-      stops.map(stop => ({
-        stop_name:   sanitize(stop.stop_name ?? ''),
-        stop_events: processEvents(stop.stop_events ?? []),
-      }))
+    const processLocation = (loc = {}) => ({
+      location_name: sanitize(loc.location_name ?? ''),
+      events: processEvents(loc.events),
+    })
     const payload = {
-      route_name:               sanitize(values.route_name        ?? ''),
-      route_category:           values.route_category             ?? '',
-      route_origin:             sanitize(values.route_origin      ?? ''),
-      route_destination:        sanitize(values.route_destination ?? ''),
-      route_origin_events:      processEvents(values.route_origin_events),
-      route_destination_events: processEvents(values.route_destination_events),
-      route_intermediate_stops: processStops(values.route_intermediate_stops ?? []),
+      route_name:                sanitize(values.route_name ?? ''),
+      route_category:            values.route_category ?? '',
+      route_origin:              processLocation(values.route_origin),
+      route_destination:         processLocation(values.route_destination),
+      route_intermediate_points: (values.route_intermediate_points ?? []).map(processLocation),
     }
     if (editingRoute && mode === 'update') payload.route_id = editingRoute.route_id
 
@@ -243,9 +252,9 @@ export default function RutasPersonalizadas() {
       width: 160,
       render: (_, record) => (
         <Space direction="vertical" size={2}>
-          <Text ellipsis style={{ maxWidth: 130 }}>{record.route_origin || '—'}</Text>
+          <Text ellipsis style={{ maxWidth: 130 }}>{record.route_origin?.location_name || '—'}</Text>
           <Button size="small" type="link" style={{ padding: 0 }} onClick={() => openEventsModal(record, 'origin')}>
-            Ver eventos ({(record.route_origin_events ?? []).length})
+            Ver eventos ({(record.route_origin?.events ?? []).filter(ev => !isCancelado(ev.event_name)).length})
           </Button>
         </Space>
       ),
@@ -256,48 +265,36 @@ export default function RutasPersonalizadas() {
       width: 160,
       render: (_, record) => (
         <Space direction="vertical" size={2}>
-          <Text ellipsis style={{ maxWidth: 130 }}>{record.route_destination || '—'}</Text>
+          <Text ellipsis style={{ maxWidth: 130 }}>{record.route_destination?.location_name || '—'}</Text>
           <Button size="small" type="link" style={{ padding: 0 }} onClick={() => openEventsModal(record, 'destination')}>
-            Ver eventos ({(record.route_destination_events ?? []).length})
+            Ver eventos ({(record.route_destination?.events ?? []).filter(ev => !isCancelado(ev.event_name)).length})
           </Button>
         </Space>
       ),
     },
     {
       title: 'Puntos Intermedios',
-      key: 'route_intermediate_stops',
+      key: 'route_intermediate_points',
       width: 200,
       render: (_, record) => {
-        const stops = record.route_intermediate_stops ?? []
-        if (stops.length > 0) {
-          return (
-            <Space direction="vertical" size={3}>
-              {stops.map((stop, i) => (
-                <div key={i}>
-                  <Text ellipsis style={{ maxWidth: 120, fontSize: 12, display: 'block' }}>
-                    {stop.stop_name || '—'}
-                  </Text>
-                  <Button size="small" type="link" style={{ padding: 0, fontSize: 11, height: 'auto' }}
-                    onClick={() => openEventsModal(record, 'stop', i)}
-                  >
-                    Ver eventos ({(stop.stop_events ?? []).length})
-                  </Button>
-                </div>
-              ))}
-            </Space>
-          )
-        }
-        if (record.route_intermediate_points) {
-          return (
-            <Space direction="vertical" size={2}>
-              <Text ellipsis style={{ maxWidth: 130, fontSize: 12 }}>{record.route_intermediate_points}</Text>
-              <Button size="small" type="link" style={{ padding: 0, fontSize: 11 }} onClick={() => openEventsModal(record, 'intermediate')}>
-                Ver eventos ({(record.route_intermediate_events ?? []).length})
-              </Button>
-            </Space>
-          )
-        }
-        return <span style={{ color: '#aaa' }}>—</span>
+        const points = record.route_intermediate_points ?? []
+        if (points.length === 0) return <span style={{ color: '#aaa' }}>—</span>
+        return (
+          <Space direction="vertical" size={3}>
+            {points.map((point, i) => (
+              <div key={i}>
+                <Text ellipsis style={{ maxWidth: 120, fontSize: 12, display: 'block' }}>
+                  {point.location_name || '—'}
+                </Text>
+                <Button size="small" type="link" style={{ padding: 0, fontSize: 11, height: 'auto' }}
+                  onClick={() => openEventsModal(record, 'stop', i)}
+                >
+                  Ver eventos ({(point.events ?? []).filter(ev => !isCancelado(ev.event_name)).length})
+                </Button>
+              </div>
+            ))}
+          </Space>
+        )
       },
     },
     {
@@ -395,8 +392,7 @@ export default function RutasPersonalizadas() {
         title={
           eventsModal?.type === 'origin'       ? `Eventos de Origen — ${eventsModal.route.route_name}`
           : eventsModal?.type === 'destination' ? `Eventos de Destino — ${eventsModal.route.route_name}`
-          : eventsModal?.type === 'stop'        ? `Eventos — ${eventsModal.stopName} · ${eventsModal.route.route_name}`
-          :                                        `Eventos Intermedios — ${eventsModal?.route?.route_name}`
+          :                                        `Eventos — ${eventsModal?.locationName} · ${eventsModal?.route?.route_name}`
         }
         open={!!eventsModal}
         onCancel={() => setEventsModal(null)}
@@ -408,21 +404,21 @@ export default function RutasPersonalizadas() {
         destroyOnHide
       >
         {eventsModal?.events?.map((event, index) => (
-          <Space key={event.event_id ?? index} align="baseline" style={{ display: 'flex', marginBottom: 8 }}>
+          <Space key={index} align="baseline" style={{ display: 'flex', marginBottom: 8 }}>
             <Input
               value={event.event_name ?? ''}
-              disabled={event.event_name === 'Cancelado'}
+              disabled={isCancelado(event.event_name)}
               onChange={(e) => handleEventChange(index, 'event_name', e.target.value)}
               placeholder="Nombre del evento"
               style={{ width: 160 }}
             />
             <Input
-              value={event.event_description ?? ''}
-              onChange={(e) => handleEventChange(index, 'event_description', e.target.value)}
+              value={event.sub_events ?? ''}
+              onChange={(e) => handleEventChange(index, 'sub_events', e.target.value)}
               placeholder="Descripción / notas"
               style={{ flex: 1 }}
             />
-            {event.event_name !== 'Cancelado' && (
+            {!isCancelado(event.event_name) && (
               <Button danger icon={<DeleteOutlined />} size="small" onClick={() => handleDeleteEvent(index)} />
             )}
           </Space>
@@ -469,9 +465,9 @@ export default function RutasPersonalizadas() {
           form={form}
           layout="vertical"
           initialValues={{
-            route_origin_events:      [{ event_name: 'Cancelado', event_description: '' }],
-            route_destination_events: [{ event_name: 'Cancelado', event_description: '' }],
-            route_intermediate_stops: [],
+            route_origin:      { location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] },
+            route_destination: { location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] },
+            route_intermediate_points: [],
           }}
           onFinish={(values) => submitRoute(values, 'update')}
         >
@@ -489,23 +485,24 @@ export default function RutasPersonalizadas() {
             </Radio.Group>
           </Form.Item>
 
-          <Divider orientation="left">Punto de Origen</Divider>
+          <Divider orientation="left">Punto de Origen <Tag style={{ marginLeft: 8 }}>Paso 1</Tag></Divider>
           <Form.Item
-            name="route_origin"
+            name={['route_origin', 'location_name']}
             label="Nombre"
             rules={[{ required: true, message: 'El nombre del origen es obligatorio' }]}
           >
             <Input placeholder="Ciudad o punto de origen" />
           </Form.Item>
-          <Form.List name="route_origin_events">
+          <Form.List name={['route_origin', 'events']}>
             {(fields, { add, remove }) => (
               <>
                 {fields.map(({ key, name, ...rest }, index) => (
                   <Space key={key} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
+                    {index > 0 && <Tag color="blue">Sub-paso {index}</Tag>}
                     <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
                       <Input placeholder="Nombre del evento" disabled={index === 0} />
                     </Form.Item>
-                    <Form.Item {...rest} name={[name, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
+                    <Form.Item {...rest} name={[name, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
                       <Input placeholder="Descripción / notas" />
                     </Form.Item>
                     {index !== 0 && (
@@ -515,7 +512,7 @@ export default function RutasPersonalizadas() {
                 ))}
                 <Button
                   type="dashed"
-                  onClick={() => add({ event_name: '', event_description: '' })}
+                  onClick={() => add({ event_name: '', sub_events: '' })}
                   icon={<PlusOutlined />}
                   block
                   style={{ marginBottom: 8 }}
@@ -526,23 +523,24 @@ export default function RutasPersonalizadas() {
             )}
           </Form.List>
 
-          <Divider orientation="left">Punto de Destino</Divider>
+          <Divider orientation="left">Punto de Destino <Tag style={{ marginLeft: 8 }}>Paso {destinationStep}</Tag></Divider>
           <Form.Item
-            name="route_destination"
+            name={['route_destination', 'location_name']}
             label="Nombre"
             rules={[{ required: true, message: 'El nombre del destino es obligatorio' }]}
           >
             <Input placeholder="Ciudad o punto de destino" />
           </Form.Item>
-          <Form.List name="route_destination_events">
+          <Form.List name={['route_destination', 'events']}>
             {(fields, { add, remove }) => (
               <>
                 {fields.map(({ key, name, ...rest }, index) => (
                   <Space key={key} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
+                    {index > 0 && <Tag color="blue">Sub-paso {index}</Tag>}
                     <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
                       <Input placeholder="Nombre del evento" disabled={index === 0} />
                     </Form.Item>
-                    <Form.Item {...rest} name={[name, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
+                    <Form.Item {...rest} name={[name, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
                       <Input placeholder="Descripción / notas" />
                     </Form.Item>
                     {index !== 0 && (
@@ -552,7 +550,7 @@ export default function RutasPersonalizadas() {
                 ))}
                 <Button
                   type="dashed"
-                  onClick={() => add({ event_name: '', event_description: '' })}
+                  onClick={() => add({ event_name: '', sub_events: '' })}
                   icon={<PlusOutlined />}
                   block
                   style={{ marginBottom: 8 }}
@@ -564,37 +562,38 @@ export default function RutasPersonalizadas() {
           </Form.List>
 
           <Divider orientation="left">Puntos Intermedios</Divider>
-          <Form.List name="route_intermediate_stops">
-            {(stopFields, { add: addStop, remove: removeStop }) => (
+          <Form.List name="route_intermediate_points">
+            {(pointFields, { add: addPoint, remove: removePoint }) => (
               <>
-                {stopFields.map(({ key: stopKey, name: stopName }) => (
+                {pointFields.map(({ key: pointKey, name: pointName }) => (
                   <div
-                    key={stopKey}
+                    key={pointKey}
                     style={{ border: '1px solid rgba(255,255,255,0.28)', borderRadius: 8, padding: '12px 12px 4px', marginBottom: 12, background: 'rgba(255,255,255,0.18)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                      <span style={{ fontWeight: 500, fontSize: 13 }}>Punto intermedio {stopName + 1}</span>
-                      <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removeStop(stopName)}>
+                      <span style={{ fontWeight: 500, fontSize: 13 }}>Punto intermedio {pointName + 1} · Paso {pointName + 2}</span>
+                      <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removePoint(pointName)}>
                         Eliminar punto
                       </Button>
                     </div>
                     <Form.Item
-                      name={[stopName, 'stop_name']}
+                      name={[pointName, 'location_name']}
                       label="Nombre del punto"
                       rules={[{ required: true, message: 'El nombre es obligatorio' }]}
                       style={{ marginBottom: 8 }}
                     >
                       <Input placeholder="Ej. PUEBLA" />
                     </Form.Item>
-                    <Form.List name={[stopName, 'stop_events']}>
+                    <Form.List name={[pointName, 'events']}>
                       {(evFields, { add: addEv, remove: removeEv }) => (
                         <>
                           {evFields.map(({ key: evKey, name: evName, ...rest }, evIndex) => (
                             <Space key={evKey} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
+                              {evIndex > 0 && <Tag color="blue">Sub-paso {evIndex}</Tag>}
                               <Form.Item {...rest} name={[evName, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
                                 <Input placeholder="Nombre del evento" disabled={evIndex === 0} />
                               </Form.Item>
-                              <Form.Item {...rest} name={[evName, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
+                              <Form.Item {...rest} name={[evName, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
                                 <Input placeholder="Descripción / notas" />
                               </Form.Item>
                               {evIndex !== 0 && (
@@ -605,7 +604,7 @@ export default function RutasPersonalizadas() {
                           <Button
                             type="dashed"
                             size="small"
-                            onClick={() => addEv({ event_name: '', event_description: '' })}
+                            onClick={() => addEv({ event_name: '', sub_events: '' })}
                             icon={<PlusOutlined />}
                             block
                             style={{ marginBottom: 8 }}
@@ -619,7 +618,7 @@ export default function RutasPersonalizadas() {
                 ))}
                 <Button
                   type="dashed"
-                  onClick={() => addStop({ stop_name: '', stop_events: [{ event_name: 'Cancelado', event_description: '' }] })}
+                  onClick={() => addPoint({ location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] })}
                   icon={<PlusOutlined />}
                   block
                   style={{ marginBottom: 8 }}
