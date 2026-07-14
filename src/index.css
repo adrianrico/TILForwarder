@@ -404,14 +404,6 @@ body {
     10px 10px 24px rgba(0, 4, 12, 0.55),
     -8px -8px 22px rgba(70, 150, 220, 0.09),
     inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-.ant-card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    14px 14px 30px rgba(0, 4, 12, 0.6),
-    -10px -10px 26px rgba(70, 150, 220, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
 }
 .ant-card-head {
   border-bottom: 1px solid rgba(6, 149, 228, 0.14) !important;
@@ -421,9 +413,5 @@ body {
 /* Modals are excluded from neumorphism — keep their flat glass shadow */
 .ant-modal .ant-card,
 .ant-modal .ant-table-wrapper .ant-table-container {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
-}
-.ant-modal .ant-card:hover {
-  transform: none !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
 }
