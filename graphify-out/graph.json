@@ -38,7 +38,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": ".oxlintrc.json",
       "id": "oxlintrc"
     },
@@ -48,7 +48,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "$schema",
       "id": "oxlintrc_schema"
     },
@@ -58,7 +58,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "plugins",
       "id": "oxlintrc_plugins"
     },
@@ -68,7 +68,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "rules",
       "id": "oxlintrc_rules"
     },
@@ -78,7 +78,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "react/rules-of-hooks",
       "id": "oxlintrc_rules_react_rules_of_hooks"
     },
@@ -88,299 +88,9 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 11,
+      "community": 10,
       "norm_label": "react/only-export-components",
       "id": "oxlintrc_rules_react_only_export_components"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "package.json",
-      "id": "package"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "name",
-      "id": "package_name"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "private",
-      "id": "package_private"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "version",
-      "id": "package_version"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "type",
-      "id": "package_type"
-    },
-    {
-      "label": "engines",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "engines",
-      "id": "package_engines"
-    },
-    {
-      "label": "node",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "node",
-      "id": "package_engines_node"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "scripts",
-      "id": "package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dev",
-      "id": "package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "build",
-      "id": "package_scripts_build"
-    },
-    {
-      "label": "lint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "lint",
-      "id": "package_scripts_lint"
-    },
-    {
-      "label": "preview",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "preview",
-      "id": "package_scripts_preview"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dependencies",
-      "id": "package_dependencies"
-    },
-    {
-      "label": "@ant-design/icons",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "@ant-design/icons",
-      "id": "package_dependencies_ant_design_icons"
-    },
-    {
-      "label": "@tanstack/react-query",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "@tanstack/react-query",
-      "id": "package_dependencies_tanstack_react_query"
-    },
-    {
-      "label": "antd",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "antd",
-      "id": "package_dependencies_antd"
-    },
-    {
-      "label": "axios",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "axios",
-      "id": "package_dependencies_axios"
-    },
-    {
-      "label": "leaflet",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "leaflet",
-      "id": "package_dependencies_leaflet"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "react",
-      "id": "package_dependencies_react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "react-dom",
-      "id": "package_dependencies_react_dom"
-    },
-    {
-      "label": "react-leaflet",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "react-leaflet",
-      "id": "package_dependencies_react_leaflet"
-    },
-    {
-      "label": "react-router-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "react-router-dom",
-      "id": "package_dependencies_react_router_dom"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "devdependencies",
-      "id": "package_devdependencies"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "@types/react",
-      "id": "package_devdependencies_types_react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "@types/react-dom",
-      "id": "package_devdependencies_types_react_dom"
-    },
-    {
-      "label": "@vitejs/plugin-react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "@vitejs/plugin-react",
-      "id": "package_devdependencies_vitejs_plugin_react"
-    },
-    {
-      "label": "oxlint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "oxlint",
-      "id": "package_devdependencies_oxlint"
-    },
-    {
-      "label": "playwright",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "playwright",
-      "id": "package_devdependencies_playwright"
-    },
-    {
-      "label": "vite",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "vite",
-      "id": "package_devdependencies_vite"
     },
     {
       "label": "App.jsx",
@@ -388,7 +98,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "app.jsx",
       "id": "src_app"
     },
@@ -398,7 +108,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "queryclient",
       "id": "src_app_queryclient"
     },
@@ -408,7 +118,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "app()",
       "id": "src_app_app"
     },
@@ -418,7 +128,7 @@
       "source_file": "src/components/GlobalLoader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "globalloader.jsx",
       "id": "src_components_globalloader"
     },
@@ -428,7 +138,7 @@
       "source_file": "src/components/GlobalLoader.jsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "globalloader()",
       "id": "src_components_globalloader_globalloader"
     },
@@ -438,7 +148,7 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "appheader.jsx",
       "id": "src_components_layout_appheader"
     },
@@ -448,7 +158,7 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "page_titles",
       "id": "src_components_layout_appheader_page_titles"
     },
@@ -458,7 +168,7 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "appheader()",
       "id": "src_components_layout_appheader_appheader"
     },
@@ -468,7 +178,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "applayout.jsx",
       "id": "src_components_layout_applayout"
     },
@@ -478,7 +188,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "glass",
       "id": "src_components_layout_applayout_glass"
     },
@@ -488,7 +198,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "menuitems",
       "id": "src_components_layout_applayout_menuitems"
     },
@@ -498,7 +208,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "applayout()",
       "id": "src_components_layout_applayout_applayout"
     },
@@ -508,7 +218,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "sidebar.jsx",
       "id": "src_components_layout_sidebar"
     },
@@ -518,7 +228,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "menuitems",
       "id": "src_components_layout_sidebar_menuitems"
     },
@@ -528,7 +238,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "sidebar()",
       "id": "src_components_layout_sidebar_sidebar"
     },
@@ -538,7 +248,7 @@
       "source_file": "src/components/ServerStatus.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "serverstatus.jsx",
       "id": "src_components_serverstatus"
     },
@@ -548,7 +258,7 @@
       "source_file": "src/components/ServerStatus.jsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "serverstatus()",
       "id": "src_components_serverstatus_serverstatus"
     },
@@ -558,7 +268,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "steeringwheeloutlined.jsx",
       "id": "src_components_steeringwheeloutlined"
     },
@@ -568,7 +278,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "steeringwheelsvg()",
       "id": "src_components_steeringwheeloutlined_steeringwheelsvg"
     },
@@ -578,7 +288,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "steeringwheeloutlined()",
       "id": "src_components_steeringwheeloutlined_steeringwheeloutlined"
     },
@@ -588,7 +298,7 @@
       "source_file": "src/components/TILLogo.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "tillogo.jsx",
       "id": "src_components_tillogo"
     },
@@ -598,7 +308,7 @@
       "source_file": "src/components/TILLogo.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "tillogo()",
       "id": "src_components_tillogo_tillogo"
     },
@@ -608,7 +318,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavebackground.jsx",
       "id": "src_components_wavebackground"
     },
@@ -618,7 +328,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "waves",
       "id": "src_components_wavebackground_waves"
     },
@@ -628,7 +338,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavelayer()",
       "id": "src_components_wavebackground_wavelayer"
     },
@@ -638,7 +348,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavebackground()",
       "id": "src_components_wavebackground_wavebackground"
     },
@@ -648,7 +358,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 1,
       "norm_label": "maneuverstable.jsx",
       "id": "src_components_dashboard_maneuverstable"
     },
@@ -658,7 +368,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 12,
+      "community": 1,
       "norm_label": "statuscolor()",
       "id": "src_components_dashboard_maneuverstable_statuscolor"
     },
@@ -668,7 +378,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 12,
+      "community": 1,
       "norm_label": "buildcolumns()",
       "id": "src_components_dashboard_maneuverstable_buildcolumns"
     },
@@ -678,7 +388,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 12,
+      "community": 1,
       "norm_label": "maneuverstable()",
       "id": "src_components_dashboard_maneuverstable_maneuverstable"
     },
@@ -688,7 +398,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "statcard.jsx",
       "id": "src_components_dashboard_statcard"
     },
@@ -698,7 +408,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "statcard()",
       "id": "src_components_dashboard_statcard_statcard"
     },
@@ -708,7 +418,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "main.jsx",
       "id": "src_main"
     },
@@ -718,7 +428,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "dashboard.jsx",
       "id": "src_pages_dashboard"
     },
@@ -728,7 +438,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "mexico_center",
       "id": "src_pages_dashboard_mexico_center"
     },
@@ -738,7 +448,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "parseprogress()",
       "id": "src_pages_dashboard_parseprogress"
     },
@@ -748,7 +458,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "iscancelled()",
       "id": "src_pages_dashboard_iscancelled"
     },
@@ -758,7 +468,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "parsecoords()",
       "id": "src_pages_dashboard_parsecoords"
     },
@@ -768,7 +478,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "dashboard()",
       "id": "src_pages_dashboard_dashboard"
     },
@@ -778,7 +488,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "api.js",
       "id": "src_services_api"
     },
@@ -788,7 +498,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "api",
       "id": "src_services_api_api"
     },
@@ -798,7 +508,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "clientesservice.js",
       "id": "src_services_clientesservice"
     },
@@ -808,7 +518,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "clientesservice",
       "id": "src_services_clientesservice_clientesservice"
     },
@@ -818,7 +528,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "maniobrasservice.js",
       "id": "src_services_maniobrasservice"
     },
@@ -828,7 +538,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "maniobrasservice",
       "id": "src_services_maniobrasservice_maniobrasservice"
     },
@@ -838,7 +548,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "rutasservice.js",
       "id": "src_services_rutasservice"
     },
@@ -848,7 +558,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "rutasservice",
       "id": "src_services_rutasservice_rutasservice"
     },
@@ -858,7 +568,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "transportistasservice.js",
       "id": "src_services_transportistasservice"
     },
@@ -868,7 +578,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 1,
       "norm_label": "transportistasservice",
       "id": "src_services_transportistasservice_transportistasservice"
     },
@@ -878,7 +588,7 @@
       "source_file": "vite.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "vite.config.js",
       "id": "vite_config"
     },
@@ -1229,7 +939,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 12,
       "norm_label": "app favicon: abstract purple/blue geometric mark with internal glow blobs, used as site branding icon",
       "id": "public_favicon_icon"
     },
@@ -1333,7 +1043,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 13,
       "norm_label": "truck icon (inkscape svg) depicting a delivery/cargo truck, used in til_forwarder's ui for vehicle or fleet-related elements such as map markers, route indicators, or navigation for the trucking/logistics app",
       "id": "public_truck_icon"
     },
@@ -1346,7 +1056,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 14,
       "norm_label": "hero image: abstract purple isometric rounded-square tile with glowing gradient edge, floating above its own outline silhouette connected by dashed guide lines - a minimalist 3d-style branding/marketing graphic likely used as the landing or splash visual for the trucking/logistics app ui",
       "id": "src_assets_hero_image"
     },
@@ -1359,7 +1069,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 15,
       "norm_label": "react logo (vite scaffold asset)",
       "id": "src_assets_react_logo"
     },
@@ -1372,7 +1082,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 17,
+      "community": 16,
       "norm_label": "truck favicon icon depicting a brown/dark box truck, used as the browser tab favicon and branding image for this logistics/trucking application",
       "id": "src_assets_truck_favicon_icon"
     },
@@ -1385,7 +1095,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 18,
+      "community": 17,
       "norm_label": "vite logo asset (vite.svg)",
       "id": "src_assets_vite_logo"
     },
@@ -1458,36 +1168,6 @@
       "community": 9,
       "norm_label": "backendmessage()",
       "id": "src_utils_backendmessage_backendmessage"
-    },
-    {
-      "label": "RutasPersonalizadas.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "rutaspersonalizadas.jsx",
-      "id": "src_pages_rutaspersonalizadas"
-    },
-    {
-      "label": "sanitize()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "sanitize()",
-      "id": "src_pages_rutaspersonalizadas_sanitize"
-    },
-    {
-      "label": "RutasPersonalizadas()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "rutaspersonalizadas()",
-      "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas"
     },
     {
       "label": "RutasSeguimiento.jsx",
@@ -1615,7 +1295,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "transportistas.jsx",
       "id": "src_pages_transportistas"
     },
@@ -1625,7 +1305,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "ecoformfields()",
       "id": "src_pages_transportistas_ecoformfields"
     },
@@ -1635,7 +1315,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "camionessection()",
       "id": "src_pages_transportistas_camionessection"
     },
@@ -1645,7 +1325,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L233",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "operatorformfields()",
       "id": "src_pages_transportistas_operatorformfields"
     },
@@ -1655,7 +1335,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L280",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "operadoressection()",
       "id": "src_pages_transportistas_operadoressection"
     },
@@ -1665,7 +1345,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L444",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "expandedrow()",
       "id": "src_pages_transportistas_expandedrow"
     },
@@ -1675,7 +1355,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L455",
       "_origin": "ast",
-      "community": 10,
+      "community": 2,
       "norm_label": "transportistas()",
       "id": "src_pages_transportistas_transportistas"
     },
@@ -1685,9 +1365,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_pages_clientes",
-      "community": 3,
-      "norm_label": "clientes.jsx"
+      "community": 11,
+      "norm_label": "clientes.jsx",
+      "id": "src_pages_clientes"
     },
     {
       "label": "DIRTY_CELL",
@@ -1695,9 +1375,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "src_pages_clientes_dirty_cell",
-      "community": 3,
-      "norm_label": "dirty_cell"
+      "community": 11,
+      "norm_label": "dirty_cell",
+      "id": "src_pages_clientes_dirty_cell"
     },
     {
       "label": "getClientId()",
@@ -1705,9 +1385,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "src_pages_clientes_getclientid",
-      "community": 3,
-      "norm_label": "getclientid()"
+      "community": 11,
+      "norm_label": "getclientid()",
+      "id": "src_pages_clientes_getclientid"
     },
     {
       "label": "toEdits()",
@@ -1715,9 +1395,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "src_pages_clientes_toedits",
-      "community": 3,
-      "norm_label": "toedits()"
+      "community": 11,
+      "norm_label": "toedits()",
+      "id": "src_pages_clientes_toedits"
     },
     {
       "label": "computeDirty()",
@@ -1725,9 +1405,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "src_pages_clientes_computedirty",
-      "community": 3,
-      "norm_label": "computedirty()"
+      "community": 11,
+      "norm_label": "computedirty()",
+      "id": "src_pages_clientes_computedirty"
     },
     {
       "label": "Clientes()",
@@ -1735,9 +1415,389 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "src_pages_clientes_clientes",
-      "community": 3,
-      "norm_label": "clientes()"
+      "community": 11,
+      "norm_label": "clientes()",
+      "id": "src_pages_clientes_clientes"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "package.json",
+      "id": "package"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "name",
+      "id": "package_name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "private",
+      "id": "package_private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "version",
+      "id": "package_version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "type",
+      "id": "package_type"
+    },
+    {
+      "label": "engines",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "engines",
+      "id": "package_engines"
+    },
+    {
+      "label": "node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "node",
+      "id": "package_engines_node"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "scripts",
+      "id": "package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "dev",
+      "id": "package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "build",
+      "id": "package_scripts_build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "lint",
+      "id": "package_scripts_lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "preview",
+      "id": "package_scripts_preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "dependencies",
+      "id": "package_dependencies"
+    },
+    {
+      "label": "@ant-design/icons",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "@ant-design/icons",
+      "id": "package_dependencies_ant_design_icons"
+    },
+    {
+      "label": "@dnd-kit/core",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "@dnd-kit/core",
+      "id": "package_dependencies_dnd_kit_core"
+    },
+    {
+      "label": "@dnd-kit/sortable",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "@dnd-kit/sortable",
+      "id": "package_dependencies_dnd_kit_sortable"
+    },
+    {
+      "label": "@dnd-kit/utilities",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "@dnd-kit/utilities",
+      "id": "package_dependencies_dnd_kit_utilities"
+    },
+    {
+      "label": "@tanstack/react-query",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "@tanstack/react-query",
+      "id": "package_dependencies_tanstack_react_query"
+    },
+    {
+      "label": "antd",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "antd",
+      "id": "package_dependencies_antd"
+    },
+    {
+      "label": "axios",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "axios",
+      "id": "package_dependencies_axios"
+    },
+    {
+      "label": "leaflet",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "leaflet",
+      "id": "package_dependencies_leaflet"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "react",
+      "id": "package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "react-dom",
+      "id": "package_dependencies_react_dom"
+    },
+    {
+      "label": "react-leaflet",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "react-leaflet",
+      "id": "package_dependencies_react_leaflet"
+    },
+    {
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "react-router-dom",
+      "id": "package_dependencies_react_router_dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "devdependencies",
+      "id": "package_devdependencies"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "@types/react",
+      "id": "package_devdependencies_types_react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "@types/react-dom",
+      "id": "package_devdependencies_types_react_dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "label": "oxlint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "oxlint",
+      "id": "package_devdependencies_oxlint"
+    },
+    {
+      "label": "playwright",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "playwright",
+      "id": "package_devdependencies_playwright"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "vite",
+      "id": "package_devdependencies_vite"
+    },
+    {
+      "label": "RutasPersonalizadas.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas",
+      "community": 2,
+      "norm_label": "rutaspersonalizadas.jsx"
+    },
+    {
+      "label": "sanitize()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas_sanitize",
+      "community": 2,
+      "norm_label": "sanitize()"
+    },
+    {
+      "label": "isCancelado()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas_iscancelado",
+      "community": 2,
+      "norm_label": "iscancelado()"
+    },
+    {
+      "label": "SortableIntermediatePoint()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
+      "community": 2,
+      "norm_label": "sortableintermediatepoint()"
+    },
+    {
+      "label": "EventsFieldList()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas_eventsfieldlist",
+      "community": 2,
+      "norm_label": "eventsfieldlist()"
+    },
+    {
+      "label": "RutasPersonalizadas()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
+      "community": 2,
+      "norm_label": "rutaspersonalizadas()"
     }
   ],
   "links": [
@@ -1790,286 +1850,6 @@
       "confidence_score": 1.0,
       "source": "oxlintrc_rules",
       "target": "oxlintrc_rules_react_rules_of_hooks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_devdependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_engines"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_private"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_type"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_engines",
-      "target": "package_engines_node"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_build"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_lint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_preview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_ant_design_icons"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_antd"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_axios"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_leaflet"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_leaflet"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_router_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_tanstack_react_query"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_oxlint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_playwright"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vite"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react"
     },
     {
       "relation": "contains",
@@ -3450,26 +3230,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_rutaspersonalizadas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_sanitize"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
       "source_location": "L64",
       "weight": 1.0,
@@ -3698,9 +3458,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_clientes",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_clientes"
     },
     {
       "relation": "contains",
@@ -3708,9 +3468,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_computedirty",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_computedirty"
     },
     {
       "relation": "contains",
@@ -3718,9 +3478,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_dirty_cell",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_dirty_cell"
     },
     {
       "relation": "contains",
@@ -3728,9 +3488,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_getclientid",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_getclientid"
     },
     {
       "relation": "contains",
@@ -3738,9 +3498,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_toedits",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_toedits"
     },
     {
       "relation": "calls",
@@ -3749,9 +3509,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_getclientid",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_getclientid"
     },
     {
       "relation": "calls",
@@ -3760,9 +3520,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_toedits",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_toedits"
     },
     {
       "relation": "calls",
@@ -3771,8 +3531,379 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_computedirty",
+      "target": "src_pages_clientes_computedirty"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_engines"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_engines",
+      "target": "package_engines_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_ant_design_icons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_antd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_axios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_dnd_kit_core"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_dnd_kit_sortable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_dnd_kit_utilities"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_leaflet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_leaflet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_router_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_tanstack_react_query"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_oxlint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_playwright"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_eventsfieldlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_iscancelado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_sanitize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
+      "target": "src_pages_rutaspersonalizadas_iscancelado",
       "confidence_score": 1.0
     }
   ],
@@ -3804,5 +3935,5 @@
       "source_file": ".agents/skills/caveman/SKILL.md"
     }
   ],
-  "built_at_commit": "8fec4f0260cac552711280af14aab8aac585c082"
+  "built_at_commit": "12bc46db1cdf1abc7b37c2a633ca17a33c2ff309"
 }

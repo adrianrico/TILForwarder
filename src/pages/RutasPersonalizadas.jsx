@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react'
 import {
   Typography, Button, Table, Input, Select, Space, Popconfirm, Empty, Modal, Form, Divider, Radio, Tag,
 } from 'antd'
-import { DeleteOutlined, EditOutlined, MinusCircleOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons'
+import { DeleteOutlined, EditOutlined, HolderOutlined, MinusCircleOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { DndContext, closestCenter, PointerSensor, KeyboardSensor, useSensor, useSensors } from '@dnd-kit/core'
+import { SortableContext, verticalListSortingStrategy, useSortable, sortableKeyboardCoordinates } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
 import { rutasService } from '../services/rutasService'
 import { backendMessage } from '../utils/backendMessage'
 
@@ -18,6 +21,97 @@ function isCancelado(name) {
   return (name ?? '').toString().trim().toLowerCase() === 'cancelado'
 }
 
+function SortableIntermediatePoint({ id, children }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id })
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    borderRadius: 8,
+    padding: '12px 12px 4px',
+    marginBottom: 12,
+    background: 'rgba(255,255,255,0.18)',
+    backdropFilter: 'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
+  }
+  return (
+    <div ref={setNodeRef} style={style}>
+      {children({ dragHandle: (
+        <HolderOutlined
+          {...attributes}
+          {...listeners}
+          style={{ cursor: 'grab', fontSize: 20, color: 'rgba(255,255,255,0.75)', marginRight: 10, padding: 4 }}
+        />
+      ) })}
+    </div>
+  )
+}
+
+function EventsFieldList({ name, addLabel, absolutePath }) {
+  const form = Form.useFormInstance()
+  const basePath = absolutePath ?? name
+
+  function addSubEvent(eventName) {
+    const path = [...basePath, eventName, 'sub_events']
+    const current = form.getFieldValue(path) ?? []
+    form.setFieldValue(path, [...current, ''])
+  }
+
+  return (
+    <Form.List name={name}>
+      {(fields, { add, remove }) => (
+        <>
+          {fields.map(({ key, name: eventName, ...rest }, index) => (
+            <div
+              key={key}
+              style={index > 0 ? { paddingLeft: 12, borderLeft: '2px solid #0695E4', marginBottom: 8 } : { marginBottom: 8 }}
+            >
+              {index > 0 && <Tag color="blue" style={{ marginBottom: 4 }}>Sub-paso {index}</Tag>}
+              <Space align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
+                <Form.Item {...rest} name={[eventName, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
+                  <Input placeholder="Nombre del evento" disabled={index === 0} />
+                </Form.Item>
+                {index !== 0 && (
+                  <MinusCircleOutlined style={{ cursor: 'pointer' }} onClick={() => remove(eventName)} />
+                )}
+                {index > 0 && (
+                  <Button type="text" size="small" title="Agregar sub-evento" icon={<PlusOutlined />} onClick={() => addSubEvent(eventName)} />
+                )}
+              </Space>
+              {index > 0 && (
+                <Form.List name={[eventName, 'sub_events']}>
+                  {(subFields, { remove: removeSub }) => (
+                    <div style={{ paddingLeft: 16, borderLeft: '2px dashed #0695E4', marginLeft: 4 }}>
+                      {subFields.map(({ key: subKey, name: subName, ...subRest }) => (
+                        <Space key={subKey} align="baseline" style={{ display: 'flex', marginBottom: 4, position: 'relative' }}>
+                          <span style={{ position: 'absolute', left: -16, top: '50%', width: 12, borderTop: '2px dashed #0695E4' }} />
+                          <Form.Item {...subRest} name={[subName]} style={{ marginBottom: 0, flex: 1 }}>
+                            <Input placeholder="Sub-evento" />
+                          </Form.Item>
+                          <MinusCircleOutlined style={{ cursor: 'pointer' }} onClick={() => removeSub(subName)} />
+                        </Space>
+                      ))}
+                    </div>
+                  )}
+                </Form.List>
+              )}
+            </div>
+          ))}
+          <Button
+            type="dashed"
+            onClick={() => add({ event_name: '', sub_events: [] })}
+            icon={<PlusOutlined />}
+            block
+            style={{ marginBottom: 8 }}
+          >
+            {addLabel}
+          </Button>
+        </>
+      )}
+    </Form.List>
+  )
+}
+
 export default function RutasPersonalizadas() {
   const qc = useQueryClient()
   const [search, setSearch] = useState('')
@@ -29,6 +123,10 @@ export default function RutasPersonalizadas() {
   const [form] = Form.useForm()
   const intermediatePointsWatch = Form.useWatch('route_intermediate_points', form) || []
   const destinationStep = intermediatePointsWatch.length + 2
+  const dndSensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+  )
 
   const { data, isLoading } = useQuery({
     queryKey: ['rutas-personalizadas'],
@@ -52,10 +150,10 @@ export default function RutasPersonalizadas() {
   function openEditModal(record) {
     setEditingRoute(record)
     const buildEvents = (events) => [
-      { event_name: 'cancelado', sub_events: '' },
+      { event_name: 'cancelado', sub_events: [] },
       ...(events ?? [])
         .filter(ev => !isCancelado(ev.event_name))
-        .map(ev => ({ event_name: ev.event_name ?? '', sub_events: ev.sub_events ?? '' })),
+        .map(ev => ({ event_name: ev.event_name ?? '', sub_events: Array.isArray(ev.sub_events) ? ev.sub_events : [] })),
     ]
     form.setFieldsValue({
       route_name:     record.route_name     ?? '',
@@ -145,7 +243,7 @@ export default function RutasPersonalizadas() {
     const processEvents = (events = []) =>
       events.filter(ev => !isCancelado(ev.event_name)).map(ev => ({
         event_name: sanitize(ev.event_name ?? ''),
-        sub_events: sanitize(ev.sub_events ?? ''),
+        sub_events: (ev.sub_events ?? []).map(se => sanitize(se ?? '')).filter(se => se !== ''),
       }))
     const processLocation = (loc = {}) => ({
       location_name: sanitize(loc.location_name ?? ''),
@@ -435,6 +533,7 @@ export default function RutasPersonalizadas() {
       </Modal>
 
       <Modal
+        className="rutas-registro-modal"
         title={editingRoute ? `Editar Ruta — ${editingRoute.route_name}` : 'Nueva Ruta Personalizada'}
         open={modalOpen}
         onCancel={() => { setModalOpen(false); setEditingRoute(null); form.resetFields() }}
@@ -455,18 +554,18 @@ export default function RutasPersonalizadas() {
         width={760}
         styles={{
           mask:    { backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', background: 'rgba(0,0,0,0.35)' },
-          content: { background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.22)', boxShadow: '0 8px 40px rgba(0,0,0,0.28)', borderRadius: 16 },
-          header:  { background: 'transparent', borderBottom: '1px solid rgba(255,255,255,0.18)' },
+          content: { background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', boxShadow: '0 8px 40px rgba(0,0,0,0.28)', borderRadius: 16 },
+          header:  { background: 'transparent' },
           body:    { background: 'transparent', padding: '16px 24px' },
-          footer:  { background: 'transparent', borderTop: '1px solid rgba(255,255,255,0.18)' },
+          footer:  { background: 'transparent' },
         }}
       >
         <Form
           form={form}
           layout="vertical"
           initialValues={{
-            route_origin:      { location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] },
-            route_destination: { location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] },
+            route_origin:      { location_name: '', events: [{ event_name: 'cancelado' }] },
+            route_destination: { location_name: '', events: [{ event_name: 'cancelado' }] },
             route_intermediate_points: [],
           }}
           onFinish={(values) => submitRoute(values, 'update')}
@@ -493,35 +592,7 @@ export default function RutasPersonalizadas() {
           >
             <Input placeholder="Ciudad o punto de origen" />
           </Form.Item>
-          <Form.List name={['route_origin', 'events']}>
-            {(fields, { add, remove }) => (
-              <>
-                {fields.map(({ key, name, ...rest }, index) => (
-                  <Space key={key} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
-                    {index > 0 && <Tag color="blue">Sub-paso {index}</Tag>}
-                    <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                      <Input placeholder="Nombre del evento" disabled={index === 0} />
-                    </Form.Item>
-                    <Form.Item {...rest} name={[name, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
-                      <Input placeholder="Descripción / notas" />
-                    </Form.Item>
-                    {index !== 0 && (
-                      <MinusCircleOutlined style={{ cursor: 'pointer' }} onClick={() => remove(name)} />
-                    )}
-                  </Space>
-                ))}
-                <Button
-                  type="dashed"
-                  onClick={() => add({ event_name: '', sub_events: '' })}
-                  icon={<PlusOutlined />}
-                  block
-                  style={{ marginBottom: 8 }}
-                >
-                  Agregar evento de origen
-                </Button>
-              </>
-            )}
-          </Form.List>
+          <EventsFieldList name={['route_origin', 'events']} addLabel="Agregar evento de origen" />
 
           <Divider orientation="left">Punto de Destino <Tag style={{ marginLeft: 8 }}>Paso {destinationStep}</Tag></Divider>
           <Form.Item
@@ -531,102 +602,67 @@ export default function RutasPersonalizadas() {
           >
             <Input placeholder="Ciudad o punto de destino" />
           </Form.Item>
-          <Form.List name={['route_destination', 'events']}>
-            {(fields, { add, remove }) => (
-              <>
-                {fields.map(({ key, name, ...rest }, index) => (
-                  <Space key={key} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
-                    {index > 0 && <Tag color="blue">Sub-paso {index}</Tag>}
-                    <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                      <Input placeholder="Nombre del evento" disabled={index === 0} />
-                    </Form.Item>
-                    <Form.Item {...rest} name={[name, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
-                      <Input placeholder="Descripción / notas" />
-                    </Form.Item>
-                    {index !== 0 && (
-                      <MinusCircleOutlined style={{ cursor: 'pointer' }} onClick={() => remove(name)} />
-                    )}
-                  </Space>
-                ))}
-                <Button
-                  type="dashed"
-                  onClick={() => add({ event_name: '', sub_events: '' })}
-                  icon={<PlusOutlined />}
-                  block
-                  style={{ marginBottom: 8 }}
-                >
-                  Agregar evento de destino
-                </Button>
-              </>
-            )}
-          </Form.List>
+          <EventsFieldList name={['route_destination', 'events']} addLabel="Agregar evento de destino" />
 
           <Divider orientation="left">Puntos Intermedios</Divider>
           <Form.List name="route_intermediate_points">
-            {(pointFields, { add: addPoint, remove: removePoint }) => (
-              <>
-                {pointFields.map(({ key: pointKey, name: pointName }) => (
-                  <div
-                    key={pointKey}
-                    style={{ border: '1px solid rgba(255,255,255,0.28)', borderRadius: 8, padding: '12px 12px 4px', marginBottom: 12, background: 'rgba(255,255,255,0.18)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
+            {(pointFields, { add: addPoint, remove: removePoint, move: movePoint }) => {
+              function handleDragEnd(event) {
+                const { active, over } = event
+                if (!over || active.id === over.id) return
+                const oldIndex = pointFields.findIndex((f) => f.key === active.id)
+                const newIndex = pointFields.findIndex((f) => f.key === over.id)
+                if (oldIndex === -1 || newIndex === -1) return
+                movePoint(oldIndex, newIndex)
+              }
+              return (
+                <>
+                  <DndContext sensors={dndSensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+                    <SortableContext items={pointFields.map((f) => f.key)} strategy={verticalListSortingStrategy}>
+                      {pointFields.map(({ key: pointKey, name: pointName }) => (
+                        <SortableIntermediatePoint key={pointKey} id={pointKey}>
+                          {({ dragHandle }) => (
+                            <>
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                                <span style={{ fontWeight: 500, fontSize: 13, display: 'flex', alignItems: 'center' }}>
+                                  {dragHandle}
+                                  Punto intermedio {pointName + 1} · Paso {pointName + 2}
+                                </span>
+                                <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removePoint(pointName)}>
+                                  Eliminar punto
+                                </Button>
+                              </div>
+                              <Form.Item
+                                name={[pointName, 'location_name']}
+                                label="Nombre del punto"
+                                rules={[{ required: true, message: 'El nombre es obligatorio' }]}
+                                style={{ marginBottom: 8 }}
+                              >
+                                <Input placeholder="Ej. PUEBLA" />
+                              </Form.Item>
+                              <EventsFieldList
+                                name={[pointName, 'events']}
+                                addLabel="Agregar evento"
+                                absolutePath={['route_intermediate_points', pointName, 'events']}
+                              />
+                            </>
+                          )}
+                        </SortableIntermediatePoint>
+                      ))}
+                    </SortableContext>
+                  </DndContext>
+                  <Button
+                    type="dashed"
+                    onClick={() => addPoint({ location_name: '', events: [{ event_name: 'cancelado' }] })}
+                    icon={<PlusOutlined />}
+                    block
+                    style={{ marginBottom: 8 }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                      <span style={{ fontWeight: 500, fontSize: 13 }}>Punto intermedio {pointName + 1} · Paso {pointName + 2}</span>
-                      <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removePoint(pointName)}>
-                        Eliminar punto
-                      </Button>
-                    </div>
-                    <Form.Item
-                      name={[pointName, 'location_name']}
-                      label="Nombre del punto"
-                      rules={[{ required: true, message: 'El nombre es obligatorio' }]}
-                      style={{ marginBottom: 8 }}
-                    >
-                      <Input placeholder="Ej. PUEBLA" />
-                    </Form.Item>
-                    <Form.List name={[pointName, 'events']}>
-                      {(evFields, { add: addEv, remove: removeEv }) => (
-                        <>
-                          {evFields.map(({ key: evKey, name: evName, ...rest }, evIndex) => (
-                            <Space key={evKey} align="baseline" style={{ display: 'flex', marginBottom: 4 }}>
-                              {evIndex > 0 && <Tag color="blue">Sub-paso {evIndex}</Tag>}
-                              <Form.Item {...rest} name={[evName, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                                <Input placeholder="Nombre del evento" disabled={evIndex === 0} />
-                              </Form.Item>
-                              <Form.Item {...rest} name={[evName, 'sub_events']} style={{ marginBottom: 0, flex: 2 }}>
-                                <Input placeholder="Descripción / notas" />
-                              </Form.Item>
-                              {evIndex !== 0 && (
-                                <MinusCircleOutlined style={{ cursor: 'pointer', color: '#ff4d4f' }} onClick={() => removeEv(evName)} />
-                              )}
-                            </Space>
-                          ))}
-                          <Button
-                            type="dashed"
-                            size="small"
-                            onClick={() => addEv({ event_name: '', sub_events: '' })}
-                            icon={<PlusOutlined />}
-                            block
-                            style={{ marginBottom: 8 }}
-                          >
-                            Agregar evento
-                          </Button>
-                        </>
-                      )}
-                    </Form.List>
-                  </div>
-                ))}
-                <Button
-                  type="dashed"
-                  onClick={() => addPoint({ location_name: '', events: [{ event_name: 'cancelado', sub_events: '' }] })}
-                  icon={<PlusOutlined />}
-                  block
-                  style={{ marginBottom: 8 }}
-                >
-                  Agregar punto intermedio
-                </Button>
-              </>
-            )}
+                    Agregar punto intermedio
+                  </Button>
+                </>
+              )
+            }}
           </Form.List>
         </Form>
       </Modal>

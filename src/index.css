@@ -415,3 +415,28 @@ body {
 .ant-modal .ant-table-wrapper .ant-table-container {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
 }
+
+/* ─── Rutas registro modal: borderless inputs + borderless text buttons.
+   "Agregar evento" / "Agregar punto intermedio" stay dashed and keep their
+   border — they're the add affordance, not plain text buttons. */
+.rutas-registro-modal .ant-input,
+.rutas-registro-modal .ant-input-affix-wrapper,
+.rutas-registro-modal .ant-select-selector {
+  border: none !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow:
+    6px 6px 14px rgba(0, 4, 12, 0.5),
+    -5px -5px 12px rgba(70, 150, 220, 0.09) !important;
+}
+.rutas-registro-modal .ant-input:focus,
+.rutas-registro-modal .ant-input-affix-wrapper-focused,
+.rutas-registro-modal .ant-select-focused .ant-select-selector {
+  box-shadow:
+    6px 6px 14px rgba(0, 4, 12, 0.5),
+    -5px -5px 12px rgba(70, 150, 220, 0.09),
+    0 0 0 2px rgba(6, 149, 228, 0.35) !important;
+}
+.rutas-registro-modal .ant-btn:not(.ant-btn-dashed) {
+  border: none !important;
+}
