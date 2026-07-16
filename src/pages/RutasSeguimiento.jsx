@@ -15,6 +15,7 @@ import { clientesService } from '../services/clientesService'
 import { transportistasService } from '../services/transportistasService'
 import { rutasService } from '../services/rutasService'
 import { toast } from '../utils/toast'
+import { isCancelado, processRouteEvents, EventsFieldList } from '../components/RouteEventsFields'
 
 const { Title } = Typography
 
@@ -35,19 +36,6 @@ function parseEvents(arr) {
   return groups.reverse()
 }
 
-function getRouteLocations(route) {
-  if (!route) return []
-  const locs = []
-  if (route.route_origin) locs.push(route.route_origin)
-  if (Array.isArray(route.route_intermediate_stops) && route.route_intermediate_stops.length > 0) {
-    route.route_intermediate_stops.forEach(s => { if (s.stop_name) locs.push(s.stop_name) })
-  } else if (route.route_intermediate_points) {
-    locs.push(route.route_intermediate_points)
-  }
-  if (route.route_destination) locs.push(route.route_destination)
-  return locs
-}
-
 const STATUS_OPTIONS = [
   { label: 'SIN INICIAR',  value: 'SIN INICIAR'  },
   { label: 'EN PROCESO',   value: 'EN PROCESO'    },
@@ -57,20 +45,32 @@ const STATUS_OPTIONS = [
   { label: 'CANCELADO',    value: 'CANCELADO'     },
 ]
 
-function toOptions(arr) {
-  return (arr ?? []).filter(e => e.event_name).map(e => ({ label: e.event_name, value: e.event_name }))
+// Strips cancelado and normalizes each evento's subeventos for a paso.
+function normalizeEvents(events) {
+  return (events ?? [])
+    .filter(e => e.event_name && !isCancelado(e.event_name))
+    .map(e => ({ event_name: e.event_name, sub_events: (e.sub_events ?? []).filter(Boolean) }))
+}
+
+// man_current_status is stored as "evento" or "evento / subevento". Split it back apart
+// so the Evento and Subevento dropdowns can be pre-selected independently.
+function parseManStatus(raw) {
+  if (!raw) return { event: '', subevent: '' }
+  const idx = raw.indexOf(' / ')
+  if (idx === -1) return { event: raw, subevent: '' }
+  return { event: raw.slice(0, idx), subevent: raw.slice(idx + 3) }
 }
 
 function buildPointMap(record, rutas = []) {
-  // Route assigned to this maniobra: prefer the live route (fresh stops/events, matched by
+  // Route assigned to this maniobra: prefer the live route (fresh puntos/eventos, matched by
   // man_route.route_id), then the embedded snapshot itself (route deleted since linking),
   // then a same-origin/destination match for legacy maniobras never explicitly linked.
   const route =
     (record.man_route?.route_id ? rutas.find(r => r.route_id === record.man_route.route_id) : null) ??
     record.man_route ??
     rutas.find(
-      r => r.route_origin === record.man_load_location &&
-           r.route_destination === record.man_unload_location
+      r => r.route_origin?.location_name      === record.man_load_location &&
+           r.route_destination?.location_name === record.man_unload_location
     ) ??
     null
 
@@ -80,20 +80,20 @@ function buildPointMap(record, rutas = []) {
   const push = (name, events) => {
     if (!name || seen.has(name)) return
     seen.add(name)
-    points.push({ label: name, value: name, events })
+    points.push({ label: name, value: name, events: normalizeEvents(events) })
   }
 
-  const originName = route?.route_origin      || record.man_load_location
-  const destName    = route?.route_destination || record.man_unload_location
-  const stops        = route?.route_intermediate_stops?.length
-    ? route.route_intermediate_stops
+  const originName = route?.route_origin?.location_name      || record.man_load_location
+  const destName    = route?.route_destination?.location_name || record.man_unload_location
+  const stops        = route?.route_intermediate_points?.length
+    ? route.route_intermediate_points
     : (record.man_intermediate_stops ?? [])
 
-  push(originName, toOptions(route?.route_origin_events))
+  push(originName, route?.route_origin?.events)
   for (const stop of stops) {
-    if (stop.stop_name) push(stop.stop_name, toOptions(stop.stop_events))
+    if (stop.location_name) push(stop.location_name, stop.events)
   }
-  push(destName, toOptions(route?.route_destination_events))
+  push(destName, route?.route_destination?.events)
 
   return points
 }
@@ -317,11 +317,15 @@ export default function RutasSeguimiento() {
     return result
   }, [allManiobras, search, containerSearch, clientMap, transporterMap, sortOrder])
 
-  const tableData = useMemo(() => filtered.map(r => ({
-    ...r,
-    _loc: cellState[r.man_id]?.location ?? (r.man_current_location ?? ''),
-    _sts: cellState[r.man_id]?.status   ?? (r.man_current_status   ?? ''),
-  })), [filtered, cellState])
+  const tableData = useMemo(() => filtered.map(r => {
+    const parsedStatus = parseManStatus(r.man_current_status)
+    return {
+      ...r,
+      _loc: cellState[r.man_id]?.location ?? (r.man_current_location ?? ''),
+      _sts: cellState[r.man_id]?.status   ?? parsedStatus.event,
+      _sub: cellState[r.man_id]?.subevent ?? parsedStatus.subevent,
+    }
+  }), [filtered, cellState])
 
   const saveMutation = useMutation({
     mutationFn: d => maniobrasService.save(d),
@@ -424,13 +428,11 @@ export default function RutasSeguimiento() {
     setIsDirty(true)
     if (value === 'nueva') {
       form.setFieldsValue({
-        route_name:               '',
-        route_category:           undefined,
-        route_origin:             '',
-        route_origin_events:      [{ event_name: 'Cancelado', event_description: '' }],
-        route_destination:        '',
-        route_destination_events: [{ event_name: 'Cancelado', event_description: '' }],
-        route_intermediate_stops: [],
+        route_name:                '',
+        route_category:            undefined,
+        route_origin:              { location_name: '', events: [{ event_name: 'cancelado', sub_events: [] }] },
+        route_destination:         { location_name: '', events: [{ event_name: 'cancelado', sub_events: [] }] },
+        route_intermediate_points: [],
       })
     }
   }
@@ -445,25 +447,16 @@ export default function RutasSeguimiento() {
     let newRouteId
 
     if (selectedRouteId === 'nueva') {
-      const processEvents = (events = []) =>
-        events.map((ev, i) => ({
-          event_id:          `ev_${Date.now()}_${i}`,
-          event_name:        sanitize(ev.event_name        ?? ''),
-          event_description: sanitize(ev.event_description ?? ''),
-        }))
-      const processStops = (stops = []) =>
-        stops.map(stop => ({
-          stop_name:   sanitize(stop.stop_name ?? ''),
-          stop_events: processEvents(stop.stop_events ?? []),
-        }))
+      const processLocation = (loc = {}) => ({
+        location_name: sanitize(loc.location_name ?? ''),
+        events:         processRouteEvents(loc.events, sanitize),
+      })
       const newRoutePayload = {
-        route_name:               sanitize(values.route_name        ?? ''),
-        route_category:           values.route_category             ?? '',
-        route_origin:             sanitize(values.route_origin      ?? ''),
-        route_destination:        sanitize(values.route_destination ?? ''),
-        route_origin_events:      processEvents(values.route_origin_events),
-        route_destination_events: processEvents(values.route_destination_events),
-        route_intermediate_stops: processStops(values.route_intermediate_stops ?? []),
+        route_name:                sanitize(values.route_name ?? ''),
+        route_category:            values.route_category      ?? '',
+        route_origin:              processLocation(values.route_origin),
+        route_destination:         processLocation(values.route_destination),
+        route_intermediate_points: (values.route_intermediate_points ?? []).map(processLocation),
       }
       try {
         const res = await rutasService.createOrUpdate(newRoutePayload)
@@ -471,9 +464,9 @@ export default function RutasSeguimiento() {
         newRouteId = res.data?.route_id ?? ''
         routeFields = {
           man_route_id:           newRouteId,
-          man_load_location:      newRoutePayload.route_origin,
-          man_unload_location:    newRoutePayload.route_destination,
-          man_intermediate_stops: newRoutePayload.route_intermediate_stops,
+          man_load_location:      newRoutePayload.route_origin.location_name,
+          man_unload_location:    newRoutePayload.route_destination.location_name,
+          man_intermediate_stops: newRoutePayload.route_intermediate_points,
         }
       } catch {
         toast.error('Error al crear la nueva ruta')
@@ -484,11 +477,11 @@ export default function RutasSeguimiento() {
       newRouteId = route?.route_id ?? ''
       routeFields = {
         man_route_id:           newRouteId,
-        man_load_location:      route?.route_origin      ?? '',
-        man_unload_location:    route?.route_destination ?? '',
-        man_intermediate_stops: (route?.route_intermediate_stops ?? []).map(s => ({
-          stop_name:   s.stop_name   ?? '',
-          stop_events: s.stop_events ?? [],
+        man_load_location:      route?.route_origin?.location_name      ?? '',
+        man_unload_location:    route?.route_destination?.location_name ?? '',
+        man_intermediate_stops: (route?.route_intermediate_points ?? []).map(p => ({
+          location_name: p.location_name ?? '',
+          events:         p.events        ?? [],
         })),
       }
     } else {
@@ -539,26 +532,47 @@ export default function RutasSeguimiento() {
     {
       title: '',
       key: 'actions',
-      width: 80,
-      render: (_, record) => (
-        <Space size={4} onClick={e => e.stopPropagation()}>
-          <Button
-            size="small"
-            type="primary"
-            icon={<EditOutlined />}
-            onClick={() => openEdit(record)}
-          />
-          <Popconfirm
-            title="¿Eliminar esta maniobra?"
-            description="Esta acción no se puede deshacer."
-            okText="Sí, eliminar"
-            cancelText="Cancelar"
-            onConfirm={() => deleteMutation.mutate(record.man_id)}
-          >
-            <Button size="small" danger icon={<DeleteOutlined />} />
-          </Popconfirm>
-        </Space>
-      ),
+      width: 115,
+      render: (_, record) => {
+        const points       = buildPointMap(record, rutas)
+        const location     = record._loc
+        const status       = record._sts
+        const subevent     = record._sub
+        const matchedPoint = points.find(p => p.value === location)
+        const isValid      = !!location && !!matchedPoint
+        const noLocation   = !isValid || matchedPoint.events.length === 0
+        const sentStatus   = status && subevent ? `${status} / ${subevent}` : (status ?? '')
+        const unchanged =
+          location   === (record.man_current_location ?? '') &&
+          sentStatus === (record.man_current_status   ?? '')
+        return (
+          <Space size={4} onClick={e => e.stopPropagation()}>
+            <Button
+              type="primary"
+              size="small"
+              icon={<SaveOutlined />}
+              loading={locationMutation.isPending && updatingId === record.man_id}
+              disabled={noLocation || unchanged || !status}
+              onClick={() => handleLocationSave(record.man_id, location, sentStatus)}
+            />
+            <Button
+              size="small"
+              type="primary"
+              icon={<EditOutlined />}
+              onClick={() => openEdit(record)}
+            />
+            <Popconfirm
+              title="¿Eliminar esta maniobra?"
+              description="Esta acción no se puede deshacer."
+              okText="Sí, eliminar"
+              cancelText="Cancelar"
+              onConfirm={() => deleteMutation.mutate(record.man_id)}
+            >
+              <Button size="small" danger icon={<DeleteOutlined />} />
+            </Popconfirm>
+          </Space>
+        )
+      },
     },
     {
       title: 'Contenedor / Fecha',
@@ -618,7 +632,7 @@ export default function RutasSeguimiento() {
             filterOption={(i, o) => (o?.label ?? '').toLowerCase().includes(i.toLowerCase())}
             onChange={v => setCellState(prev => ({
               ...prev,
-              [r.man_id]: { location: v ?? '', status: '' },
+              [r.man_id]: { location: v ?? '', status: '', subevent: '' },
             }))}
             onClick={e => e.stopPropagation()}
           />
@@ -628,44 +642,55 @@ export default function RutasSeguimiento() {
     {
       title: 'Estatus',
       key: 'estatus',
-      width: 175,
+      width: 220,
       render: (_, r) => {
-        const points      = buildPointMap(r, rutas)
-        const location    = r._loc
-        const status      = r._sts
-        const matchedPoint  = points.find(p => p.value === location)
-        const isValid       = !!location && !!matchedPoint
-        const hasEvents     = isValid && matchedPoint.events.length > 0
-        const noLocation    = !isValid || !hasEvents
-        const statusOptions = noLocation
+        const points       = buildPointMap(r, rutas)
+        const location     = r._loc
+        const status       = r._sts
+        const subevent     = r._sub
+        const matchedPoint = points.find(p => p.value === location)
+        const isValid      = !!location && !!matchedPoint
+        const events       = isValid ? matchedPoint.events : []
+        const noLocation   = !isValid || events.length === 0
+        const eventOptions = noLocation
           ? [{ label: 'SIN INICIAR', value: 'SIN INICIAR' }]
-          : matchedPoint.events
-        const displayStatus = noLocation ? 'SIN INICIAR' : (status || undefined)
-        const unchanged =
-          location === (r.man_current_location ?? '') &&
-          status   === (r.man_current_status   ?? '')
+          : events.map(e => ({ label: e.event_name, value: e.event_name }))
+        const displayStatus  = noLocation ? 'SIN INICIAR' : (status || undefined)
+        const selectedEvent  = events.find(e => e.event_name === status)
+        const subEventOptions = (selectedEvent?.sub_events ?? []).map(se => ({ label: se, value: se }))
+        const hasSubEvents     = subEventOptions.length > 0
         return (
-          <div style={{ display: 'flex', gap: 4 }} onClick={e => e.stopPropagation()}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }} onClick={e => e.stopPropagation()}>
             <Select
               key={location}
               size="small"
-              style={{ flex: 1, minWidth: 0 }}
+              style={{ width: '100%' }}
+              placeholder="Evento"
               value={displayStatus}
-              options={statusOptions}
+              options={eventOptions}
               disabled={noLocation}
               onChange={v => setCellState(prev => ({
                 ...prev,
-                [r.man_id]: { ...(prev[r.man_id] ?? { location }), status: v ?? '' },
+                [r.man_id]: { ...(prev[r.man_id] ?? { location }), status: v ?? '', subevent: '' },
               }))}
             />
-            <Button
-              type="primary"
-              size="small"
-              icon={<SaveOutlined />}
-              loading={locationMutation.isPending && updatingId === r.man_id}
-              disabled={unchanged || !status}
-              onClick={() => handleLocationSave(r.man_id, location, status)}
-            />
+            {hasSubEvents && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 4, paddingLeft: 10, marginLeft: 4, borderLeft: '2px dashed #0695E4' }}>
+                <Select
+                  key={`${location}-${status}`}
+                  size="small"
+                  style={{ width: '100%' }}
+                  placeholder={`Subevento de "${status}"`}
+                  allowClear
+                  value={subevent || undefined}
+                  options={subEventOptions}
+                  onChange={v => setCellState(prev => ({
+                    ...prev,
+                    [r.man_id]: { ...(prev[r.man_id] ?? { location, status }), subevent: v ?? '' },
+                  }))}
+                />
+              </div>
+            )}
           </div>
         )
       },
@@ -881,141 +906,58 @@ export default function RutasSeguimiento() {
 
               <Divider orientation="left">Punto de Origen</Divider>
               <Form.Item
-                name="route_origin"
+                name={['route_origin', 'location_name']}
                 label="Nombre"
                 rules={[{ required: true, message: 'El nombre del origen es obligatorio' }]}
               >
                 <Input placeholder="Ciudad o punto de origen" />
               </Form.Item>
-              <Form.List name="route_origin_events">
-                {(fields, { add, remove }) => (
-                  <>
-                    {fields.map(({ key, name, ...rest }, index) => (
-                      <div key={key} style={{ display: 'flex', gap: 8, marginBottom: 4, alignItems: 'baseline' }}>
-                        <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                          <Input placeholder="Nombre del evento" disabled={index === 0} />
-                        </Form.Item>
-                        <Form.Item {...rest} name={[name, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
-                          <Input placeholder="Descripción / notas" />
-                        </Form.Item>
-                        {index !== 0 && (
-                          <MinusCircleOutlined style={{ cursor: 'pointer', color: '#ff4d4f', flexShrink: 0 }} onClick={() => remove(name)} />
-                        )}
-                      </div>
-                    ))}
-                    <Button
-                      type="dashed"
-                      size="small"
-                      onClick={() => add({ event_name: '', event_description: '' })}
-                      icon={<PlusOutlined />}
-                      block
-                      style={{ marginBottom: 8 }}
-                    >
-                      Agregar evento de origen
-                    </Button>
-                  </>
-                )}
-              </Form.List>
+              <EventsFieldList name={['route_origin', 'events']} addLabel="Agregar evento de origen" />
 
               <Divider orientation="left">Punto de Destino</Divider>
               <Form.Item
-                name="route_destination"
+                name={['route_destination', 'location_name']}
                 label="Nombre"
                 rules={[{ required: true, message: 'El nombre del destino es obligatorio' }]}
               >
                 <Input placeholder="Ciudad o punto de destino" />
               </Form.Item>
-              <Form.List name="route_destination_events">
-                {(fields, { add, remove }) => (
-                  <>
-                    {fields.map(({ key, name, ...rest }, index) => (
-                      <div key={key} style={{ display: 'flex', gap: 8, marginBottom: 4, alignItems: 'baseline' }}>
-                        <Form.Item {...rest} name={[name, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                          <Input placeholder="Nombre del evento" disabled={index === 0} />
-                        </Form.Item>
-                        <Form.Item {...rest} name={[name, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
-                          <Input placeholder="Descripción / notas" />
-                        </Form.Item>
-                        {index !== 0 && (
-                          <MinusCircleOutlined style={{ cursor: 'pointer', color: '#ff4d4f', flexShrink: 0 }} onClick={() => remove(name)} />
-                        )}
-                      </div>
-                    ))}
-                    <Button
-                      type="dashed"
-                      size="small"
-                      onClick={() => add({ event_name: '', event_description: '' })}
-                      icon={<PlusOutlined />}
-                      block
-                      style={{ marginBottom: 8 }}
-                    >
-                      Agregar evento de destino
-                    </Button>
-                  </>
-                )}
-              </Form.List>
+              <EventsFieldList name={['route_destination', 'events']} addLabel="Agregar evento de destino" />
 
               <Divider orientation="left">Puntos Intermedios</Divider>
-              <Form.List name="route_intermediate_stops">
-                {(stopFields, { add: addStop, remove: removeStop }) => (
+              <Form.List name="route_intermediate_points">
+                {(pointFields, { add: addPoint, remove: removePoint }) => (
                   <>
-                    {stopFields.map(({ key: stopKey, name: stopName }) => (
+                    {pointFields.map(({ key: pointKey, name: pointName }) => (
                       <Card
-                        key={stopKey}
+                        key={pointKey}
                         size="small"
-                        title={`Punto intermedio ${stopName + 1}`}
+                        title={`Punto intermedio ${pointName + 1}`}
                         extra={
-                          <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removeStop(stopName)}>
+                          <Button danger size="small" icon={<MinusCircleOutlined />} onClick={() => removePoint(pointName)}>
                             Eliminar
                           </Button>
                         }
                         style={{ marginBottom: 12, background: '#fafafa' }}
                       >
                         <Form.Item
-                          name={[stopName, 'stop_name']}
+                          name={[pointName, 'location_name']}
                           label="Nombre del punto"
                           rules={[{ required: true, message: 'El nombre es obligatorio' }]}
                           style={{ marginBottom: 8 }}
                         >
                           <Input allowClear placeholder="Ej. ADUANA, PATIO, TERMINAL" />
                         </Form.Item>
-                        <Form.List name={[stopName, 'stop_events']}>
-                          {(evFields, { add: addEv, remove: removeEv }) => (
-                            <>
-                              {evFields.map(({ key: evKey, name: evName, ...rest }, evIndex) => (
-                                <div key={evKey} style={{ display: 'flex', gap: 8, marginBottom: 4, alignItems: 'baseline' }}>
-                                  <Form.Item {...rest} name={[evName, 'event_name']} style={{ marginBottom: 0, flex: 1 }}>
-                                    <Input placeholder="Nombre del evento" disabled={evIndex === 0} />
-                                  </Form.Item>
-                                  <Form.Item {...rest} name={[evName, 'event_description']} style={{ marginBottom: 0, flex: 2 }}>
-                                    <Input placeholder="Descripción / notas" />
-                                  </Form.Item>
-                                  {evIndex !== 0 && (
-                                    <MinusCircleOutlined
-                                      style={{ cursor: 'pointer', color: '#ff4d4f', flexShrink: 0 }}
-                                      onClick={() => removeEv(evName)}
-                                    />
-                                  )}
-                                </div>
-                              ))}
-                              <Button
-                                type="dashed"
-                                size="small"
-                                onClick={() => addEv({ event_name: '', event_description: '' })}
-                                icon={<PlusOutlined />}
-                                block
-                                style={{ marginBottom: 4 }}
-                              >
-                                Agregar evento
-                              </Button>
-                            </>
-                          )}
-                        </Form.List>
+                        <EventsFieldList
+                          name={[pointName, 'events']}
+                          addLabel="Agregar evento"
+                          absolutePath={['route_intermediate_points', pointName, 'events']}
+                        />
                       </Card>
                     ))}
                     <Button
                       type="dashed"
-                      onClick={() => addStop({ stop_name: '', stop_events: [{ event_name: 'Cancelado', event_description: '' }] })}
+                      onClick={() => addPoint({ location_name: '', events: [{ event_name: 'cancelado' }] })}
                       icon={<PlusOutlined />}
                       block
                       style={{ marginBottom: 8 }}

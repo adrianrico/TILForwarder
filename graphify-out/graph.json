@@ -38,7 +38,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": ".oxlintrc.json",
       "id": "oxlintrc"
     },
@@ -48,7 +48,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": "$schema",
       "id": "oxlintrc_schema"
     },
@@ -58,7 +58,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": "plugins",
       "id": "oxlintrc_plugins"
     },
@@ -68,7 +68,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": "rules",
       "id": "oxlintrc_rules"
     },
@@ -78,7 +78,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": "react/rules-of-hooks",
       "id": "oxlintrc_rules_react_rules_of_hooks"
     },
@@ -88,7 +88,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 9,
+      "community": 10,
       "norm_label": "react/only-export-components",
       "id": "oxlintrc_rules_react_only_export_components"
     },
@@ -98,7 +98,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "app.jsx",
       "id": "src_app"
     },
@@ -108,7 +108,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "queryclient",
       "id": "src_app_queryclient"
     },
@@ -118,7 +118,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "app()",
       "id": "src_app_app"
     },
@@ -128,7 +128,7 @@
       "source_file": "src/components/GlobalLoader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "globalloader.jsx",
       "id": "src_components_globalloader"
     },
@@ -138,7 +138,7 @@
       "source_file": "src/components/GlobalLoader.jsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "globalloader()",
       "id": "src_components_globalloader_globalloader"
     },
@@ -148,7 +148,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "applayout.jsx",
       "id": "src_components_layout_applayout"
     },
@@ -158,7 +158,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "glass",
       "id": "src_components_layout_applayout_glass"
     },
@@ -168,7 +168,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "menuitems",
       "id": "src_components_layout_applayout_menuitems"
     },
@@ -178,7 +178,7 @@
       "source_file": "src/components/Layout/AppLayout.jsx",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "applayout()",
       "id": "src_components_layout_applayout_applayout"
     },
@@ -188,7 +188,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "sidebar.jsx",
       "id": "src_components_layout_sidebar"
     },
@@ -198,7 +198,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "menuitems",
       "id": "src_components_layout_sidebar_menuitems"
     },
@@ -208,7 +208,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "sidebar()",
       "id": "src_components_layout_sidebar_sidebar"
     },
@@ -218,7 +218,7 @@
       "source_file": "src/components/ServerStatus.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "serverstatus.jsx",
       "id": "src_components_serverstatus"
     },
@@ -228,7 +228,7 @@
       "source_file": "src/components/ServerStatus.jsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "serverstatus()",
       "id": "src_components_serverstatus_serverstatus"
     },
@@ -238,7 +238,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "steeringwheeloutlined.jsx",
       "id": "src_components_steeringwheeloutlined"
     },
@@ -248,7 +248,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "steeringwheelsvg()",
       "id": "src_components_steeringwheeloutlined_steeringwheelsvg"
     },
@@ -258,7 +258,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 10,
+      "community": 11,
       "norm_label": "steeringwheeloutlined()",
       "id": "src_components_steeringwheeloutlined_steeringwheeloutlined"
     },
@@ -268,7 +268,7 @@
       "source_file": "src/components/TILLogo.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "tillogo.jsx",
       "id": "src_components_tillogo"
     },
@@ -278,7 +278,7 @@
       "source_file": "src/components/TILLogo.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "tillogo()",
       "id": "src_components_tillogo_tillogo"
     },
@@ -288,7 +288,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavebackground.jsx",
       "id": "src_components_wavebackground"
     },
@@ -298,7 +298,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "waves",
       "id": "src_components_wavebackground_waves"
     },
@@ -308,7 +308,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavelayer()",
       "id": "src_components_wavebackground_wavelayer"
     },
@@ -318,7 +318,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "wavebackground()",
       "id": "src_components_wavebackground_wavebackground"
     },
@@ -388,7 +388,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 2,
       "norm_label": "main.jsx",
       "id": "src_main"
     },
@@ -571,7 +571,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman skill",
       "id": "agents_skills_caveman_readme_caveman_skill"
     },
@@ -584,7 +584,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman intensity levels",
       "id": "agents_skills_caveman_readme_intensity_levels"
     },
@@ -597,7 +597,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman auto-clarity rule",
       "id": "agents_skills_caveman_readme_auto_clarity_rule"
     },
@@ -610,7 +610,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman invocation commands",
       "id": "agents_skills_caveman_readme_invocation"
     },
@@ -623,7 +623,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman skill (llm instructions)",
       "id": "agents_skills_caveman_skill_caveman_skill"
     },
@@ -636,7 +636,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman persistence rule",
       "id": "agents_skills_caveman_skill_persistence_rule"
     },
@@ -649,7 +649,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman compression rules",
       "id": "agents_skills_caveman_skill_compression_rules"
     },
@@ -662,7 +662,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman intensity levels (detailed)",
       "id": "agents_skills_caveman_skill_intensity_levels"
     },
@@ -675,7 +675,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman auto-clarity exceptions",
       "id": "agents_skills_caveman_skill_auto_clarity"
     },
@@ -688,7 +688,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 7,
       "norm_label": "caveman boundaries rule",
       "id": "agents_skills_caveman_skill_boundaries"
     },
@@ -701,7 +701,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "react + vite template",
       "id": "readme_react_vite_template"
     },
@@ -714,7 +714,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "@vitejs/plugin-react",
       "id": "readme_vitejs_plugin_react"
     },
@@ -727,7 +727,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "@vitejs/plugin-react-swc",
       "id": "readme_vitejs_plugin_react_swc"
     },
@@ -740,7 +740,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "oxc",
       "id": "readme_oxc"
     },
@@ -753,7 +753,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "swc",
       "id": "readme_swc"
     },
@@ -766,7 +766,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "react compiler",
       "id": "readme_react_compiler"
     },
@@ -779,7 +779,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "backend api configuration",
       "id": "readme_backend_api"
     },
@@ -792,7 +792,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "vite_api_url environment variable",
       "id": "readme_vite_api_url"
     },
@@ -805,7 +805,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "maylob_backend service",
       "id": "readme_maylob_backend"
     },
@@ -818,7 +818,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "local mongodb",
       "id": "readme_mongodb_local"
     },
@@ -831,7 +831,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "til app entry html",
       "id": "index_html_til_app"
     },
@@ -844,7 +844,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "src/main.jsx entry script",
       "id": "index_html_main_jsx"
     },
@@ -857,7 +857,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "truck_favicon.png",
       "id": "index_html_truck_favicon"
     },
@@ -870,7 +870,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "til-forwarder render service",
       "id": "render_yaml_til_forwarder_service"
     },
@@ -883,7 +883,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "static build command",
       "id": "render_yaml_static_build"
     },
@@ -896,7 +896,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 3,
       "norm_label": "spa rewrite route",
       "id": "render_yaml_spa_rewrite_route"
     },
@@ -922,7 +922,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "svg icon sprite sheet (icons.svg)",
       "id": "public_icons_sprite"
     },
@@ -935,7 +935,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "bluesky social icon (butterfly logo)",
       "id": "public_icons_bluesky_icon"
     },
@@ -948,7 +948,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "discord social icon (game controller/mask logo)",
       "id": "public_icons_discord_icon"
     },
@@ -961,7 +961,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "documentation icon (document with chat/arrow bubbles, purple outline)",
       "id": "public_icons_documentation_icon"
     },
@@ -974,7 +974,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "github icon (octocat/cat silhouette logo)",
       "id": "public_icons_github_icon"
     },
@@ -987,7 +987,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "generic social/community icon (person with star badge, purple outline)",
       "id": "public_icons_social_icon"
     },
@@ -1000,7 +1000,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 9,
       "norm_label": "x (twitter) icon",
       "id": "public_icons_x_icon"
     },
@@ -1345,7 +1345,7 @@
       "source_file": "package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "devdependencies",
       "id": "package_devdependencies"
     },
@@ -1355,7 +1355,7 @@
       "source_file": "package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "@types/react",
       "id": "package_devdependencies_types_react"
     },
@@ -1365,7 +1365,7 @@
       "source_file": "package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "@types/react-dom",
       "id": "package_devdependencies_types_react_dom"
     },
@@ -1375,7 +1375,7 @@
       "source_file": "package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "@vitejs/plugin-react",
       "id": "package_devdependencies_vitejs_plugin_react"
     },
@@ -1385,7 +1385,7 @@
       "source_file": "package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "oxlint",
       "id": "package_devdependencies_oxlint"
     },
@@ -1395,7 +1395,7 @@
       "source_file": "package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "playwright",
       "id": "package_devdependencies_playwright"
     },
@@ -1405,7 +1405,7 @@
       "source_file": "package.json",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "vite",
       "id": "package_devdependencies_vite"
     },
@@ -1415,9 +1415,9 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_components_layout_appheader",
       "community": 12,
-      "norm_label": "appheader.jsx"
+      "norm_label": "appheader.jsx",
+      "id": "src_components_layout_appheader"
     },
     {
       "label": "PAGE_TITLES",
@@ -1425,9 +1425,9 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "src_components_layout_appheader_page_titles",
       "community": 12,
-      "norm_label": "page_titles"
+      "norm_label": "page_titles",
+      "id": "src_components_layout_appheader_page_titles"
     },
     {
       "label": "AppHeader()",
@@ -1435,9 +1435,9 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "src_components_layout_appheader_appheader",
       "community": 12,
-      "norm_label": "appheader()"
+      "norm_label": "appheader()",
+      "id": "src_components_layout_appheader_appheader"
     },
     {
       "label": "RouteEventsFields.jsx",
@@ -1445,9 +1445,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields",
-      "community": 5,
-      "norm_label": "routeeventsfields.jsx"
+      "community": 4,
+      "norm_label": "routeeventsfields.jsx",
+      "id": "src_components_routeeventsfields"
     },
     {
       "label": "isCancelado()",
@@ -1455,9 +1455,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields_iscancelado",
-      "community": 5,
-      "norm_label": "iscancelado()"
+      "community": 4,
+      "norm_label": "iscancelado()",
+      "id": "src_components_routeeventsfields_iscancelado"
     },
     {
       "label": "normalizeSubEvents()",
@@ -1465,9 +1465,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields_normalizesubevents",
-      "community": 5,
-      "norm_label": "normalizesubevents()"
+      "community": 4,
+      "norm_label": "normalizesubevents()",
+      "id": "src_components_routeeventsfields_normalizesubevents"
     },
     {
       "label": "buildEvents()",
@@ -1475,9 +1475,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields_buildevents",
-      "community": 5,
-      "norm_label": "buildevents()"
+      "community": 4,
+      "norm_label": "buildevents()",
+      "id": "src_components_routeeventsfields_buildevents"
     },
     {
       "label": "processRouteEvents()",
@@ -1485,9 +1485,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields_processrouteevents",
-      "community": 5,
-      "norm_label": "processrouteevents()"
+      "community": 4,
+      "norm_label": "processrouteevents()",
+      "id": "src_components_routeeventsfields_processrouteevents"
     },
     {
       "label": "EventsFieldList()",
@@ -1495,9 +1495,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "src_components_routeeventsfields_eventsfieldlist",
-      "community": 5,
-      "norm_label": "eventsfieldlist()"
+      "community": 4,
+      "norm_label": "eventsfieldlist()",
+      "id": "src_components_routeeventsfields_eventsfieldlist"
     },
     {
       "label": "Clientes.jsx",
@@ -1505,9 +1505,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_pages_clientes",
-      "community": 11,
-      "norm_label": "clientes.jsx"
+      "community": 5,
+      "norm_label": "clientes.jsx",
+      "id": "src_pages_clientes"
     },
     {
       "label": "DIRTY_CELL",
@@ -1515,9 +1515,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "src_pages_clientes_dirty_cell",
-      "community": 11,
-      "norm_label": "dirty_cell"
+      "community": 5,
+      "norm_label": "dirty_cell",
+      "id": "src_pages_clientes_dirty_cell"
     },
     {
       "label": "getClientId()",
@@ -1525,9 +1525,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "src_pages_clientes_getclientid",
-      "community": 11,
-      "norm_label": "getclientid()"
+      "community": 5,
+      "norm_label": "getclientid()",
+      "id": "src_pages_clientes_getclientid"
     },
     {
       "label": "toEdits()",
@@ -1535,9 +1535,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "src_pages_clientes_toedits",
-      "community": 11,
-      "norm_label": "toedits()"
+      "community": 5,
+      "norm_label": "toedits()",
+      "id": "src_pages_clientes_toedits"
     },
     {
       "label": "computeDirty()",
@@ -1545,9 +1545,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "src_pages_clientes_computedirty",
-      "community": 11,
-      "norm_label": "computedirty()"
+      "community": 5,
+      "norm_label": "computedirty()",
+      "id": "src_pages_clientes_computedirty"
     },
     {
       "label": "Clientes()",
@@ -1555,9 +1555,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "src_pages_clientes_clientes",
-      "community": 11,
-      "norm_label": "clientes()"
+      "community": 5,
+      "norm_label": "clientes()",
+      "id": "src_pages_clientes_clientes"
     },
     {
       "label": "Maniobras.jsx",
@@ -1565,9 +1565,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_pages_maniobras",
-      "community": 5,
-      "norm_label": "maniobras.jsx"
+      "community": 4,
+      "norm_label": "maniobras.jsx",
+      "id": "src_pages_maniobras"
     },
     {
       "label": "filterByLabel()",
@@ -1575,9 +1575,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "src_pages_maniobras_filterbylabel",
-      "community": 5,
-      "norm_label": "filterbylabel()"
+      "community": 4,
+      "norm_label": "filterbylabel()",
+      "id": "src_pages_maniobras_filterbylabel"
     },
     {
       "label": "glassGroupStyle",
@@ -1585,9 +1585,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "src_pages_maniobras_glassgroupstyle",
-      "community": 5,
-      "norm_label": "glassgroupstyle"
+      "community": 4,
+      "norm_label": "glassgroupstyle",
+      "id": "src_pages_maniobras_glassgroupstyle"
     },
     {
       "label": "sanitize()",
@@ -1595,9 +1595,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "src_pages_maniobras_sanitize",
-      "community": 5,
-      "norm_label": "sanitize()"
+      "community": 4,
+      "norm_label": "sanitize()",
+      "id": "src_pages_maniobras_sanitize"
     },
     {
       "label": "Maniobras()",
@@ -1605,9 +1605,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "src_pages_maniobras_maniobras",
-      "community": 5,
-      "norm_label": "maniobras()"
+      "community": 4,
+      "norm_label": "maniobras()",
+      "id": "src_pages_maniobras_maniobras"
     },
     {
       "label": "RutasPersonalizadas.jsx",
@@ -1615,9 +1615,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas",
-      "community": 5,
-      "norm_label": "rutaspersonalizadas.jsx"
+      "community": 4,
+      "norm_label": "rutaspersonalizadas.jsx",
+      "id": "src_pages_rutaspersonalizadas"
     },
     {
       "label": "sanitize()",
@@ -1625,9 +1625,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_sanitize",
-      "community": 5,
-      "norm_label": "sanitize()"
+      "community": 4,
+      "norm_label": "sanitize()",
+      "id": "src_pages_rutaspersonalizadas_sanitize"
     },
     {
       "label": "SortableIntermediatePoint()",
@@ -1635,9 +1635,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
-      "community": 5,
-      "norm_label": "sortableintermediatepoint()"
+      "community": 4,
+      "norm_label": "sortableintermediatepoint()",
+      "id": "src_pages_rutaspersonalizadas_sortableintermediatepoint"
     },
     {
       "label": "RutasPersonalizadas()",
@@ -1645,9 +1645,99 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
+      "community": 4,
+      "norm_label": "rutaspersonalizadas()",
+      "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas"
+    },
+    {
+      "label": "Transportistas.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
       "community": 5,
-      "norm_label": "rutaspersonalizadas()"
+      "norm_label": "transportistas.jsx",
+      "id": "src_pages_transportistas"
+    },
+    {
+      "label": "EcoFormFields()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "ecoformfields()",
+      "id": "src_pages_transportistas_ecoformfields"
+    },
+    {
+      "label": "CamionesSection()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L73",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "camionessection()",
+      "id": "src_pages_transportistas_camionessection"
+    },
+    {
+      "label": "OperatorFormFields()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L233",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "operatorformfields()",
+      "id": "src_pages_transportistas_operatorformfields"
+    },
+    {
+      "label": "OperadoresSection()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L280",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "operadoressection()",
+      "id": "src_pages_transportistas_operadoressection"
+    },
+    {
+      "label": "ExpandedRow()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L444",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "expandedrow()",
+      "id": "src_pages_transportistas_expandedrow"
+    },
+    {
+      "label": "Transportistas()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L455",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "transportistas()",
+      "id": "src_pages_transportistas_transportistas"
+    },
+    {
+      "label": "toast.js",
+      "file_type": "code",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "toast.js",
+      "id": "src_utils_toast"
+    },
+    {
+      "label": "toast",
+      "file_type": "code",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "toast",
+      "id": "src_utils_toast_toast"
     },
     {
       "label": "RutasSeguimiento.jsx",
@@ -1656,68 +1746,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento",
-      "community": 2,
+      "community": 6,
       "norm_label": "rutasseguimiento.jsx"
     },
     {
       "label": "filterByLabel()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_filterbylabel",
-      "community": 2,
+      "community": 6,
       "norm_label": "filterbylabel()"
     },
     {
       "label": "sanitize()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_sanitize",
-      "community": 2,
+      "community": 6,
       "norm_label": "sanitize()"
     },
     {
       "label": "parseEvents()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_parseevents",
-      "community": 2,
+      "community": 6,
       "norm_label": "parseevents()"
-    },
-    {
-      "label": "getRouteLocations()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "src_pages_rutasseguimiento_getroutelocations",
-      "community": 2,
-      "norm_label": "getroutelocations()"
     },
     {
       "label": "STATUS_OPTIONS",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L51",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_status_options",
-      "community": 2,
+      "community": 6,
       "norm_label": "status_options"
     },
     {
-      "label": "toOptions()",
+      "label": "normalizeEvents()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L60",
+      "source_location": "L49",
       "_origin": "ast",
-      "id": "src_pages_rutasseguimiento_tooptions",
-      "community": 2,
-      "norm_label": "tooptions()"
+      "id": "src_pages_rutasseguimiento_normalizeevents",
+      "community": 6,
+      "norm_label": "normalizeevents()"
+    },
+    {
+      "label": "parseManStatus()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_parsemanstatus",
+      "community": 6,
+      "norm_label": "parsemanstatus()"
     },
     {
       "label": "buildPointMap()",
@@ -1726,7 +1816,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_buildpointmap",
-      "community": 2,
+      "community": 6,
       "norm_label": "buildpointmap()"
     },
     {
@@ -1736,7 +1826,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_expandedrow",
-      "community": 2,
+      "community": 6,
       "norm_label": "expandedrow()"
     },
     {
@@ -1746,7 +1836,7 @@
       "source_location": "L183",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_tocomparablestr",
-      "community": 2,
+      "community": 6,
       "norm_label": "tocomparablestr()"
     },
     {
@@ -1756,7 +1846,7 @@
       "source_location": "L187",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_statuscolor",
-      "community": 2,
+      "community": 6,
       "norm_label": "statuscolor()"
     },
     {
@@ -1766,98 +1856,8 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_rutasseguimiento",
-      "community": 2,
+      "community": 6,
       "norm_label": "rutasseguimiento()"
-    },
-    {
-      "label": "Transportistas.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_pages_transportistas",
-      "community": 2,
-      "norm_label": "transportistas.jsx"
-    },
-    {
-      "label": "EcoFormFields()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_ecoformfields",
-      "community": 2,
-      "norm_label": "ecoformfields()"
-    },
-    {
-      "label": "CamionesSection()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_camionessection",
-      "community": 2,
-      "norm_label": "camionessection()"
-    },
-    {
-      "label": "OperatorFormFields()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L233",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_operatorformfields",
-      "community": 2,
-      "norm_label": "operatorformfields()"
-    },
-    {
-      "label": "OperadoresSection()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L280",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_operadoressection",
-      "community": 2,
-      "norm_label": "operadoressection()"
-    },
-    {
-      "label": "ExpandedRow()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L444",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_expandedrow",
-      "community": 2,
-      "norm_label": "expandedrow()"
-    },
-    {
-      "label": "Transportistas()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L455",
-      "_origin": "ast",
-      "id": "src_pages_transportistas_transportistas",
-      "community": 2,
-      "norm_label": "transportistas()"
-    },
-    {
-      "label": "toast.js",
-      "file_type": "code",
-      "source_file": "src/utils/toast.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_utils_toast",
-      "community": 2,
-      "norm_label": "toast.js"
-    },
-    {
-      "label": "toast",
-      "file_type": "code",
-      "source_file": "src/utils/toast.js",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "src_utils_toast_toast",
-      "community": 2,
-      "norm_label": "toast"
     }
   ],
   "links": [
@@ -3488,9 +3488,9 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_layout_appheader",
-      "target": "src_components_layout_appheader_appheader",
-      "confidence_score": 1.0
+      "target": "src_components_layout_appheader_appheader"
     },
     {
       "relation": "contains",
@@ -3498,9 +3498,9 @@
       "source_file": "src/components/Layout/AppHeader.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_layout_appheader",
-      "target": "src_components_layout_appheader_page_titles",
-      "confidence_score": 1.0
+      "target": "src_components_layout_appheader_page_titles"
     },
     {
       "relation": "contains",
@@ -3508,9 +3508,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields",
-      "target": "src_components_routeeventsfields_buildevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_buildevents"
     },
     {
       "relation": "contains",
@@ -3518,9 +3518,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields",
-      "target": "src_components_routeeventsfields_eventsfieldlist",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_eventsfieldlist"
     },
     {
       "relation": "contains",
@@ -3528,9 +3528,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields",
-      "target": "src_components_routeeventsfields_iscancelado",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_iscancelado"
     },
     {
       "relation": "contains",
@@ -3538,9 +3538,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields",
-      "target": "src_components_routeeventsfields_normalizesubevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_normalizesubevents"
     },
     {
       "relation": "contains",
@@ -3548,9 +3548,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields",
-      "target": "src_components_routeeventsfields_processrouteevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_processrouteevents"
     },
     {
       "relation": "imports_from",
@@ -3559,9 +3559,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_components_routeeventsfields",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields"
     },
     {
       "relation": "imports_from",
@@ -3570,9 +3570,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_components_routeeventsfields",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields"
     },
     {
       "relation": "calls",
@@ -3581,9 +3581,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields_buildevents",
-      "target": "src_components_routeeventsfields_iscancelado",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_iscancelado"
     },
     {
       "relation": "calls",
@@ -3592,9 +3592,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields_processrouteevents",
-      "target": "src_components_routeeventsfields_iscancelado",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_iscancelado"
     },
     {
       "relation": "imports",
@@ -3603,9 +3603,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_components_routeeventsfields_iscancelado",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_iscancelado"
     },
     {
       "relation": "calls",
@@ -3625,9 +3625,9 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_routeeventsfields_buildevents",
-      "target": "src_components_routeeventsfields_normalizesubevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_normalizesubevents"
     },
     {
       "relation": "imports",
@@ -3636,9 +3636,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_components_routeeventsfields_buildevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_buildevents"
     },
     {
       "relation": "imports",
@@ -3647,9 +3647,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_components_routeeventsfields_buildevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_buildevents"
     },
     {
       "relation": "imports",
@@ -3658,9 +3658,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_components_routeeventsfields_processrouteevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_processrouteevents"
     },
     {
       "relation": "imports",
@@ -3669,9 +3669,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_components_routeeventsfields_processrouteevents",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_processrouteevents"
     },
     {
       "relation": "imports",
@@ -3680,9 +3680,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_components_routeeventsfields_eventsfieldlist",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_eventsfieldlist"
     },
     {
       "relation": "imports",
@@ -3691,9 +3691,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_components_routeeventsfields_eventsfieldlist",
-      "confidence_score": 1.0
+      "target": "src_components_routeeventsfields_eventsfieldlist"
     },
     {
       "relation": "contains",
@@ -3701,9 +3701,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_clientes",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_clientes"
     },
     {
       "relation": "contains",
@@ -3711,9 +3711,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_computedirty",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_computedirty"
     },
     {
       "relation": "contains",
@@ -3721,9 +3721,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_dirty_cell",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_dirty_cell"
     },
     {
       "relation": "contains",
@@ -3731,9 +3731,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_getclientid",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_getclientid"
     },
     {
       "relation": "contains",
@@ -3741,9 +3741,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_pages_clientes_toedits",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_toedits"
     },
     {
       "relation": "imports_from",
@@ -3752,9 +3752,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_utils_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast"
     },
     {
       "relation": "imports",
@@ -3763,9 +3763,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes",
-      "target": "src_utils_toast_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast_toast"
     },
     {
       "relation": "calls",
@@ -3774,9 +3774,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_getclientid",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_getclientid"
     },
     {
       "relation": "calls",
@@ -3785,9 +3785,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_toedits",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_toedits"
     },
     {
       "relation": "calls",
@@ -3796,9 +3796,9 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_computedirty",
-      "confidence_score": 1.0
+      "target": "src_pages_clientes_computedirty"
     },
     {
       "relation": "contains",
@@ -3806,9 +3806,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_filterbylabel",
-      "confidence_score": 1.0
+      "target": "src_pages_maniobras_filterbylabel"
     },
     {
       "relation": "contains",
@@ -3816,9 +3816,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_glassgroupstyle",
-      "confidence_score": 1.0
+      "target": "src_pages_maniobras_glassgroupstyle"
     },
     {
       "relation": "contains",
@@ -3826,9 +3826,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_maniobras",
-      "confidence_score": 1.0
+      "target": "src_pages_maniobras_maniobras"
     },
     {
       "relation": "contains",
@@ -3836,9 +3836,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_sanitize",
-      "confidence_score": 1.0
+      "target": "src_pages_maniobras_sanitize"
     },
     {
       "relation": "imports_from",
@@ -3847,9 +3847,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_utils_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast"
     },
     {
       "relation": "imports",
@@ -3858,9 +3858,9 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_maniobras",
-      "target": "src_utils_toast_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast_toast"
     },
     {
       "relation": "contains",
@@ -3868,9 +3868,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
-      "confidence_score": 1.0
+      "target": "src_pages_rutaspersonalizadas_rutaspersonalizadas"
     },
     {
       "relation": "contains",
@@ -3878,9 +3878,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_sanitize",
-      "confidence_score": 1.0
+      "target": "src_pages_rutaspersonalizadas_sanitize"
     },
     {
       "relation": "contains",
@@ -3888,9 +3888,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
-      "confidence_score": 1.0
+      "target": "src_pages_rutaspersonalizadas_sortableintermediatepoint"
     },
     {
       "relation": "imports_from",
@@ -3899,9 +3899,9 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_utils_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast"
     },
     {
       "relation": "imports",
@@ -3910,9 +3910,101 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_utils_toast_toast",
-      "confidence_score": 1.0
+      "target": "src_utils_toast_toast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_camionessection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_ecoformfields"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L444",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_expandedrow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L280",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_operadoressection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L233",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_operatorformfields"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L455",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_transportistas"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_utils_toast"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_utils_toast_toast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_toast",
+      "target": "src_utils_toast_toast"
     },
     {
       "relation": "contains",
@@ -3938,7 +4030,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_filterbylabel",
@@ -3948,20 +4040,30 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L38",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_getroutelocations",
+      "target": "src_pages_rutasseguimiento_normalizeevents",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parseevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_parsemanstatus",
       "confidence_score": 1.0
     },
     {
@@ -3978,7 +4080,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_sanitize",
@@ -3988,7 +4090,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L51",
+      "source_location": "L39",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_status_options",
@@ -4015,38 +4117,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_tooptions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_utils_toast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_utils_toast_toast",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -4062,7 +4132,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L678",
+      "source_location": "L703",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parseevents",
@@ -4073,10 +4143,10 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L92",
+      "source_location": "L83",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_buildpointmap",
-      "target": "src_pages_rutasseguimiento_tooptions",
+      "target": "src_pages_rutasseguimiento_normalizeevents",
       "confidence_score": 1.0
     },
     {
@@ -4084,7 +4154,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L608",
+      "source_location": "L321",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_parsemanstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L537",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_buildpointmap",
@@ -4099,98 +4180,6 @@
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_expandedrow",
       "target": "src_pages_rutasseguimiento_statuscolor",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L73",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_camionessection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_ecoformfields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L444",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_expandedrow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L280",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_operadoressection",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L233",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_operatorformfields",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L455",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_transportistas",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_utils_toast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_utils_toast_toast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/toast.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "src_utils_toast",
-      "target": "src_utils_toast_toast",
       "confidence_score": 1.0
     }
   ],
@@ -4222,5 +4211,5 @@
       "source_file": ".agents/skills/caveman/SKILL.md"
     }
   ],
-  "built_at_commit": "9c04870b58f9b84b4563158c1f655de28eee54a8"
+  "built_at_commit": "f7914fdc8256a62c279c0397279cda038a40c80a"
 }
