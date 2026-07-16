@@ -21,6 +21,26 @@ function isCancelado(name) {
   return (name ?? '').toString().trim().toLowerCase() === 'cancelado'
 }
 
+function normalizeSubEvents(subEvents) {
+  if (Array.isArray(subEvents)) return subEvents
+  if (typeof subEvents === 'string') {
+    return subEvents
+      .split(/[,;\n]+/)
+      .map(s => s.trim())
+      .filter(s => s !== '')
+  }
+  return []
+}
+
+function buildEvents(events) {
+  return [
+    { event_name: 'cancelado', sub_events: [] },
+    ...(events ?? [])
+      .filter(ev => !isCancelado(ev.event_name))
+      .map(ev => ({ event_name: ev.event_name ?? '', sub_events: normalizeSubEvents(ev.sub_events) })),
+  ]
+}
+
 function SortableIntermediatePoint({ id, children }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id })
   const style = {
@@ -121,6 +141,7 @@ export default function RutasPersonalizadas() {
   const [editingRoute, setEditingRoute] = useState(null)
   const [eventsModal, setEventsModal] = useState(null)
   const [form] = Form.useForm()
+  const [eventsForm] = Form.useForm()
   const intermediatePointsWatch = Form.useWatch('route_intermediate_points', form) || []
   const destinationStep = intermediatePointsWatch.length + 2
   const dndSensors = useSensors(
@@ -149,12 +170,6 @@ export default function RutasPersonalizadas() {
 
   function openEditModal(record) {
     setEditingRoute(record)
-    const buildEvents = (events) => [
-      { event_name: 'cancelado', sub_events: [] },
-      ...(events ?? [])
-        .filter(ev => !isCancelado(ev.event_name))
-        .map(ev => ({ event_name: ev.event_name ?? '', sub_events: Array.isArray(ev.sub_events) ? ev.sub_events : [] })),
-    ]
     form.setFieldsValue({
       route_name:     record.route_name     ?? '',
       route_category: record.route_category ?? undefined,
@@ -169,41 +184,40 @@ export default function RutasPersonalizadas() {
   }
 
   function openEventsModal(route, type, stopIndex) {
+    let locationName = ''
+    let events = []
     if (type === 'stop') {
       const point = route.route_intermediate_points?.[stopIndex] ?? {}
-      setEventsModal({ route, type, stopIndex, locationName: point.location_name ?? '', events: [...(point.events ?? [])] })
+      locationName = point.location_name ?? ''
+      events = point.events ?? []
     } else {
       const loc = type === 'origin' ? route.route_origin : route.route_destination
-      setEventsModal({ route, type, locationName: loc?.location_name ?? '', events: [...(loc?.events ?? [])] })
+      locationName = loc?.location_name ?? ''
+      events = loc?.events ?? []
     }
+    eventsForm.setFieldsValue({ events: buildEvents(events) })
+    setEventsModal({ route, type, stopIndex, locationName })
   }
 
-  function handleEventChange(index, field, value) {
-    setEventsModal((prev) => {
-      const events = [...prev.events]
-      events[index] = { ...events[index], [field]: sanitize(value) }
-      return { ...prev, events }
-    })
-  }
-
-  function handleAddEvent() {
-    setEventsModal((prev) => ({ ...prev, events: [...prev.events, { event_name: '', sub_events: '' }] }))
-  }
-
-  function handleDeleteEvent(index) {
-    setEventsModal((prev) => ({ ...prev, events: prev.events.filter((_, i) => i !== index) }))
-  }
-
-  function handleSaveEvents() {
-    const { route, type, events, stopIndex } = eventsModal
+  async function handleSaveEvents() {
+    const { route, type, stopIndex } = eventsModal
+    let values
+    try {
+      values = await eventsForm.validateFields()
+    } catch {
+      return
+    }
     const toRealEvents = (list) => (list ?? [])
       .filter(ev => !isCancelado(ev.event_name))
-      .map(ev => ({ event_name: sanitize(ev.event_name ?? ''), sub_events: sanitize(ev.sub_events ?? '') }))
+      .map(ev => ({
+        event_name: sanitize(ev.event_name ?? ''),
+        sub_events: (ev.sub_events ?? []).map(se => sanitize(se ?? '')).filter(se => se !== ''),
+      }))
 
     if (type === 'stop') {
       const points = (route.route_intermediate_points ?? []).map((p, i) => ({
         location_name: p.location_name,
-        events: i === stopIndex ? toRealEvents(events) : toRealEvents(p.events),
+        events: i === stopIndex ? toRealEvents(values.events) : toRealEvents(p.events),
       }))
       saveEventsMutation.mutate({ route_id: route.route_id, route_name: route.route_name, route_intermediate_points: points })
     } else {
@@ -212,7 +226,7 @@ export default function RutasPersonalizadas() {
       saveEventsMutation.mutate({
         route_id: route.route_id,
         route_name: route.route_name,
-        [fieldKey]: { location_name: locationName, events: toRealEvents(events) },
+        [fieldKey]: { location_name: locationName, events: toRealEvents(values.events) },
       })
     }
   }
@@ -284,6 +298,7 @@ export default function RutasPersonalizadas() {
       Modal.success({ content: 'Eventos actualizados' })
       qc.invalidateQueries({ queryKey: ['rutas-personalizadas'] })
       setEventsModal(null)
+      eventsForm.resetFields()
     },
     onError: err => Modal.error({ content: backendMessage(err, 'Error al actualizar eventos') }),
   })
@@ -351,7 +366,7 @@ export default function RutasPersonalizadas() {
       render: (_, record) => (
         <Space direction="vertical" size={2}>
           <Text ellipsis style={{ maxWidth: 130 }}>{record.route_origin?.location_name || '—'}</Text>
-          <Button size="small" type="link" style={{ padding: 0 }} onClick={() => openEventsModal(record, 'origin')}>
+          <Button size="small" type="link" style={{ padding: 0, fontSize: 11 }} onClick={() => openEventsModal(record, 'origin')}>
             Ver eventos ({(record.route_origin?.events ?? []).filter(ev => !isCancelado(ev.event_name)).length})
           </Button>
         </Space>
@@ -364,7 +379,7 @@ export default function RutasPersonalizadas() {
       render: (_, record) => (
         <Space direction="vertical" size={2}>
           <Text ellipsis style={{ maxWidth: 130 }}>{record.route_destination?.location_name || '—'}</Text>
-          <Button size="small" type="link" style={{ padding: 0 }} onClick={() => openEventsModal(record, 'destination')}>
+          <Button size="small" type="link" style={{ padding: 0, fontSize: 11 }} onClick={() => openEventsModal(record, 'destination')}>
             Ver eventos ({(record.route_destination?.events ?? []).filter(ev => !isCancelado(ev.event_name)).length})
           </Button>
         </Space>
@@ -493,7 +508,7 @@ export default function RutasPersonalizadas() {
           :                                        `Eventos — ${eventsModal?.locationName} · ${eventsModal?.route?.route_name}`
         }
         open={!!eventsModal}
-        onCancel={() => setEventsModal(null)}
+        onCancel={() => { setEventsModal(null); eventsForm.resetFields() }}
         onOk={handleSaveEvents}
         confirmLoading={saveEventsMutation.isPending}
         okText="Guardar cambios"
@@ -501,35 +516,9 @@ export default function RutasPersonalizadas() {
         width={700}
         destroyOnHide
       >
-        {eventsModal?.events?.map((event, index) => (
-          <Space key={index} align="baseline" style={{ display: 'flex', marginBottom: 8 }}>
-            <Input
-              value={event.event_name ?? ''}
-              disabled={isCancelado(event.event_name)}
-              onChange={(e) => handleEventChange(index, 'event_name', e.target.value)}
-              placeholder="Nombre del evento"
-              style={{ width: 160 }}
-            />
-            <Input
-              value={event.sub_events ?? ''}
-              onChange={(e) => handleEventChange(index, 'sub_events', e.target.value)}
-              placeholder="Descripción / notas"
-              style={{ flex: 1 }}
-            />
-            {!isCancelado(event.event_name) && (
-              <Button danger icon={<DeleteOutlined />} size="small" onClick={() => handleDeleteEvent(index)} />
-            )}
-          </Space>
-        ))}
-        <Button
-          type="dashed"
-          onClick={handleAddEvent}
-          icon={<PlusOutlined />}
-          block
-          style={{ marginTop: 8 }}
-        >
-          Agregar evento
-        </Button>
+        <Form form={eventsForm} layout="vertical">
+          <EventsFieldList name={['events']} addLabel="Agregar evento" />
+        </Form>
       </Modal>
 
       <Modal
