@@ -38,7 +38,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": ".oxlintrc.json",
       "id": "oxlintrc"
     },
@@ -48,7 +48,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": "$schema",
       "id": "oxlintrc_schema"
     },
@@ -58,7 +58,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": "plugins",
       "id": "oxlintrc_plugins"
     },
@@ -68,7 +68,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": "rules",
       "id": "oxlintrc_rules"
     },
@@ -78,7 +78,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": "react/rules-of-hooks",
       "id": "oxlintrc_rules_react_rules_of_hooks"
     },
@@ -88,7 +88,7 @@
       "source_file": ".oxlintrc.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 11,
+      "community": 9,
       "norm_label": "react/only-export-components",
       "id": "oxlintrc_rules_react_only_export_components"
     },
@@ -98,7 +98,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "app.jsx",
       "id": "src_app"
     },
@@ -108,7 +108,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "queryclient",
       "id": "src_app_queryclient"
     },
@@ -118,7 +118,7 @@
       "source_file": "src/App.jsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "app()",
       "id": "src_app_app"
     },
@@ -141,36 +141,6 @@
       "community": 3,
       "norm_label": "globalloader()",
       "id": "src_components_globalloader_globalloader"
-    },
-    {
-      "label": "AppHeader.jsx",
-      "file_type": "code",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "appheader.jsx",
-      "id": "src_components_layout_appheader"
-    },
-    {
-      "label": "PAGE_TITLES",
-      "file_type": "code",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "page_titles",
-      "id": "src_components_layout_appheader_page_titles"
-    },
-    {
-      "label": "AppHeader()",
-      "file_type": "code",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "appheader()",
-      "id": "src_components_layout_appheader_appheader"
     },
     {
       "label": "AppLayout.jsx",
@@ -218,7 +188,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "sidebar.jsx",
       "id": "src_components_layout_sidebar"
     },
@@ -228,7 +198,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "menuitems",
       "id": "src_components_layout_sidebar_menuitems"
     },
@@ -238,7 +208,7 @@
       "source_file": "src/components/Layout/Sidebar.jsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "sidebar()",
       "id": "src_components_layout_sidebar_sidebar"
     },
@@ -268,7 +238,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "steeringwheeloutlined.jsx",
       "id": "src_components_steeringwheeloutlined"
     },
@@ -278,7 +248,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "steeringwheelsvg()",
       "id": "src_components_steeringwheeloutlined_steeringwheelsvg"
     },
@@ -288,7 +258,7 @@
       "source_file": "src/components/SteeringWheelOutlined.jsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 3,
+      "community": 10,
       "norm_label": "steeringwheeloutlined()",
       "id": "src_components_steeringwheeloutlined_steeringwheeloutlined"
     },
@@ -318,7 +288,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "wavebackground.jsx",
       "id": "src_components_wavebackground"
     },
@@ -328,7 +298,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "waves",
       "id": "src_components_wavebackground_waves"
     },
@@ -338,7 +308,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "wavelayer()",
       "id": "src_components_wavebackground_wavelayer"
     },
@@ -348,7 +318,7 @@
       "source_file": "src/components/WaveBackground.jsx",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "wavebackground()",
       "id": "src_components_wavebackground_wavebackground"
     },
@@ -358,7 +328,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "maneuverstable.jsx",
       "id": "src_components_dashboard_maneuverstable"
     },
@@ -368,7 +338,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "statuscolor()",
       "id": "src_components_dashboard_maneuverstable_statuscolor"
     },
@@ -378,7 +348,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "buildcolumns()",
       "id": "src_components_dashboard_maneuverstable_buildcolumns"
     },
@@ -388,7 +358,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "maneuverstable()",
       "id": "src_components_dashboard_maneuverstable_maneuverstable"
     },
@@ -398,7 +368,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "statcard.jsx",
       "id": "src_components_dashboard_statcard"
     },
@@ -408,7 +378,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "statcard()",
       "id": "src_components_dashboard_statcard_statcard"
     },
@@ -418,7 +388,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 3,
       "norm_label": "main.jsx",
       "id": "src_main"
     },
@@ -428,7 +398,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "dashboard.jsx",
       "id": "src_pages_dashboard"
     },
@@ -438,7 +408,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "mexico_center",
       "id": "src_pages_dashboard_mexico_center"
     },
@@ -448,7 +418,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "parseprogress()",
       "id": "src_pages_dashboard_parseprogress"
     },
@@ -458,7 +428,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "iscancelled()",
       "id": "src_pages_dashboard_iscancelled"
     },
@@ -468,7 +438,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "parsecoords()",
       "id": "src_pages_dashboard_parsecoords"
     },
@@ -478,7 +448,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "dashboard()",
       "id": "src_pages_dashboard_dashboard"
     },
@@ -488,7 +458,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "api.js",
       "id": "src_services_api"
     },
@@ -498,7 +468,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "api",
       "id": "src_services_api_api"
     },
@@ -508,7 +478,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "clientesservice.js",
       "id": "src_services_clientesservice"
     },
@@ -518,7 +488,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "clientesservice",
       "id": "src_services_clientesservice_clientesservice"
     },
@@ -528,7 +498,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "maniobrasservice.js",
       "id": "src_services_maniobrasservice"
     },
@@ -538,7 +508,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "maniobrasservice",
       "id": "src_services_maniobrasservice_maniobrasservice"
     },
@@ -548,7 +518,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "rutasservice.js",
       "id": "src_services_rutasservice"
     },
@@ -558,7 +528,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "rutasservice",
       "id": "src_services_rutasservice_rutasservice"
     },
@@ -568,7 +538,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "transportistasservice.js",
       "id": "src_services_transportistasservice"
     },
@@ -578,7 +548,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "transportistasservice",
       "id": "src_services_transportistasservice_transportistasservice"
     },
@@ -588,7 +558,7 @@
       "source_file": "vite.config.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 20,
       "norm_label": "vite.config.js",
       "id": "vite_config"
     },
@@ -601,7 +571,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman skill",
       "id": "agents_skills_caveman_readme_caveman_skill"
     },
@@ -614,7 +584,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman intensity levels",
       "id": "agents_skills_caveman_readme_intensity_levels"
     },
@@ -627,7 +597,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman auto-clarity rule",
       "id": "agents_skills_caveman_readme_auto_clarity_rule"
     },
@@ -640,7 +610,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman invocation commands",
       "id": "agents_skills_caveman_readme_invocation"
     },
@@ -653,7 +623,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman skill (llm instructions)",
       "id": "agents_skills_caveman_skill_caveman_skill"
     },
@@ -666,7 +636,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman persistence rule",
       "id": "agents_skills_caveman_skill_persistence_rule"
     },
@@ -679,7 +649,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman compression rules",
       "id": "agents_skills_caveman_skill_compression_rules"
     },
@@ -692,7 +662,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman intensity levels (detailed)",
       "id": "agents_skills_caveman_skill_intensity_levels"
     },
@@ -705,7 +675,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman auto-clarity exceptions",
       "id": "agents_skills_caveman_skill_auto_clarity"
     },
@@ -718,7 +688,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "caveman boundaries rule",
       "id": "agents_skills_caveman_skill_boundaries"
     },
@@ -939,7 +909,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 14,
       "norm_label": "app favicon: abstract purple/blue geometric mark with internal glow blobs, used as site branding icon",
       "id": "public_favicon_icon"
     },
@@ -952,7 +922,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "svg icon sprite sheet (icons.svg)",
       "id": "public_icons_sprite"
     },
@@ -965,7 +935,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "bluesky social icon (butterfly logo)",
       "id": "public_icons_bluesky_icon"
     },
@@ -978,7 +948,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "discord social icon (game controller/mask logo)",
       "id": "public_icons_discord_icon"
     },
@@ -991,7 +961,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "documentation icon (document with chat/arrow bubbles, purple outline)",
       "id": "public_icons_documentation_icon"
     },
@@ -1004,7 +974,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "github icon (octocat/cat silhouette logo)",
       "id": "public_icons_github_icon"
     },
@@ -1017,7 +987,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "generic social/community icon (person with star badge, purple outline)",
       "id": "public_icons_social_icon"
     },
@@ -1030,7 +1000,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 9,
+      "community": 8,
       "norm_label": "x (twitter) icon",
       "id": "public_icons_x_icon"
     },
@@ -1043,7 +1013,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 15,
       "norm_label": "truck icon (inkscape svg) depicting a delivery/cargo truck, used in til_forwarder's ui for vehicle or fleet-related elements such as map markers, route indicators, or navigation for the trucking/logistics app",
       "id": "public_truck_icon"
     },
@@ -1056,7 +1026,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 16,
       "norm_label": "hero image: abstract purple isometric rounded-square tile with glowing gradient edge, floating above its own outline silhouette connected by dashed guide lines - a minimalist 3d-style branding/marketing graphic likely used as the landing or splash visual for the trucking/logistics app ui",
       "id": "src_assets_hero_image"
     },
@@ -1069,7 +1039,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 17,
       "norm_label": "react logo (vite scaffold asset)",
       "id": "src_assets_react_logo"
     },
@@ -1082,7 +1052,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 16,
+      "community": 18,
       "norm_label": "truck favicon icon depicting a brown/dark box truck, used as the browser tab favicon and branding image for this logistics/trucking application",
       "id": "src_assets_truck_favicon_icon"
     },
@@ -1095,59 +1065,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 17,
+      "community": 19,
       "norm_label": "vite logo asset (vite.svg)",
       "id": "src_assets_vite_logo"
-    },
-    {
-      "label": "Maniobras.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "maniobras.jsx",
-      "id": "src_pages_maniobras"
-    },
-    {
-      "label": "filterByLabel()",
-      "file_type": "code",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "filterbylabel()",
-      "id": "src_pages_maniobras_filterbylabel"
-    },
-    {
-      "label": "glassGroupStyle",
-      "file_type": "code",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "glassgroupstyle",
-      "id": "src_pages_maniobras_glassgroupstyle"
-    },
-    {
-      "label": "sanitize()",
-      "file_type": "code",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "sanitize()",
-      "id": "src_pages_maniobras_sanitize"
-    },
-    {
-      "label": "Maniobras()",
-      "file_type": "code",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "maniobras()",
-      "id": "src_pages_maniobras_maniobras"
     },
     {
       "label": "backendMessage.js",
@@ -1155,7 +1075,7 @@
       "source_file": "src/utils/backendMessage.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 13,
       "norm_label": "backendmessage.js",
       "id": "src_utils_backendmessage"
     },
@@ -1165,259 +1085,9 @@
       "source_file": "src/utils/backendMessage.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 13,
       "norm_label": "backendmessage()",
       "id": "src_utils_backendmessage_backendmessage"
-    },
-    {
-      "label": "RutasSeguimiento.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "rutasseguimiento.jsx",
-      "id": "src_pages_rutasseguimiento"
-    },
-    {
-      "label": "filterByLabel()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "filterbylabel()",
-      "id": "src_pages_rutasseguimiento_filterbylabel"
-    },
-    {
-      "label": "sanitize()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "sanitize()",
-      "id": "src_pages_rutasseguimiento_sanitize"
-    },
-    {
-      "label": "parseEvents()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "parseevents()",
-      "id": "src_pages_rutasseguimiento_parseevents"
-    },
-    {
-      "label": "getRouteLocations()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "getroutelocations()",
-      "id": "src_pages_rutasseguimiento_getroutelocations"
-    },
-    {
-      "label": "STATUS_OPTIONS",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L51",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "status_options",
-      "id": "src_pages_rutasseguimiento_status_options"
-    },
-    {
-      "label": "toOptions()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L60",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "tooptions()",
-      "id": "src_pages_rutasseguimiento_tooptions"
-    },
-    {
-      "label": "buildPointMap()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L64",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "buildpointmap()",
-      "id": "src_pages_rutasseguimiento_buildpointmap"
-    },
-    {
-      "label": "ExpandedRow()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L101",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "expandedrow()",
-      "id": "src_pages_rutasseguimiento_expandedrow"
-    },
-    {
-      "label": "toComparableStr()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L183",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "tocomparablestr()",
-      "id": "src_pages_rutasseguimiento_tocomparablestr"
-    },
-    {
-      "label": "statusColor()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L187",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "statuscolor()",
-      "id": "src_pages_rutasseguimiento_statuscolor"
-    },
-    {
-      "label": "RutasSeguimiento()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L197",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "rutasseguimiento()",
-      "id": "src_pages_rutasseguimiento_rutasseguimiento"
-    },
-    {
-      "label": "Transportistas.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "transportistas.jsx",
-      "id": "src_pages_transportistas"
-    },
-    {
-      "label": "EcoFormFields()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "ecoformfields()",
-      "id": "src_pages_transportistas_ecoformfields"
-    },
-    {
-      "label": "CamionesSection()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L73",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "camionessection()",
-      "id": "src_pages_transportistas_camionessection"
-    },
-    {
-      "label": "OperatorFormFields()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L233",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "operatorformfields()",
-      "id": "src_pages_transportistas_operatorformfields"
-    },
-    {
-      "label": "OperadoresSection()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L280",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "operadoressection()",
-      "id": "src_pages_transportistas_operadoressection"
-    },
-    {
-      "label": "ExpandedRow()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L444",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "expandedrow()",
-      "id": "src_pages_transportistas_expandedrow"
-    },
-    {
-      "label": "Transportistas()",
-      "file_type": "code",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L455",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "transportistas()",
-      "id": "src_pages_transportistas_transportistas"
-    },
-    {
-      "label": "Clientes.jsx",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "clientes.jsx",
-      "id": "src_pages_clientes"
-    },
-    {
-      "label": "DIRTY_CELL",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "dirty_cell",
-      "id": "src_pages_clientes_dirty_cell"
-    },
-    {
-      "label": "getClientId()",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "getclientid()",
-      "id": "src_pages_clientes_getclientid"
-    },
-    {
-      "label": "toEdits()",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "toedits()",
-      "id": "src_pages_clientes_toedits"
-    },
-    {
-      "label": "computeDirty()",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "computedirty()",
-      "id": "src_pages_clientes_computedirty"
-    },
-    {
-      "label": "Clientes()",
-      "file_type": "code",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 1,
-      "norm_label": "clientes()",
-      "id": "src_pages_clientes_clientes"
     },
     {
       "label": "package.json",
@@ -1425,7 +1095,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "package.json",
       "id": "package"
     },
@@ -1435,7 +1105,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "name",
       "id": "package_name"
     },
@@ -1445,7 +1115,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "private",
       "id": "package_private"
     },
@@ -1455,7 +1125,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "version",
       "id": "package_version"
     },
@@ -1465,7 +1135,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "type",
       "id": "package_type"
     },
@@ -1475,7 +1145,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "engines",
       "id": "package_engines"
     },
@@ -1485,7 +1155,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "node",
       "id": "package_engines_node"
     },
@@ -1495,7 +1165,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "scripts",
       "id": "package_scripts"
     },
@@ -1505,7 +1175,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "dev",
       "id": "package_scripts_dev"
     },
@@ -1515,7 +1185,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "build",
       "id": "package_scripts_build"
     },
@@ -1525,7 +1195,7 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "lint",
       "id": "package_scripts_lint"
     },
@@ -1535,7 +1205,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 2,
+      "community": 0,
       "norm_label": "preview",
       "id": "package_scripts_preview"
     },
@@ -1545,7 +1215,7 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "dependencies",
       "id": "package_dependencies"
     },
@@ -1555,7 +1225,7 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "@ant-design/icons",
       "id": "package_dependencies_ant_design_icons"
     },
@@ -1565,7 +1235,7 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "@dnd-kit/core",
       "id": "package_dependencies_dnd_kit_core"
     },
@@ -1575,7 +1245,7 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "@dnd-kit/sortable",
       "id": "package_dependencies_dnd_kit_sortable"
     },
@@ -1585,7 +1255,7 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "@dnd-kit/utilities",
       "id": "package_dependencies_dnd_kit_utilities"
     },
@@ -1595,7 +1265,7 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "@tanstack/react-query",
       "id": "package_dependencies_tanstack_react_query"
     },
@@ -1605,7 +1275,7 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "antd",
       "id": "package_dependencies_antd"
     },
@@ -1615,7 +1285,7 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "axios",
       "id": "package_dependencies_axios"
     },
@@ -1625,7 +1295,7 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "leaflet",
       "id": "package_dependencies_leaflet"
     },
@@ -1635,7 +1305,7 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "react",
       "id": "package_dependencies_react"
     },
@@ -1645,7 +1315,7 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "react-dom",
       "id": "package_dependencies_react_dom"
     },
@@ -1655,7 +1325,7 @@
       "source_file": "package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "react-leaflet",
       "id": "package_dependencies_react_leaflet"
     },
@@ -1665,7 +1335,7 @@
       "source_file": "package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 5,
+      "community": 0,
       "norm_label": "react-router-dom",
       "id": "package_dependencies_react_router_dom"
     },
@@ -1675,7 +1345,7 @@
       "source_file": "package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "devdependencies",
       "id": "package_devdependencies"
     },
@@ -1685,7 +1355,7 @@
       "source_file": "package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "@types/react",
       "id": "package_devdependencies_types_react"
     },
@@ -1695,7 +1365,7 @@
       "source_file": "package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "@types/react-dom",
       "id": "package_devdependencies_types_react_dom"
     },
@@ -1705,7 +1375,7 @@
       "source_file": "package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "@vitejs/plugin-react",
       "id": "package_devdependencies_vitejs_plugin_react"
     },
@@ -1715,7 +1385,7 @@
       "source_file": "package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "oxlint",
       "id": "package_devdependencies_oxlint"
     },
@@ -1725,7 +1395,7 @@
       "source_file": "package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "playwright",
       "id": "package_devdependencies_playwright"
     },
@@ -1735,9 +1405,209 @@
       "source_file": "package.json",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 2,
+      "community": 7,
       "norm_label": "vite",
       "id": "package_devdependencies_vite"
+    },
+    {
+      "label": "AppHeader.jsx",
+      "file_type": "code",
+      "source_file": "src/components/Layout/AppHeader.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_layout_appheader",
+      "community": 12,
+      "norm_label": "appheader.jsx"
+    },
+    {
+      "label": "PAGE_TITLES",
+      "file_type": "code",
+      "source_file": "src/components/Layout/AppHeader.jsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_components_layout_appheader_page_titles",
+      "community": 12,
+      "norm_label": "page_titles"
+    },
+    {
+      "label": "AppHeader()",
+      "file_type": "code",
+      "source_file": "src/components/Layout/AppHeader.jsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_components_layout_appheader_appheader",
+      "community": 12,
+      "norm_label": "appheader()"
+    },
+    {
+      "label": "RouteEventsFields.jsx",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields",
+      "community": 5,
+      "norm_label": "routeeventsfields.jsx"
+    },
+    {
+      "label": "isCancelado()",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields_iscancelado",
+      "community": 5,
+      "norm_label": "iscancelado()"
+    },
+    {
+      "label": "normalizeSubEvents()",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields_normalizesubevents",
+      "community": 5,
+      "norm_label": "normalizesubevents()"
+    },
+    {
+      "label": "buildEvents()",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields_buildevents",
+      "community": 5,
+      "norm_label": "buildevents()"
+    },
+    {
+      "label": "processRouteEvents()",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields_processrouteevents",
+      "community": 5,
+      "norm_label": "processrouteevents()"
+    },
+    {
+      "label": "EventsFieldList()",
+      "file_type": "code",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "src_components_routeeventsfields_eventsfieldlist",
+      "community": 5,
+      "norm_label": "eventsfieldlist()"
+    },
+    {
+      "label": "Clientes.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_pages_clientes",
+      "community": 11,
+      "norm_label": "clientes.jsx"
+    },
+    {
+      "label": "DIRTY_CELL",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_pages_clientes_dirty_cell",
+      "community": 11,
+      "norm_label": "dirty_cell"
+    },
+    {
+      "label": "getClientId()",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_pages_clientes_getclientid",
+      "community": 11,
+      "norm_label": "getclientid()"
+    },
+    {
+      "label": "toEdits()",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_pages_clientes_toedits",
+      "community": 11,
+      "norm_label": "toedits()"
+    },
+    {
+      "label": "computeDirty()",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "src_pages_clientes_computedirty",
+      "community": 11,
+      "norm_label": "computedirty()"
+    },
+    {
+      "label": "Clientes()",
+      "file_type": "code",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "src_pages_clientes_clientes",
+      "community": 11,
+      "norm_label": "clientes()"
+    },
+    {
+      "label": "Maniobras.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_pages_maniobras",
+      "community": 5,
+      "norm_label": "maniobras.jsx"
+    },
+    {
+      "label": "filterByLabel()",
+      "file_type": "code",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_pages_maniobras_filterbylabel",
+      "community": 5,
+      "norm_label": "filterbylabel()"
+    },
+    {
+      "label": "glassGroupStyle",
+      "file_type": "code",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_pages_maniobras_glassgroupstyle",
+      "community": 5,
+      "norm_label": "glassgroupstyle"
+    },
+    {
+      "label": "sanitize()",
+      "file_type": "code",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_pages_maniobras_sanitize",
+      "community": 5,
+      "norm_label": "sanitize()"
+    },
+    {
+      "label": "Maniobras()",
+      "file_type": "code",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "src_pages_maniobras_maniobras",
+      "community": 5,
+      "norm_label": "maniobras()"
     },
     {
       "label": "RutasPersonalizadas.jsx",
@@ -1746,78 +1616,248 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_rutaspersonalizadas",
-      "community": 8,
+      "community": 5,
       "norm_label": "rutaspersonalizadas.jsx"
     },
     {
       "label": "sanitize()",
       "file_type": "code",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "src_pages_rutaspersonalizadas_sanitize",
-      "community": 8,
+      "community": 5,
       "norm_label": "sanitize()"
-    },
-    {
-      "label": "isCancelado()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_iscancelado",
-      "community": 8,
-      "norm_label": "iscancelado()"
-    },
-    {
-      "label": "normalizeSubEvents()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_normalizesubevents",
-      "community": 8,
-      "norm_label": "normalizesubevents()"
-    },
-    {
-      "label": "buildEvents()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_buildevents",
-      "community": 8,
-      "norm_label": "buildevents()"
     },
     {
       "label": "SortableIntermediatePoint()",
       "file_type": "code",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L44",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
-      "community": 8,
+      "community": 5,
       "norm_label": "sortableintermediatepoint()"
-    },
-    {
-      "label": "EventsFieldList()",
-      "file_type": "code",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L70",
-      "_origin": "ast",
-      "id": "src_pages_rutaspersonalizadas_eventsfieldlist",
-      "community": 8,
-      "norm_label": "eventsfieldlist()"
     },
     {
       "label": "RutasPersonalizadas()",
       "file_type": "code",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L135",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
-      "community": 8,
+      "community": 5,
       "norm_label": "rutaspersonalizadas()"
+    },
+    {
+      "label": "RutasSeguimiento.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento",
+      "community": 2,
+      "norm_label": "rutasseguimiento.jsx"
+    },
+    {
+      "label": "filterByLabel()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_filterbylabel",
+      "community": 2,
+      "norm_label": "filterbylabel()"
+    },
+    {
+      "label": "sanitize()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_sanitize",
+      "community": 2,
+      "norm_label": "sanitize()"
+    },
+    {
+      "label": "parseEvents()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_parseevents",
+      "community": 2,
+      "norm_label": "parseevents()"
+    },
+    {
+      "label": "getRouteLocations()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_getroutelocations",
+      "community": 2,
+      "norm_label": "getroutelocations()"
+    },
+    {
+      "label": "STATUS_OPTIONS",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_status_options",
+      "community": 2,
+      "norm_label": "status_options"
+    },
+    {
+      "label": "toOptions()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_tooptions",
+      "community": 2,
+      "norm_label": "tooptions()"
+    },
+    {
+      "label": "buildPointMap()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_buildpointmap",
+      "community": 2,
+      "norm_label": "buildpointmap()"
+    },
+    {
+      "label": "ExpandedRow()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_expandedrow",
+      "community": 2,
+      "norm_label": "expandedrow()"
+    },
+    {
+      "label": "toComparableStr()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L183",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_tocomparablestr",
+      "community": 2,
+      "norm_label": "tocomparablestr()"
+    },
+    {
+      "label": "statusColor()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L187",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_statuscolor",
+      "community": 2,
+      "norm_label": "statuscolor()"
+    },
+    {
+      "label": "RutasSeguimiento()",
+      "file_type": "code",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L197",
+      "_origin": "ast",
+      "id": "src_pages_rutasseguimiento_rutasseguimiento",
+      "community": 2,
+      "norm_label": "rutasseguimiento()"
+    },
+    {
+      "label": "Transportistas.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_pages_transportistas",
+      "community": 2,
+      "norm_label": "transportistas.jsx"
+    },
+    {
+      "label": "EcoFormFields()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_ecoformfields",
+      "community": 2,
+      "norm_label": "ecoformfields()"
+    },
+    {
+      "label": "CamionesSection()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_camionessection",
+      "community": 2,
+      "norm_label": "camionessection()"
+    },
+    {
+      "label": "OperatorFormFields()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L233",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_operatorformfields",
+      "community": 2,
+      "norm_label": "operatorformfields()"
+    },
+    {
+      "label": "OperadoresSection()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L280",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_operadoressection",
+      "community": 2,
+      "norm_label": "operadoressection()"
+    },
+    {
+      "label": "ExpandedRow()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L444",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_expandedrow",
+      "community": 2,
+      "norm_label": "expandedrow()"
+    },
+    {
+      "label": "Transportistas()",
+      "file_type": "code",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L455",
+      "_origin": "ast",
+      "id": "src_pages_transportistas_transportistas",
+      "community": 2,
+      "norm_label": "transportistas()"
+    },
+    {
+      "label": "toast.js",
+      "file_type": "code",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_utils_toast",
+      "community": 2,
+      "norm_label": "toast.js"
+    },
+    {
+      "label": "toast",
+      "file_type": "code",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_utils_toast_toast",
+      "community": 2,
+      "norm_label": "toast"
     }
   ],
   "links": [
@@ -2141,48 +2181,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_components_globalloader",
-      "target": "src_components_tillogo_tillogo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_appheader",
-      "target": "src_components_layout_appheader_appheader"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_appheader",
-      "target": "src_components_layout_appheader_page_titles"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_appheader",
-      "target": "src_components_tillogo"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Layout/AppHeader.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_appheader",
       "target": "src_components_tillogo_tillogo"
     },
     {
@@ -3167,393 +3165,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_filterbylabel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_glassgroupstyle"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_maniobras"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_pages_maniobras_sanitize"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_utils_backendmessage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_maniobras",
-      "target": "src_utils_backendmessage_backendmessage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/pages/Maniobras.jsx",
-      "source_location": "L100",
-      "weight": 1.0,
-      "source": "src_pages_maniobras_maniobras",
-      "target": "src_utils_backendmessage_backendmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/utils/backendMessage.js",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_utils_backendmessage",
       "target": "src_utils_backendmessage_backendmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_buildpointmap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L101",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_expandedrow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_filterbylabel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_getroutelocations"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_parseevents"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L197",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_rutasseguimiento"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_sanitize"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_status_options"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L187",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_statuscolor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L183",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_tocomparablestr"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_tooptions"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L102",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento_expandedrow",
-      "target": "src_pages_rutasseguimiento_parseevents"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L678",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_parseevents"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento_buildpointmap",
-      "target": "src_pages_rutasseguimiento_tooptions"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L608",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento_rutasseguimiento",
-      "target": "src_pages_rutasseguimiento_buildpointmap"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_rutasseguimiento_expandedrow",
-      "target": "src_pages_rutasseguimiento_statuscolor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L73",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_camionessection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_ecoformfields"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L444",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_expandedrow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L280",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_operadoressection"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L233",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_operatorformfields"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Transportistas.jsx",
-      "source_location": "L455",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_transportistas",
-      "target": "src_pages_transportistas_transportistas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes",
-      "target": "src_pages_clientes_clientes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes",
-      "target": "src_pages_clientes_computedirty"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes",
-      "target": "src_pages_clientes_dirty_cell"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes",
-      "target": "src_pages_clientes_getclientid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes",
-      "target": "src_pages_clientes_toedits"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_getclientid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L65",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_toedits"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Clientes.jsx",
-      "source_location": "L130",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientes_clientes",
-      "target": "src_pages_clientes_computedirty"
     },
     {
       "relation": "contains",
@@ -3868,48 +3485,388 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L35",
+      "source_file": "src/components/Layout/AppHeader.jsx",
+      "source_location": "L17",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_buildevents",
+      "source": "src_components_layout_appheader",
+      "target": "src_components_layout_appheader_appheader",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L70",
+      "source_file": "src/components/Layout/AppHeader.jsx",
+      "source_location": "L9",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_eventsfieldlist",
+      "source": "src_components_layout_appheader",
+      "target": "src_components_layout_appheader_page_titles",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L20",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L19",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_iscancelado",
+      "source": "src_components_routeeventsfields",
+      "target": "src_components_routeeventsfields_buildevents",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields",
+      "target": "src_components_routeeventsfields_eventsfieldlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields",
+      "target": "src_components_routeeventsfields_iscancelado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields",
+      "target": "src_components_routeeventsfields_normalizesubevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields",
+      "target": "src_components_routeeventsfields_processrouteevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_components_routeeventsfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_components_routeeventsfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields_buildevents",
+      "target": "src_components_routeeventsfields_iscancelado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_components_routeeventsfields_processrouteevents",
+      "target": "src_components_routeeventsfields_iscancelado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_components_routeeventsfields_iscancelado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L272",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
+      "target": "src_components_routeeventsfields_iscancelado"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L24",
       "weight": 1.0,
+      "source": "src_components_routeeventsfields_buildevents",
+      "target": "src_components_routeeventsfields_normalizesubevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_components_routeeventsfields_buildevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
       "source": "src_pages_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_normalizesubevents",
+      "target": "src_components_routeeventsfields_buildevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_components_routeeventsfields_processrouteevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_components_routeeventsfields_processrouteevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_components_routeeventsfields_eventsfieldlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_components_routeeventsfields_eventsfieldlist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_pages_clientes_clientes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_pages_clientes_computedirty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_pages_clientes_dirty_cell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_pages_clientes_getclientid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_pages_clientes_toedits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_utils_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_pages_clientes",
+      "target": "src_utils_toast_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "src_pages_clientes_clientes",
+      "target": "src_pages_clientes_getclientid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "src_pages_clientes_clientes",
+      "target": "src_pages_clientes_toedits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Clientes.jsx",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "src_pages_clientes_clientes",
+      "target": "src_pages_clientes_computedirty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_pages_maniobras_filterbylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_pages_maniobras_glassgroupstyle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_pages_maniobras_maniobras",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_pages_maniobras_sanitize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_utils_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Maniobras.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_pages_maniobras",
+      "target": "src_utils_toast_toast",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L135",
+      "source_location": "L47",
       "weight": 1.0,
       "source": "src_pages_rutaspersonalizadas",
       "target": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
@@ -3919,7 +3876,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "src_pages_rutaspersonalizadas",
       "target": "src_pages_rutaspersonalizadas_sanitize",
@@ -3929,43 +3886,311 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L44",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "src_pages_rutaspersonalizadas",
       "target": "src_pages_rutaspersonalizadas_sortableintermediatepoint",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L39",
+      "source_location": "L11",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas_buildevents",
-      "target": "src_pages_rutaspersonalizadas_iscancelado",
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_utils_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasPersonalizadas.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_pages_rutaspersonalizadas",
+      "target": "src_utils_toast_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_buildpointmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_expandedrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_filterbylabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_getroutelocations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_parseevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_rutasseguimiento",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_sanitize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_status_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_statuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_tocomparablestr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_tooptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_utils_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_utils_toast_toast",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L370",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L102",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas_rutaspersonalizadas",
-      "target": "src_pages_rutaspersonalizadas_iscancelado",
+      "source": "src_pages_rutasseguimiento_expandedrow",
+      "target": "src_pages_rutasseguimiento_parseevents",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/RutasPersonalizadas.jsx",
-      "source_location": "L40",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L678",
       "weight": 1.0,
-      "source": "src_pages_rutaspersonalizadas_buildevents",
-      "target": "src_pages_rutaspersonalizadas_normalizesubevents",
+      "source": "src_pages_rutasseguimiento_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_parseevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento_buildpointmap",
+      "target": "src_pages_rutasseguimiento_tooptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L608",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento_rutasseguimiento",
+      "target": "src_pages_rutasseguimiento_buildpointmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento_expandedrow",
+      "target": "src_pages_rutasseguimiento_statuscolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_camionessection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_ecoformfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L444",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_expandedrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_operadoressection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_operatorformfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L455",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_pages_transportistas_transportistas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_utils_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Transportistas.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_pages_transportistas",
+      "target": "src_utils_toast_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/toast.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_utils_toast",
+      "target": "src_utils_toast_toast",
       "confidence_score": 1.0
     }
   ],
@@ -3997,5 +4222,5 @@
       "source_file": ".agents/skills/caveman/SKILL.md"
     }
   ],
-  "built_at_commit": "5a76da27a0f974b48de61686ac7601494b6590a1"
+  "built_at_commit": "9c04870b58f9b84b4563158c1f655de28eee54a8"
 }

@@ -3,7 +3,7 @@ import { Typography, Button, Table, Input, Space, Popconfirm, Empty, Modal, Form
 import { DeleteOutlined, SaveOutlined, PlusOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { clientesService } from '../services/clientesService'
-import { backendMessage } from '../utils/backendMessage'
+import { toast } from '../utils/toast'
 
 const { Title } = Typography
 
@@ -76,19 +76,19 @@ export default function Clientes() {
     meta:       { label: 'Registrando cliente...' },
     mutationFn: values => clientesService.create(values),
     onSuccess:  () => {
-      Modal.success({ content: 'Cliente registrado' })
+      toast.success('Cliente registrado')
       setModalOpen(false)
       form.resetFields()
       qc.refetchQueries({ queryKey: ['clientes'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el cliente') }),
+    onError: err => toast.error('Error al registrar el cliente', err),
   })
 
   const updateMutation = useMutation({
     meta:       { label: 'Guardando cambios...' },
     mutationFn: payload => clientesService.update(payload),
     onSuccess:  (_, variables) => {
-      Modal.success({ content: 'Cliente actualizado' })
+      toast.success('Cliente actualizado')
       // Se descarta el edit local del renglón guardado para que, al llegar el
       // refetch, el useEffect lo reconstruya desde los datos frescos del backend
       // (en vez de seguir mostrando lo que el usuario tecleó).
@@ -99,17 +99,17 @@ export default function Clientes() {
       })
       qc.invalidateQueries({ queryKey: ['clientes'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al actualizar el cliente') }),
+    onError: err => toast.error('Error al actualizar el cliente', err),
   })
 
   const deleteMutation = useMutation({
     meta:       { label: 'Eliminando cliente...' },
     mutationFn: client_id => clientesService.remove(client_id),
     onSuccess:  () => {
-      Modal.success({ content: 'Cliente eliminado' })
+      toast.success('Cliente eliminado')
       qc.invalidateQueries({ queryKey: ['clientes'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el cliente') }),
+    onError: err => toast.error('Error al eliminar el cliente', err),
   })
 
   // Nuevos objetos en cada cambio de edits → el Table detecta el cambio y re-renderiza.

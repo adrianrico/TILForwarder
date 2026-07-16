@@ -14,7 +14,7 @@ import { maniobrasService } from '../services/maniobrasService'
 import { clientesService } from '../services/clientesService'
 import { transportistasService } from '../services/transportistasService'
 import { rutasService } from '../services/rutasService'
-import { backendMessage } from '../utils/backendMessage'
+import { toast } from '../utils/toast'
 
 const { Title } = Typography
 
@@ -326,23 +326,23 @@ export default function RutasSeguimiento() {
   const saveMutation = useMutation({
     mutationFn: d => maniobrasService.save(d),
     onSuccess: () => {
-      Modal.success({ content: 'Maniobra actualizada correctamente' })
+      toast.success('Maniobra actualizada correctamente')
       queryClient.invalidateQueries({ queryKey: ['maniobras'] })
       setDrawerOpen(false)
       setEditing(null)
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar los cambios') }),
+    onError: err => toast.error('Error al guardar los cambios', err),
   })
 
   const [updatingId, setUpdatingId] = useState(null)
   const locationMutation = useMutation({
     mutationFn: d => maniobrasService.updateLocation(d),
     onSuccess: () => {
-      Modal.success({ content: 'Ubicación actualizada' })
+      toast.success('Ubicación actualizada')
       queryClient.invalidateQueries({ queryKey: ['maniobras'] })
       setUpdatingId(null)
     },
-    onError: err => { Modal.error({ content: backendMessage(err, 'Error al actualizar la ubicación') }); setUpdatingId(null) },
+    onError: err => { toast.error('Error al actualizar la ubicación', err); setUpdatingId(null) },
   })
 
   function handleLocationSave(man_id, man_current_location, man_current_status) {
@@ -353,10 +353,10 @@ export default function RutasSeguimiento() {
   const deleteMutation = useMutation({
     mutationFn: man_id => maniobrasService.remove({ man_id }),
     onSuccess: () => {
-      Modal.success({ content: 'Maniobra eliminada correctamente' })
+      toast.success('Maniobra eliminada correctamente')
       queryClient.invalidateQueries({ queryKey: ['maniobras'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar la maniobra') }),
+    onError: err => toast.error('Error al eliminar la maniobra', err),
   })
 
   function openEdit(record) {
@@ -476,7 +476,7 @@ export default function RutasSeguimiento() {
           man_intermediate_stops: newRoutePayload.route_intermediate_stops,
         }
       } catch {
-        Modal.error({ content: 'Error al crear la nueva ruta' })
+        toast.error('Error al crear la nueva ruta')
         return
       }
     } else if (selectedRouteId) {
@@ -492,7 +492,7 @@ export default function RutasSeguimiento() {
         })),
       }
     } else {
-      Modal.error({ content: 'Selecciona una ruta' })
+      toast.error('Selecciona una ruta')
       return
     }
 

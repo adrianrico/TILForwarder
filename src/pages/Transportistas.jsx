@@ -6,7 +6,7 @@ import {
 import { DeleteOutlined, EditOutlined, PlusOutlined, SaveOutlined, TruckOutlined, TeamOutlined, SettingOutlined } from '@ant-design/icons'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { transportistasService } from '../services/transportistasService'
-import { backendMessage } from '../utils/backendMessage'
+import { toast } from '../utils/toast'
 
 const { Title, Text } = Typography
 
@@ -89,33 +89,33 @@ function CamionesSection({ transporter }) {
     meta:       { label: 'Guardando camión...' },
     mutationFn: (data) => transportistasService.saveEco(data),
     onSuccess: () => {
-      Modal.success({ content: 'Camión actualizado' })
+      toast.success('Camión actualizado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setEditModal(null)
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el camión') }),
+    onError: err => toast.error('Error al guardar el camión', err),
   })
 
   const newEcoMutation = useMutation({
     meta:       { label: 'Registrando camión...' },
     mutationFn: (data) => transportistasService.saveEco(data),
     onSuccess: () => {
-      Modal.success({ content: 'Camión registrado' })
+      toast.success('Camión registrado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setAddModal(false)
       addForm.resetFields()
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el camión') }),
+    onError: err => toast.error('Error al registrar el camión', err),
   })
 
   const deleteEcoMutation = useMutation({
     meta:       { label: 'Eliminando camión...' },
     mutationFn: (data) => transportistasService.deleteEco(data),
     onSuccess: () => {
-      Modal.success({ content: 'Camión eliminado' })
+      toast.success('Camión eliminado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el camión') }),
+    onError: err => toast.error('Error al eliminar el camión', err),
   })
 
   const columns = [
@@ -296,33 +296,33 @@ function OperadoresSection({ transporter }) {
     meta:       { label: 'Guardando operador...' },
     mutationFn: (data) => transportistasService.saveOperator(data),
     onSuccess: () => {
-      Modal.success({ content: 'Operador actualizado' })
+      toast.success('Operador actualizado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setEditModal(null)
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el operador') }),
+    onError: err => toast.error('Error al guardar el operador', err),
   })
 
   const newOpMutation = useMutation({
     meta:       { label: 'Registrando operador...' },
     mutationFn: (data) => transportistasService.saveOperator(data),
     onSuccess: () => {
-      Modal.success({ content: 'Operador registrado' })
+      toast.success('Operador registrado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setAddModal(false)
       addForm.resetFields()
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el operador') }),
+    onError: err => toast.error('Error al registrar el operador', err),
   })
 
   const deleteOpMutation = useMutation({
     meta:       { label: 'Eliminando operador...' },
     mutationFn: (data) => transportistasService.deleteOperator(data),
     onSuccess: () => {
-      Modal.success({ content: 'Operador eliminado' })
+      toast.success('Operador eliminado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el operador') }),
+    onError: err => toast.error('Error al eliminar el operador', err),
   })
 
   const columns = [
@@ -520,32 +520,32 @@ export default function Transportistas() {
     meta:       { label: 'Guardando transportista...' },
     mutationFn: (values) => transportistasService.createOrUpdate(values),
     onSuccess: () => {
-      Modal.success({ content: 'Transportista actualizado' })
+      toast.success('Transportista actualizado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al guardar el transportista') }),
+    onError: err => toast.error('Error al guardar el transportista', err),
   })
 
   const createMutation = useMutation({
     meta:       { label: 'Registrando transportista...' },
     mutationFn: (values) => transportistasService.createOrUpdate(values),
     onSuccess: () => {
-      Modal.success({ content: 'Transportista registrado' })
+      toast.success('Transportista registrado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
       setModalOpen(false)
       form.resetFields()
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al registrar el transportista') }),
+    onError: err => toast.error('Error al registrar el transportista', err),
   })
 
   const deleteMutation = useMutation({
     meta:       { label: 'Eliminando transportista...' },
     mutationFn: (payload) => transportistasService.remove(payload),
     onSuccess: () => {
-      Modal.success({ content: 'Transportista eliminado' })
+      toast.success('Transportista eliminado')
       qc.invalidateQueries({ queryKey: ['transportistas'] })
     },
-    onError: err => Modal.error({ content: backendMessage(err, 'Error al eliminar el transportista') }),
+    onError: err => toast.error('Error al eliminar el transportista', err),
   })
 
   const filtered = (Array.isArray(data) ? data : []).filter((t) =>
