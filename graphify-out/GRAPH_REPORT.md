@@ -1,27 +1,27 @@
 # Graph Report - .  (2026-07-27)
 
 ## Corpus Check
-- 2 files · ~21,669 words
+- 2 files · ~21,849 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 174 nodes · 230 edges · 21 communities (13 shown, 8 thin omitted)
+- 174 nodes · 231 edges · 21 communities (13 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- Package Manifest & Dependencies
 - Dashboard, Services & API Layer
-- Rutas Seguimiento, Transportistas & Toast
+- Dev Dependencies
 - App Shell & Chrome Components
 - Project Docs & Deploy Config
+- Rutas Seguimiento & Location Timeline
 - Maniobras, Rutas Personalizadas & Route Events
+- Clientes, Transportistas & Toast
+- Package Dependencies
 - Caveman Skill Docs
-- Dev Dependencies
 - Icon Sprite Assets
 - Oxlint Config
 - Layout Sidebar & Steering Icon
-- Clientes Page
 - App Header
 - Favicon Asset
 - Truck Icon Asset
@@ -63,65 +63,65 @@
 
 ## Communities (21 total, 8 thin omitted)
 
-### Community 0 - "Package Manifest & Dependencies"
+### Community 0 - "Dashboard, Services & API Layer"
 Cohesion: 0.17
 Nodes (14): buildColumns(), ManeuversTable(), statusColor(), StatCard(), Dashboard(), isCancelled(), MEXICO_CENTER, parseCoords() (+6 more)
 
-### Community 1 - "Dashboard, Services & API Layer"
+### Community 1 - "Dev Dependencies"
 Cohesion: 0.11
 Nodes (18): devDependencies, oxlint, playwright, @types/react, @types/react-dom, vite, @vitejs/plugin-react, engines (+10 more)
 
-### Community 2 - "Rutas Seguimiento, Transportistas & Toast"
+### Community 2 - "App Shell & Chrome Components"
 Cohesion: 0.16
 Nodes (10): App(), queryClient, GlobalLoader(), AppLayout(), GLASS, menuItems, ServerStatus(), TILLogo() (+2 more)
 
-### Community 3 - "App Shell & Chrome Components"
+### Community 3 - "Project Docs & Deploy Config"
 Cohesion: 0.13
 Nodes (16): src/main.jsx Entry Script, TIL App Entry HTML, truck_favicon.png, Backend API Configuration, maylob_backend Service, Local MongoDB, Oxc, React Compiler (+8 more)
 
-### Community 4 - "Project Docs & Deploy Config"
-Cohesion: 0.21
+### Community 4 - "Rutas Seguimiento & Location Timeline"
+Cohesion: 0.22
 Nodes (10): LocationStatusTimeline(), useIsDesktop(), buildPointMap(), ExpandedRow(), normalizeEvents(), parseEvents(), parseManStatus(), RutasSeguimiento() (+2 more)
 
 ### Community 5 - "Maniobras, Rutas Personalizadas & Route Events"
 Cohesion: 0.24
 Nodes (8): buildEvents(), EventsFieldList(), isCancelado(), normalizeSubEvents(), processRouteEvents(), glassGroupStyle, Maniobras(), RutasPersonalizadas()
 
-### Community 6 - "Caveman Skill Docs"
+### Community 6 - "Clientes, Transportistas & Toast"
 Cohesion: 0.18
 Nodes (7): Clientes(), computeDirty(), DIRTY_CELL, getClientId(), toEdits(), Transportistas(), toast
 
-### Community 7 - "Dev Dependencies"
+### Community 7 - "Package Dependencies"
 Cohesion: 0.15
 Nodes (13): dependencies, @ant-design/icons, antd, axios, @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities, leaflet (+5 more)
 
-### Community 8 - "Icon Sprite Assets"
+### Community 8 - "Caveman Skill Docs"
 Cohesion: 0.24
 Nodes (10): Caveman Auto-Clarity Rule, Caveman Skill, Caveman Intensity Levels, Caveman Invocation Commands, Caveman Auto-Clarity Exceptions, Caveman Boundaries Rule, Caveman Skill (LLM Instructions), Caveman Compression Rules (+2 more)
 
-### Community 9 - "Oxlint Config"
+### Community 9 - "Icon Sprite Assets"
 Cohesion: 0.29
 Nodes (7): Bluesky social icon (butterfly logo), Discord social icon (game controller/mask logo), Documentation icon (document with chat/arrow bubbles, purple outline), GitHub icon (Octocat/cat silhouette logo), Generic social/community icon (person with star badge, purple outline), SVG Icon Sprite Sheet (icons.svg), X (Twitter) icon
 
-### Community 10 - "Layout Sidebar & Steering Icon"
+### Community 10 - "Oxlint Config"
 Cohesion: 0.33
 Nodes (5): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema
 
 ## Knowledge Gaps
-- **64 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `queryClient` (+59 more)
+- **63 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `queryClient` (+58 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `Dev Dependencies` to `Dashboard, Services & API Layer`?**
+- **Why does `dependencies` connect `Package Dependencies` to `Dev Dependencies`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
-- **Why does `SteeringWheelOutlined()` connect `Clientes Page` to `Package Manifest & Dependencies`, `Rutas Seguimiento, Transportistas & Toast`?**
+- **Why does `SteeringWheelOutlined()` connect `Layout Sidebar & Steering Icon` to `Dashboard, Services & API Layer`, `App Shell & Chrome Components`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
-  _66 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Dashboard, Services & API Layer` be split into smaller, more focused modules?**
+  _65 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Dev Dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `App Shell & Chrome Components` be split into smaller, more focused modules?**
+- **Should `Project Docs & Deploy Config` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

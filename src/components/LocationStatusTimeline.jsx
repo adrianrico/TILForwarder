@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Modal, Steps, Timeline, Tag, Space } from 'antd'
-import { EnvironmentOutlined, CheckCircleFilled, StopOutlined } from '@ant-design/icons'
+import { Modal, Steps, Timeline, Tag, Space, Button } from 'antd'
+import { EnvironmentOutlined, CheckCircleFilled, StopOutlined, SaveOutlined } from '@ant-design/icons'
 
 const CANCEL_EVENT = 'CANCELADO'
 
@@ -17,7 +17,7 @@ function useIsDesktop(breakpoint = 768) {
   return isDesktop
 }
 
-export function LocationStatusTimeline({ points = [], location, status, subevent, onChange, disabled }) {
+export function LocationStatusTimeline({ points = [], location, status, subevent, onChange, disabled, onSave, saveDisabled, saving }) {
   const [open, setOpen] = useState(false)
   const isDesktop = useIsDesktop()
 
@@ -46,6 +46,19 @@ export function LocationStatusTimeline({ points = [], location, status, subevent
   }
 
   const sentStatus = status && subevent ? `${status} / ${subevent}` : (status ?? '')
+  // Index of the currently selected event within its location's own sequence -
+  // everything before it is an already-completed step and gets a checkmark too.
+  const currentEventIndex = events.findIndex(e => e.event_name === status)
+
+  async function handleSave() {
+    if (!onSave) return
+    try {
+      await onSave({ location, status, subevent })
+      setOpen(false)
+    } catch {
+      // keep the modal open on failure so the user can retry
+    }
+  }
 
   return (
     <>
@@ -71,7 +84,19 @@ export function LocationStatusTimeline({ points = [], location, status, subevent
       <Modal
         open={open}
         onCancel={() => setOpen(false)}
-        footer={null}
+        footer={onSave ? [
+          <Button key="cancel" onClick={() => setOpen(false)}>Cerrar</Button>,
+          <Button
+            key="save"
+            type="primary"
+            icon={<SaveOutlined />}
+            loading={saving}
+            disabled={saveDisabled}
+            onClick={handleSave}
+          >
+            Guardar
+          </Button>,
+        ] : null}
         destroyOnClose
         centered
         width="96vw"
@@ -96,19 +121,25 @@ export function LocationStatusTimeline({ points = [], location, status, subevent
                 <span style={{ color: '#aaa', fontSize: 12 }}>Selecciona una ubicación para ver sus pasos</span>
               ) : (
                 <Timeline
-                  items={events.map(e => {
-                    const isCancel   = e.event_name === CANCEL_EVENT
-                    const isSelected = e.event_name === status
+                  items={events.map((e, idx) => {
+                    const isCancel    = e.event_name === CANCEL_EVENT
+                    const isSelected  = e.event_name === status
+                    // A step before the currently selected one was necessarily passed
+                    // through already, so it counts as completed too (but cancel is a
+                    // side branch, not a sequence step, so it never marks others done).
+                    const isCompleted = !isCancel && currentEventIndex >= 0 && idx < currentEventIndex
+                    const isDone      = isSelected || isCompleted
+                    const currentSubIndex = e.sub_events.indexOf(subevent)
                     return {
                       key: e.event_name,
-                      color: isSelected ? (isCancel ? 'red' : 'blue') : 'gray',
-                      dot: isSelected ? <CheckCircleFilled style={{ color: isCancel ? '#ff4d4f' : '#1677ff' }} /> : (isCancel ? <StopOutlined style={{ color: '#ff4d4f' }} /> : undefined),
+                      color: isDone ? (isCancel ? 'red' : 'blue') : 'gray',
+                      dot: isDone ? <CheckCircleFilled style={{ color: isCancel ? '#ff4d4f' : '#1677ff' }} /> : (isCancel ? <StopOutlined style={{ color: '#ff4d4f' }} /> : undefined),
                       children: (
                         <div>
                           <div
                             style={{
                               cursor:   'pointer',
-                              fontWeight: isSelected ? 600 : 400,
+                              fontWeight: isSelected ? 600 : (isCompleted ? 500 : 400),
                               fontSize:   13,
                               color:      isCancel ? '#ff4d4f' : undefined,
                             }}
@@ -119,16 +150,21 @@ export function LocationStatusTimeline({ points = [], location, status, subevent
                           {isSelected && e.sub_events.length > 0 && (
                             <div style={{ paddingLeft: 10, marginTop: 4, borderLeft: '2px dashed #0695E4' }}>
                               <Space size={[4, 4]} wrap>
-                                {e.sub_events.map(se => (
-                                  <Tag.CheckableTag
-                                    key={se}
-                                    checked={se === subevent}
-                                    onChange={() => selectSubEvent(se)}
-                                  >
-                                    {se === subevent && <CheckCircleFilled style={{ marginRight: 4 }} />}
-                                    {se}
-                                  </Tag.CheckableTag>
-                                ))}
+                                {e.sub_events.map((se, subIdx) => {
+                                  const isSubSelected  = se === subevent
+                                  const isSubCompleted = currentSubIndex >= 0 && subIdx < currentSubIndex
+                                  const isSubDone      = isSubSelected || isSubCompleted
+                                  return (
+                                    <Tag.CheckableTag
+                                      key={se}
+                                      checked={isSubDone}
+                                      onChange={() => selectSubEvent(se)}
+                                    >
+                                      {isSubDone && <CheckCircleFilled style={{ marginRight: 4 }} />}
+                                      {se}
+                                    </Tag.CheckableTag>
+                                  )
+                                })}
                               </Space>
                             </div>
                           )}

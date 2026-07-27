@@ -176,6 +176,21 @@ function toComparableStr(vals) {
   return JSON.stringify(vals, (_, v) => (dayjs.isDayjs(v) ? v.format('YYYY-MM-DD') : v))
 }
 
+function seguimientoState(record, rutas) {
+  const points       = buildPointMap(record, rutas)
+  const location     = record._loc
+  const status       = record._sts
+  const subevent     = record._sub
+  const matchedPoint = points.find(p => p.value === location)
+  const isValid      = !!location && !!matchedPoint
+  const noLocation   = !isValid || matchedPoint.events.length === 0
+  const sentStatus   = status && subevent ? `${status} / ${subevent}` : (status ?? '')
+  const unchanged =
+    location   === (record.man_current_location ?? '') &&
+    sentStatus === (record.man_current_status   ?? '')
+  return { points, location, status, subevent, sentStatus, saveDisabled: noLocation || unchanged || !status }
+}
+
 function statusColor(v) {
   if (typeof v !== 'string' || !v) return 'default'
   const s = v.toLowerCase()
@@ -343,7 +358,7 @@ export default function RutasSeguimiento() {
 
   function handleLocationSave(man_id, man_current_location, man_current_status) {
     setUpdatingId(man_id)
-    locationMutation.mutate({ man_id, man_current_location, man_current_status })
+    return locationMutation.mutateAsync({ man_id, man_current_location, man_current_status })
   }
 
   const deleteMutation = useMutation({
@@ -526,17 +541,7 @@ export default function RutasSeguimiento() {
       key: 'actions',
       width: 115,
       render: (_, record) => {
-        const points       = buildPointMap(record, rutas)
-        const location     = record._loc
-        const status       = record._sts
-        const subevent     = record._sub
-        const matchedPoint = points.find(p => p.value === location)
-        const isValid      = !!location && !!matchedPoint
-        const noLocation   = !isValid || matchedPoint.events.length === 0
-        const sentStatus   = status && subevent ? `${status} / ${subevent}` : (status ?? '')
-        const unchanged =
-          location   === (record.man_current_location ?? '') &&
-          sentStatus === (record.man_current_status   ?? '')
+        const { location, sentStatus, saveDisabled } = seguimientoState(record, rutas)
         return (
           <Space size={4} onClick={e => e.stopPropagation()}>
             <Button
@@ -544,7 +549,7 @@ export default function RutasSeguimiento() {
               size="small"
               icon={<SaveOutlined />}
               loading={locationMutation.isPending && updatingId === record.man_id}
-              disabled={noLocation || unchanged || !status}
+              disabled={saveDisabled}
               onClick={() => handleLocationSave(record.man_id, location, sentStatus)}
             />
             <Button
@@ -610,15 +615,21 @@ export default function RutasSeguimiento() {
       title: 'Seguimiento',
       key: 'seguimiento',
       width: 190,
-      render: (_, r) => (
-        <LocationStatusTimeline
-          points={buildPointMap(r, rutas)}
-          location={r._loc}
-          status={r._sts}
-          subevent={r._sub}
-          onChange={next => setCellState(prev => ({ ...prev, [r.man_id]: next }))}
-        />
-      ),
+      render: (_, r) => {
+        const { points, location, status, subevent, sentStatus, saveDisabled } = seguimientoState(r, rutas)
+        return (
+          <LocationStatusTimeline
+            points={points}
+            location={location}
+            status={status}
+            subevent={subevent}
+            onChange={next => setCellState(prev => ({ ...prev, [r.man_id]: next }))}
+            onSave={() => handleLocationSave(r.man_id, location, sentStatus)}
+            saveDisabled={saveDisabled}
+            saving={locationMutation.isPending && updatingId === r.man_id}
+          />
+        )
+      },
     },
     {
       title: 'PROGRESO',
