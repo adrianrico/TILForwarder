@@ -1,11 +1,11 @@
-# Graph Report - .  (2026-07-16)
+# Graph Report - .  (2026-07-27)
 
 ## Corpus Check
-- 1 files · ~21,370 words
+- 2 files · ~21,669 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 171 nodes · 225 edges · 21 communities (13 shown, 8 thin omitted)
+- 174 nodes · 230 edges · 21 communities (13 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
@@ -64,12 +64,12 @@
 ## Communities (21 total, 8 thin omitted)
 
 ### Community 0 - "Package Manifest & Dependencies"
-Cohesion: 0.08
-Nodes (24): dependencies, @ant-design/icons, antd, axios, @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities, leaflet (+16 more)
-
-### Community 1 - "Dashboard, Services & API Layer"
 Cohesion: 0.17
 Nodes (14): buildColumns(), ManeuversTable(), statusColor(), StatCard(), Dashboard(), isCancelled(), MEXICO_CENTER, parseCoords() (+6 more)
+
+### Community 1 - "Dashboard, Services & API Layer"
+Cohesion: 0.11
+Nodes (18): devDependencies, oxlint, playwright, @types/react, @types/react-dom, vite, @vitejs/plugin-react, engines (+10 more)
 
 ### Community 2 - "Rutas Seguimiento, Transportistas & Toast"
 Cohesion: 0.16
@@ -80,24 +80,24 @@ Cohesion: 0.13
 Nodes (16): src/main.jsx Entry Script, TIL App Entry HTML, truck_favicon.png, Backend API Configuration, maylob_backend Service, Local MongoDB, Oxc, React Compiler (+8 more)
 
 ### Community 4 - "Project Docs & Deploy Config"
+Cohesion: 0.21
+Nodes (10): LocationStatusTimeline(), useIsDesktop(), buildPointMap(), ExpandedRow(), normalizeEvents(), parseEvents(), parseManStatus(), RutasSeguimiento() (+2 more)
+
+### Community 5 - "Maniobras, Rutas Personalizadas & Route Events"
 Cohesion: 0.24
 Nodes (8): buildEvents(), EventsFieldList(), isCancelado(), normalizeSubEvents(), processRouteEvents(), glassGroupStyle, Maniobras(), RutasPersonalizadas()
 
-### Community 5 - "Maniobras, Rutas Personalizadas & Route Events"
+### Community 6 - "Caveman Skill Docs"
 Cohesion: 0.18
 Nodes (7): Clientes(), computeDirty(), DIRTY_CELL, getClientId(), toEdits(), Transportistas(), toast
 
-### Community 6 - "Caveman Skill Docs"
-Cohesion: 0.26
-Nodes (8): buildPointMap(), ExpandedRow(), normalizeEvents(), parseEvents(), parseManStatus(), RutasSeguimiento(), STATUS_OPTIONS, statusColor()
-
 ### Community 7 - "Dev Dependencies"
-Cohesion: 0.24
-Nodes (10): Caveman Auto-Clarity Rule, Caveman Skill, Caveman Intensity Levels, Caveman Invocation Commands, Caveman Auto-Clarity Exceptions, Caveman Boundaries Rule, Caveman Skill (LLM Instructions), Caveman Compression Rules (+2 more)
+Cohesion: 0.15
+Nodes (13): dependencies, @ant-design/icons, antd, axios, @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities, leaflet (+5 more)
 
 ### Community 8 - "Icon Sprite Assets"
-Cohesion: 0.29
-Nodes (7): devDependencies, oxlint, playwright, @types/react, @types/react-dom, vite, @vitejs/plugin-react
+Cohesion: 0.24
+Nodes (10): Caveman Auto-Clarity Rule, Caveman Skill, Caveman Intensity Levels, Caveman Invocation Commands, Caveman Auto-Clarity Exceptions, Caveman Boundaries Rule, Caveman Skill (LLM Instructions), Caveman Compression Rules (+2 more)
 
 ### Community 9 - "Oxlint Config"
 Cohesion: 0.29
@@ -115,13 +115,13 @@ Nodes (5): plugins, rules, react/only-export-components, react/rules-of-hooks, $
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `Icon Sprite Assets` to `Package Manifest & Dependencies`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `SteeringWheelOutlined()` connect `Clientes Page` to `Dashboard, Services & API Layer`, `Rutas Seguimiento, Transportistas & Toast`?**
+- **Why does `dependencies` connect `Dev Dependencies` to `Dashboard, Services & API Layer`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `SteeringWheelOutlined()` connect `Clientes Page` to `Package Manifest & Dependencies`, `Rutas Seguimiento, Transportistas & Toast`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
   _66 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Package Manifest & Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+- **Should `Dashboard, Services & API Layer` be split into smaller, more focused modules?**
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `App Shell & Chrome Components` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

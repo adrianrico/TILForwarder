@@ -100,9 +100,9 @@
     "semantic_hash": "8e448420765116c22bcddd305cbba2e0"
   },
   "src/pages/RutasSeguimiento.jsx": {
-    "mtime": 1784237329.840741,
-    "ast_hash": "16e11c9baf02ec86bfb43ba7f1b61f69",
-    "semantic_hash": "16e11c9baf02ec86bfb43ba7f1b61f69"
+    "mtime": 1785168308.4584765,
+    "ast_hash": "775e23704b59eb9971834f95117086c7",
+    "semantic_hash": "775e23704b59eb9971834f95117086c7"
   },
   "src/pages/Transportistas.jsx": {
     "mtime": 1784220341.6546588,
@@ -213,5 +213,10 @@
     "mtime": 1784220288.2361646,
     "ast_hash": "c9c65dc512ca466fa8ba7199bec31ff7",
     "semantic_hash": "c9c65dc512ca466fa8ba7199bec31ff7"
+  },
+  "src/components/LocationStatusTimeline.jsx": {
+    "mtime": 1785168867.7557976,
+    "ast_hash": "a33012492e09c75f8c07c09e5738f42b",
+    "semantic_hash": "a33012492e09c75f8c07c09e5738f42b"
   }
 }

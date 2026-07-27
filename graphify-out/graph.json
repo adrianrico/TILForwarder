@@ -328,7 +328,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "maneuverstable.jsx",
       "id": "src_components_dashboard_maneuverstable"
     },
@@ -338,7 +338,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "statuscolor()",
       "id": "src_components_dashboard_maneuverstable_statuscolor"
     },
@@ -348,7 +348,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "buildcolumns()",
       "id": "src_components_dashboard_maneuverstable_buildcolumns"
     },
@@ -358,7 +358,7 @@
       "source_file": "src/components/dashboard/ManeuversTable.jsx",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "maneuverstable()",
       "id": "src_components_dashboard_maneuverstable_maneuverstable"
     },
@@ -368,7 +368,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "statcard.jsx",
       "id": "src_components_dashboard_statcard"
     },
@@ -378,7 +378,7 @@
       "source_file": "src/components/dashboard/StatCard.jsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "statcard()",
       "id": "src_components_dashboard_statcard_statcard"
     },
@@ -398,7 +398,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "dashboard.jsx",
       "id": "src_pages_dashboard"
     },
@@ -408,7 +408,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "mexico_center",
       "id": "src_pages_dashboard_mexico_center"
     },
@@ -418,7 +418,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "parseprogress()",
       "id": "src_pages_dashboard_parseprogress"
     },
@@ -428,7 +428,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "iscancelled()",
       "id": "src_pages_dashboard_iscancelled"
     },
@@ -438,7 +438,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "parsecoords()",
       "id": "src_pages_dashboard_parsecoords"
     },
@@ -448,7 +448,7 @@
       "source_file": "src/pages/Dashboard.jsx",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "dashboard()",
       "id": "src_pages_dashboard_dashboard"
     },
@@ -458,7 +458,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "api.js",
       "id": "src_services_api"
     },
@@ -468,7 +468,7 @@
       "source_file": "src/services/api.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "api",
       "id": "src_services_api_api"
     },
@@ -478,7 +478,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "clientesservice.js",
       "id": "src_services_clientesservice"
     },
@@ -488,7 +488,7 @@
       "source_file": "src/services/clientesService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "clientesservice",
       "id": "src_services_clientesservice_clientesservice"
     },
@@ -498,7 +498,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "maniobrasservice.js",
       "id": "src_services_maniobrasservice"
     },
@@ -508,7 +508,7 @@
       "source_file": "src/services/maniobrasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "maniobrasservice",
       "id": "src_services_maniobrasservice_maniobrasservice"
     },
@@ -518,7 +518,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "rutasservice.js",
       "id": "src_services_rutasservice"
     },
@@ -528,7 +528,7 @@
       "source_file": "src/services/rutasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "rutasservice",
       "id": "src_services_rutasservice_rutasservice"
     },
@@ -538,7 +538,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "transportistasservice.js",
       "id": "src_services_transportistasservice"
     },
@@ -548,7 +548,7 @@
       "source_file": "src/services/transportistasService.js",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "norm_label": "transportistasservice",
       "id": "src_services_transportistasservice_transportistasservice"
     },
@@ -571,7 +571,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman skill",
       "id": "agents_skills_caveman_readme_caveman_skill"
     },
@@ -584,7 +584,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman intensity levels",
       "id": "agents_skills_caveman_readme_intensity_levels"
     },
@@ -597,7 +597,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman auto-clarity rule",
       "id": "agents_skills_caveman_readme_auto_clarity_rule"
     },
@@ -610,7 +610,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman invocation commands",
       "id": "agents_skills_caveman_readme_invocation"
     },
@@ -623,7 +623,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman skill (llm instructions)",
       "id": "agents_skills_caveman_skill_caveman_skill"
     },
@@ -636,7 +636,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman persistence rule",
       "id": "agents_skills_caveman_skill_persistence_rule"
     },
@@ -649,7 +649,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman compression rules",
       "id": "agents_skills_caveman_skill_compression_rules"
     },
@@ -662,7 +662,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman intensity levels (detailed)",
       "id": "agents_skills_caveman_skill_intensity_levels"
     },
@@ -675,7 +675,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman auto-clarity exceptions",
       "id": "agents_skills_caveman_skill_auto_clarity"
     },
@@ -688,7 +688,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 8,
       "norm_label": "caveman boundaries rule",
       "id": "agents_skills_caveman_skill_boundaries"
     },
@@ -1095,7 +1095,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "package.json",
       "id": "package"
     },
@@ -1105,7 +1105,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "name",
       "id": "package_name"
     },
@@ -1115,7 +1115,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "private",
       "id": "package_private"
     },
@@ -1125,7 +1125,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "version",
       "id": "package_version"
     },
@@ -1135,7 +1135,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "type",
       "id": "package_type"
     },
@@ -1145,7 +1145,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "engines",
       "id": "package_engines"
     },
@@ -1155,7 +1155,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "node",
       "id": "package_engines_node"
     },
@@ -1165,7 +1165,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "scripts",
       "id": "package_scripts"
     },
@@ -1175,7 +1175,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "dev",
       "id": "package_scripts_dev"
     },
@@ -1185,7 +1185,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "build",
       "id": "package_scripts_build"
     },
@@ -1195,7 +1195,7 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "lint",
       "id": "package_scripts_lint"
     },
@@ -1205,7 +1205,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "norm_label": "preview",
       "id": "package_scripts_preview"
     },
@@ -1215,7 +1215,7 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "dependencies",
       "id": "package_dependencies"
     },
@@ -1225,7 +1225,7 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "@ant-design/icons",
       "id": "package_dependencies_ant_design_icons"
     },
@@ -1235,7 +1235,7 @@
       "source_file": "package.json",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "@dnd-kit/core",
       "id": "package_dependencies_dnd_kit_core"
     },
@@ -1245,7 +1245,7 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "@dnd-kit/sortable",
       "id": "package_dependencies_dnd_kit_sortable"
     },
@@ -1255,7 +1255,7 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "@dnd-kit/utilities",
       "id": "package_dependencies_dnd_kit_utilities"
     },
@@ -1265,7 +1265,7 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "@tanstack/react-query",
       "id": "package_dependencies_tanstack_react_query"
     },
@@ -1275,7 +1275,7 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "antd",
       "id": "package_dependencies_antd"
     },
@@ -1285,7 +1285,7 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "axios",
       "id": "package_dependencies_axios"
     },
@@ -1295,7 +1295,7 @@
       "source_file": "package.json",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "leaflet",
       "id": "package_dependencies_leaflet"
     },
@@ -1305,7 +1305,7 @@
       "source_file": "package.json",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "react",
       "id": "package_dependencies_react"
     },
@@ -1315,7 +1315,7 @@
       "source_file": "package.json",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "react-dom",
       "id": "package_dependencies_react_dom"
     },
@@ -1325,7 +1325,7 @@
       "source_file": "package.json",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "react-leaflet",
       "id": "package_dependencies_react_leaflet"
     },
@@ -1335,7 +1335,7 @@
       "source_file": "package.json",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "react-router-dom",
       "id": "package_dependencies_react_router_dom"
     },
@@ -1345,7 +1345,7 @@
       "source_file": "package.json",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "devdependencies",
       "id": "package_devdependencies"
     },
@@ -1355,7 +1355,7 @@
       "source_file": "package.json",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "@types/react",
       "id": "package_devdependencies_types_react"
     },
@@ -1365,7 +1365,7 @@
       "source_file": "package.json",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "@types/react-dom",
       "id": "package_devdependencies_types_react_dom"
     },
@@ -1375,7 +1375,7 @@
       "source_file": "package.json",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "@vitejs/plugin-react",
       "id": "package_devdependencies_vitejs_plugin_react"
     },
@@ -1385,7 +1385,7 @@
       "source_file": "package.json",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "oxlint",
       "id": "package_devdependencies_oxlint"
     },
@@ -1395,7 +1395,7 @@
       "source_file": "package.json",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "playwright",
       "id": "package_devdependencies_playwright"
     },
@@ -1405,7 +1405,7 @@
       "source_file": "package.json",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 8,
+      "community": 1,
       "norm_label": "vite",
       "id": "package_devdependencies_vite"
     },
@@ -1445,7 +1445,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "routeeventsfields.jsx",
       "id": "src_components_routeeventsfields"
     },
@@ -1455,7 +1455,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "iscancelado()",
       "id": "src_components_routeeventsfields_iscancelado"
     },
@@ -1465,7 +1465,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "normalizesubevents()",
       "id": "src_components_routeeventsfields_normalizesubevents"
     },
@@ -1475,7 +1475,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "buildevents()",
       "id": "src_components_routeeventsfields_buildevents"
     },
@@ -1485,7 +1485,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "processrouteevents()",
       "id": "src_components_routeeventsfields_processrouteevents"
     },
@@ -1495,7 +1495,7 @@
       "source_file": "src/components/RouteEventsFields.jsx",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "eventsfieldlist()",
       "id": "src_components_routeeventsfields_eventsfieldlist"
     },
@@ -1505,7 +1505,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "clientes.jsx",
       "id": "src_pages_clientes"
     },
@@ -1515,7 +1515,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "dirty_cell",
       "id": "src_pages_clientes_dirty_cell"
     },
@@ -1525,7 +1525,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "getclientid()",
       "id": "src_pages_clientes_getclientid"
     },
@@ -1535,7 +1535,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "toedits()",
       "id": "src_pages_clientes_toedits"
     },
@@ -1545,7 +1545,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "computedirty()",
       "id": "src_pages_clientes_computedirty"
     },
@@ -1555,7 +1555,7 @@
       "source_file": "src/pages/Clientes.jsx",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "clientes()",
       "id": "src_pages_clientes_clientes"
     },
@@ -1565,7 +1565,7 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "maniobras.jsx",
       "id": "src_pages_maniobras"
     },
@@ -1575,7 +1575,7 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "filterbylabel()",
       "id": "src_pages_maniobras_filterbylabel"
     },
@@ -1585,7 +1585,7 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "glassgroupstyle",
       "id": "src_pages_maniobras_glassgroupstyle"
     },
@@ -1595,7 +1595,7 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "sanitize()",
       "id": "src_pages_maniobras_sanitize"
     },
@@ -1605,7 +1605,7 @@
       "source_file": "src/pages/Maniobras.jsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "maniobras()",
       "id": "src_pages_maniobras_maniobras"
     },
@@ -1615,7 +1615,7 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "rutaspersonalizadas.jsx",
       "id": "src_pages_rutaspersonalizadas"
     },
@@ -1625,7 +1625,7 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "sanitize()",
       "id": "src_pages_rutaspersonalizadas_sanitize"
     },
@@ -1635,7 +1635,7 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "sortableintermediatepoint()",
       "id": "src_pages_rutaspersonalizadas_sortableintermediatepoint"
     },
@@ -1645,7 +1645,7 @@
       "source_file": "src/pages/RutasPersonalizadas.jsx",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "norm_label": "rutaspersonalizadas()",
       "id": "src_pages_rutaspersonalizadas_rutaspersonalizadas"
     },
@@ -1655,7 +1655,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "transportistas.jsx",
       "id": "src_pages_transportistas"
     },
@@ -1665,7 +1665,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "ecoformfields()",
       "id": "src_pages_transportistas_ecoformfields"
     },
@@ -1675,7 +1675,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "camionessection()",
       "id": "src_pages_transportistas_camionessection"
     },
@@ -1685,7 +1685,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L233",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "operatorformfields()",
       "id": "src_pages_transportistas_operatorformfields"
     },
@@ -1695,7 +1695,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L280",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "operadoressection()",
       "id": "src_pages_transportistas_operadoressection"
     },
@@ -1705,7 +1705,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L444",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "expandedrow()",
       "id": "src_pages_transportistas_expandedrow"
     },
@@ -1715,7 +1715,7 @@
       "source_file": "src/pages/Transportistas.jsx",
       "source_location": "L455",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "transportistas()",
       "id": "src_pages_transportistas_transportistas"
     },
@@ -1725,7 +1725,7 @@
       "source_file": "src/utils/toast.js",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "toast.js",
       "id": "src_utils_toast"
     },
@@ -1735,9 +1735,39 @@
       "source_file": "src/utils/toast.js",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "norm_label": "toast",
       "id": "src_utils_toast_toast"
+    },
+    {
+      "label": "LocationStatusTimeline.jsx",
+      "file_type": "code",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_locationstatustimeline",
+      "community": 4,
+      "norm_label": "locationstatustimeline.jsx"
+    },
+    {
+      "label": "useIsDesktop()",
+      "file_type": "code",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_components_locationstatustimeline_useisdesktop",
+      "community": 4,
+      "norm_label": "useisdesktop()"
+    },
+    {
+      "label": "LocationStatusTimeline()",
+      "file_type": "code",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_components_locationstatustimeline_locationstatustimeline",
+      "community": 4,
+      "norm_label": "locationstatustimeline()"
     },
     {
       "label": "RutasSeguimiento.jsx",
@@ -1746,117 +1776,117 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento",
-      "community": 6,
+      "community": 4,
       "norm_label": "rutasseguimiento.jsx"
     },
     {
       "label": "filterByLabel()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_filterbylabel",
-      "community": 6,
+      "community": 4,
       "norm_label": "filterbylabel()"
     },
     {
       "label": "sanitize()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_sanitize",
-      "community": 6,
+      "community": 4,
       "norm_label": "sanitize()"
     },
     {
       "label": "parseEvents()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_parseevents",
-      "community": 6,
+      "community": 4,
       "norm_label": "parseevents()"
     },
     {
       "label": "STATUS_OPTIONS",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_status_options",
-      "community": 6,
+      "community": 4,
       "norm_label": "status_options"
     },
     {
       "label": "normalizeEvents()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_normalizeevents",
-      "community": 6,
+      "community": 4,
       "norm_label": "normalizeevents()"
     },
     {
       "label": "parseManStatus()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_parsemanstatus",
-      "community": 6,
+      "community": 4,
       "norm_label": "parsemanstatus()"
     },
     {
       "label": "buildPointMap()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L64",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_buildpointmap",
-      "community": 6,
+      "community": 4,
       "norm_label": "buildpointmap()"
     },
     {
       "label": "ExpandedRow()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L101",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_expandedrow",
-      "community": 6,
+      "community": 4,
       "norm_label": "expandedrow()"
     },
     {
       "label": "toComparableStr()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L183",
+      "source_location": "L184",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_tocomparablestr",
-      "community": 6,
+      "community": 4,
       "norm_label": "tocomparablestr()"
     },
     {
       "label": "statusColor()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L187",
+      "source_location": "L188",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_statuscolor",
-      "community": 6,
+      "community": 4,
       "norm_label": "statuscolor()"
     },
     {
       "label": "RutasSeguimiento()",
       "file_type": "code",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L197",
+      "source_location": "L198",
       "_origin": "ast",
       "id": "src_pages_rutasseguimiento_rutasseguimiento",
-      "community": 6,
+      "community": 4,
       "norm_label": "rutasseguimiento()"
     }
   ],
@@ -4009,8 +4039,61 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_components_locationstatustimeline",
+      "target": "src_components_locationstatustimeline_locationstatustimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_locationstatustimeline",
+      "target": "src_components_locationstatustimeline_useisdesktop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L64",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_components_locationstatustimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/LocationStatusTimeline.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_components_locationstatustimeline_locationstatustimeline",
+      "target": "src_components_locationstatustimeline_useisdesktop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "src_pages_rutasseguimiento",
+      "target": "src_components_locationstatustimeline_locationstatustimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RutasSeguimiento.jsx",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_buildpointmap",
@@ -4020,7 +4103,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L101",
+      "source_location": "L102",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_expandedrow",
@@ -4030,7 +4113,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_filterbylabel",
@@ -4040,7 +4123,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_normalizeevents",
@@ -4050,7 +4133,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parseevents",
@@ -4060,7 +4143,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parsemanstatus",
@@ -4070,7 +4153,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L197",
+      "source_location": "L198",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_rutasseguimiento",
@@ -4080,7 +4163,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_sanitize",
@@ -4090,7 +4173,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_status_options",
@@ -4100,7 +4183,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L187",
+      "source_location": "L188",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_statuscolor",
@@ -4110,7 +4193,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L183",
+      "source_location": "L184",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_tocomparablestr",
@@ -4121,7 +4204,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L102",
+      "source_location": "L103",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_expandedrow",
       "target": "src_pages_rutasseguimiento_parseevents",
@@ -4132,7 +4215,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L703",
+      "source_location": "L637",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parseevents",
@@ -4143,7 +4226,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_buildpointmap",
       "target": "src_pages_rutasseguimiento_normalizeevents",
@@ -4154,7 +4237,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L321",
+      "source_location": "L322",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_parsemanstatus",
@@ -4165,7 +4248,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L537",
+      "source_location": "L538",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_rutasseguimiento",
       "target": "src_pages_rutasseguimiento_buildpointmap",
@@ -4176,7 +4259,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RutasSeguimiento.jsx",
-      "source_location": "L117",
+      "source_location": "L118",
       "weight": 1.0,
       "source": "src_pages_rutasseguimiento_expandedrow",
       "target": "src_pages_rutasseguimiento_statuscolor",
@@ -4211,5 +4294,5 @@
       "source_file": ".agents/skills/caveman/SKILL.md"
     }
   ],
-  "built_at_commit": "f7914fdc8256a62c279c0397279cda038a40c80a"
+  "built_at_commit": "ecc9c1853c45721b69bd111b57e1d012590af7de"
 }
