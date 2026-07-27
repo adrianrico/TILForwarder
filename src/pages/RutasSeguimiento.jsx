@@ -37,15 +37,6 @@ function parseEvents(arr) {
   return groups.reverse()
 }
 
-const STATUS_OPTIONS = [
-  { label: 'SIN INICIAR',  value: 'SIN INICIAR'  },
-  { label: 'EN PROCESO',   value: 'EN PROCESO'    },
-  { label: 'EN TRÁNSITO',  value: 'EN TRÁNSITO'   },
-  { label: 'EN TERMINAL',  value: 'EN TERMINAL'   },
-  { label: 'FINALIZADO',   value: 'FINALIZADO'    },
-  { label: 'CANCELADO',    value: 'CANCELADO'     },
-]
-
 // Strips cancelado and normalizes each evento's subeventos for a paso.
 function normalizeEvents(events) {
   return (events ?? [])
