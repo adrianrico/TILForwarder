@@ -287,19 +287,19 @@ body {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
   max-width: min(384px, calc(100vw - 24px));
 }
-.maylob-toast .ant-notification-notice-message {
-  color: rgb(232, 244, 255) !important;
+.maylob-toast .ant-notification-notice-title {
+  color: #fff !important;
 }
 .maylob-toast .ant-notification-notice-description {
-  color: rgb(232, 244, 255) !important;
+  color: #fff !important;
 }
 .maylob-toast .ant-notification-notice-icon-success { color: #22c55e !important; }
 .maylob-toast .ant-notification-notice-icon-error   { color: #f87171 !important; }
 .maylob-toast .ant-notification-notice-close {
-  color: rgb(232, 244, 255) !important;
+  color: #fff !important;
 }
 .maylob-toast .ant-notification-notice-close:hover {
-  color: rgb(232, 244, 255) !important;
+  color: #fff !important;
 }
 
 /* Responsive: toasts stretch edge-to-edge (with margin) on small screens

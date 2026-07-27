@@ -16,6 +16,7 @@ import { transportistasService } from '../services/transportistasService'
 import { rutasService } from '../services/rutasService'
 import { toast } from '../utils/toast'
 import { isCancelado, processRouteEvents, EventsFieldList } from '../components/RouteEventsFields'
+import { LocationStatusTimeline } from '../components/LocationStatusTimeline'
 
 const { Title } = Typography
 
@@ -185,7 +186,7 @@ function toComparableStr(vals) {
 }
 
 function statusColor(v) {
-  if (!v) return 'default'
+  if (typeof v !== 'string' || !v) return 'default'
   const s = v.toLowerCase()
   if (s.includes('inici')) return 'orange'
   if (s.includes('proceso') || s.includes('activ')) return 'green'
@@ -615,85 +616,18 @@ export default function RutasSeguimiento() {
       ),
     },
     {
-      title: 'Ubicación',
-      key: 'ubicacion',
-      width: 155,
-      render: (_, r) => {
-        const points = buildPointMap(r, rutas)
-        return (
-          <Select
-            size="small"
-            style={{ width: '100%' }}
-            showSearch
-            allowClear
-            value={r._loc || undefined}
-            placeholder="Punto"
-            options={points.map(p => ({ label: p.label, value: p.value }))}
-            filterOption={(i, o) => (o?.label ?? '').toLowerCase().includes(i.toLowerCase())}
-            onChange={v => setCellState(prev => ({
-              ...prev,
-              [r.man_id]: { location: v ?? '', status: '', subevent: '' },
-            }))}
-            onClick={e => e.stopPropagation()}
-          />
-        )
-      },
-    },
-    {
-      title: 'Estatus',
-      key: 'estatus',
-      width: 220,
-      render: (_, r) => {
-        const points       = buildPointMap(r, rutas)
-        const location     = r._loc
-        const status       = r._sts
-        const subevent     = r._sub
-        const matchedPoint = points.find(p => p.value === location)
-        const isValid      = !!location && !!matchedPoint
-        const events       = isValid ? matchedPoint.events : []
-        const noLocation   = !isValid || events.length === 0
-        const eventOptions = noLocation
-          ? [{ label: 'SIN INICIAR', value: 'SIN INICIAR' }]
-          : events.map(e => ({ label: e.event_name, value: e.event_name }))
-        const displayStatus  = noLocation ? 'SIN INICIAR' : (status || undefined)
-        const selectedEvent  = events.find(e => e.event_name === status)
-        const subEventOptions = (selectedEvent?.sub_events ?? []).map(se => ({ label: se, value: se }))
-        const hasSubEvents     = subEventOptions.length > 0
-        return (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }} onClick={e => e.stopPropagation()}>
-            <Select
-              key={location}
-              size="small"
-              style={{ width: '100%' }}
-              placeholder="Evento"
-              value={displayStatus}
-              options={eventOptions}
-              disabled={noLocation}
-              onChange={v => setCellState(prev => ({
-                ...prev,
-                [r.man_id]: { ...(prev[r.man_id] ?? { location }), status: v ?? '', subevent: '' },
-              }))}
-            />
-            {hasSubEvents && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, paddingLeft: 10, marginLeft: 4, borderLeft: '2px dashed #0695E4' }}>
-                <Select
-                  key={`${location}-${status}`}
-                  size="small"
-                  style={{ width: '100%' }}
-                  placeholder={`Subevento de "${status}"`}
-                  allowClear
-                  value={subevent || undefined}
-                  options={subEventOptions}
-                  onChange={v => setCellState(prev => ({
-                    ...prev,
-                    [r.man_id]: { ...(prev[r.man_id] ?? { location, status }), subevent: v ?? '' },
-                  }))}
-                />
-              </div>
-            )}
-          </div>
-        )
-      },
+      title: 'Seguimiento',
+      key: 'seguimiento',
+      width: 190,
+      render: (_, r) => (
+        <LocationStatusTimeline
+          points={buildPointMap(r, rutas)}
+          location={r._loc}
+          status={r._sts}
+          subevent={r._sub}
+          onChange={next => setCellState(prev => ({ ...prev, [r.man_id]: next }))}
+        />
+      ),
     },
     {
       title: 'PROGRESO',
@@ -701,7 +635,7 @@ export default function RutasSeguimiento() {
       width: 130,
       render: (_, r) => {
         const events      = parseEvents(r.man_events)
-        const isCancelled = events.some(e => (e.status ?? '').toUpperCase().includes('CANCEL'))
+        const isCancelled = events.some(e => String(e.status ?? '').toUpperCase().includes('CANCEL'))
         const progress    = parseInt(r.man_progress, 10) || 0
         return (
           <Progress
