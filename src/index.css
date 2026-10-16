@@ -1,3 +1,7 @@
+/**
+ * Estilos globales: variables, fondo, animaciones (olas, spinner) y ajustes responsivos
+ * de tablas/formularios sobre Ant Design.
+ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
