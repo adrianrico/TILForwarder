@@ -1,24 +1,24 @@
 import { createContext, useContext, useState } from 'react'
 import api from '@/shared/api/client'
-import { adminKey } from './adminKey'
+import { session } from './session'
 
 const AuthContext = createContext(null)
 
 /**
- * Sesión del administrador: expone `{ isAuthenticated, login(key), logout() }` vía `useAuth()`.
- * `login` valida la llave contra el backend antes de guardarla.
+ * Sesión del usuario: expone `{ isAuthenticated, login(key), logout() }` vía `useAuth()`.
+ * `login` envía la clave personal a `POST /portal/login` y guarda solo el token recibido.
  */
 export function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(() => Boolean(adminKey.get()))
+  const [isAuthenticated, setIsAuthenticated] = useState(() => Boolean(session.get()))
 
   async function login(key) {
-    await api.get('/clients/client/', { headers: { 'X-API-Key': key } })
-    adminKey.set(key)
+    const { data } = await api.post('/portal/login', { key })
+    session.set(data.token)
     setIsAuthenticated(true)
   }
 
   function logout() {
-    adminKey.clear()
+    session.clear()
     setIsAuthenticated(false)
   }
 

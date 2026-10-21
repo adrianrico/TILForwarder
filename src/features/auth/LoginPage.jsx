@@ -7,7 +7,7 @@ import TILLogo from '@/shared/components/TILLogo'
 
 const { Text } = Typography
 
-/** Pantalla de acceso: el administrador ingresa su llave (`ADMIN_API_KEY` del backend). */
+/** Pantalla de acceso: el usuario ingresa la clave personal que le asignó el administrador. */
 export default function LoginPage() {
   const navigate = useNavigate()
   const { login } = useAuth()
@@ -25,11 +25,9 @@ export default function LoginPage() {
       navigate('/', { replace: true })
     } catch (err) {
       const status = err.response?.status
-      setError(
-        status === 401 || status === 403
-          ? 'Llave de administrador incorrecta.'
-          : err.userMessage ?? 'No se pudo conectar con el servidor.',
-      )
+      if (status === 429) setError('Demasiados intentos. Espera unos minutos.')
+      else if (status === 401 || status === 403) setError('Clave incorrecta o acceso restringido.')
+      else setError(err.userMessage ?? 'No se pudo conectar con el servidor.')
     } finally {
       setLoading(false)
     }
@@ -41,12 +39,12 @@ export default function LoginPage() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginBottom: 24 }}>
           <TILLogo height={40} />
           <Text style={{ color: '#7aafc8', fontSize: 13, textAlign: 'center' }}>
-            Ingresa la llave de administrador
+            Ingresa tu clave de acceso
           </Text>
         </div>
 
         <Form layout="vertical" onFinish={onSubmit}>
-          <Form.Item label="Llave de administrador" required style={{ marginBottom: 20 }}>
+          <Form.Item label="Clave de acceso" required style={{ marginBottom: 20 }}>
             <Input.Password
               prefix={<KeyOutlined />}
               size="large"

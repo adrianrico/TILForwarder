@@ -10,7 +10,7 @@
  *  - Los errores de red se normalizan para que la UI nunca muestre trazas internas.
  */
 import axios from 'axios'
-import { adminKey } from '@/features/auth/adminKey'
+import { session } from '@/features/auth/session'
 
 const API_URL = import.meta.env.VITE_API_URL
 
@@ -32,10 +32,10 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
-/** Adjunta la llave de administrador (`X-API-Key`) guardada al iniciar sesión. */
+/** Adjunta el JWT del usuario (`Authorization: Bearer`) obtenido al iniciar sesión. */
 api.interceptors.request.use((config) => {
-  const key = adminKey.get()
-  if (key && !config.headers['X-API-Key']) config.headers['X-API-Key'] = key
+  const token = session.get()
+  if (token) config.headers.Authorization = `Bearer ${token}`
   return config
 })
 
@@ -46,9 +46,9 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Llave rechazada: se limpia la sesión y se vuelve al login (el login mismo se maneja en su pantalla).
-    if (error.response?.status === 401 && adminKey.get() && window.location.pathname !== '/login') {
-      adminKey.clear()
+    // Sesión rechazada (token vencido, usuario restringido o eliminado): se limpia y se vuelve al login.
+    if (error.response?.status === 401 && session.get() && window.location.pathname !== '/login') {
+      session.clear()
       window.location.assign('/login')
     }
     if (error.code === 'ECONNABORTED') {
