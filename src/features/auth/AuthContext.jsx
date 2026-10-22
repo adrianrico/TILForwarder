@@ -1,29 +1,46 @@
-import { createContext, useContext, useState } from 'react'
-import api from '@/shared/api/client'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { authService } from './authService'
 import { session } from './session'
 
 const AuthContext = createContext(null)
 
 /**
- * Sesión del usuario: expone `{ isAuthenticated, login(key), logout() }` vía `useAuth()`.
- * `login` envía la clave personal a `POST /portal/login` y guarda solo el token recibido.
+ * Sesión del usuario: expone `{ isAuthenticated, user, login(username, password), logout() }` vía `useAuth()`.
+ * El login lo valida TIL_Backend con las credenciales generadas en el portal TIL_Superadmin.
+ * Al montar, si hay token se revalida con `/client-auth/me`: si el administrador restringió o
+ * eliminó al usuario, la sesión se cierra.
  */
 export function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(() => Boolean(session.get()))
+  const [token, setToken] = useState(() => session.get())
+  const [user, setUser] = useState(() => session.getUser())
 
-  async function login(key) {
-    const { data } = await api.post('/portal/login', { key })
-    session.set(data.token)
-    setIsAuthenticated(true)
+  useEffect(() => {
+    if (!token) return
+    let cancelled = false
+    authService.me().catch((err) => {
+      const status = err.response?.status
+      if (!cancelled && (status === 401 || status === 403)) logout()
+    })
+    return () => { cancelled = true }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  async function login(username, password) {
+    const { data } = await authService.login(username, password)
+    const { accessToken, user: profile } = data.data
+    session.set(accessToken, profile)
+    setToken(accessToken)
+    setUser(profile)
   }
 
   function logout() {
     session.clear()
-    setIsAuthenticated(false)
+    setToken(null)
+    setUser(null)
   }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated: Boolean(token), user, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

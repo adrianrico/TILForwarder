@@ -124,7 +124,7 @@ export default function Dashboard() {
       {backendDown && (
         <Alert
           title="Sin conexión al servidor"
-          description="Verifica que el backend Node.js esté corriendo en el puerto 8080."
+          description="Verifica que TIL_Backend esté corriendo (puerto 4000 en local)."
           type="warning"
           showIcon
           style={{ marginBottom: 24 }}

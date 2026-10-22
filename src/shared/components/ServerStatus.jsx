@@ -5,13 +5,16 @@ import { useState, useEffect } from 'react'
 import { Alert } from 'antd'
 import api from '@/shared/api/client'
 
+// TIL_Backend expone el health check en la raíz (/health), fuera del prefijo /api/v1.
+const HEALTH_URL = new URL('/health', import.meta.env.VITE_API_URL).href
+
 export default function ServerStatus() {
   const [isOnline, setIsOnline] = useState(true)
 
   useEffect(() => {
     const check = async () => {
       try {
-        await api.get('/health', { timeout: 5000 })
+        await api.get(HEALTH_URL, { timeout: 5000 })
         setIsOnline(true)
       } catch (err) {
         if (!err.response || err.response.status >= 500) {

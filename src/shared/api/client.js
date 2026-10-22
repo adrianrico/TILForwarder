@@ -1,5 +1,5 @@
 /**
- * Cliente HTTP único de la aplicación (capa de infraestructura).
+ * Cliente HTTP único de la aplicación (capa de infraestructura) hacia TIL_Backend (`/api/v1`).
  *
  * Reglas de seguridad aplicadas aquí, en un solo punto:
  *  - La URL base sale SOLO de `VITE_API_URL`; no hay URL de producción "escondida"

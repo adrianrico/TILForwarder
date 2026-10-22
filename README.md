@@ -1,6 +1,6 @@
 # TIL Forwarder (frontend)
 
-SPA en React + Vite para administrar clientes, transportistas, rutas, maniobras y su seguimiento. Consume la API REST `maylob_backend`.
+SPA en React + Vite para administrar clientes, transportistas, rutas, maniobras y su seguimiento. Consume la API REST `TIL_Backend`.
 
 ## Inicio rápido
 
@@ -11,7 +11,7 @@ npm run build    # usa .env.production (HTTPS obligatorio)
 npm run lint
 ```
 
-`VITE_API_URL` define la URL del backend (ver `.env.example`). No guardes secretos en variables `VITE_*`: son públicas.
+`VITE_API_URL` define la URL de TIL_Backend con `/api/v1` (ver `.env.example`). El usuario y la contraseña los genera el portal TIL_Superadmin; el login se valida en `POST /client-auth/login` y el mismo JWT autoriza `/clients`, `/transporters`, `/routes` y `/maneuvers`.
 
 ## Estructura
 
